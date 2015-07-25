@@ -1,0 +1,44 @@
+<ul class="tab-nav tn-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">Securities</a></li>
+    <li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Watchlist</a></li>
+</ul>
+
+<div class="chat-search">
+    <div class="fg-line">
+        <input type="text" ng-model="vm.keyword" class="form-control" placeholder="Search People">
+    </div>
+</div>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="friends">
+        <div class="listview">
+            <a class="lv-item" href="" ng-repeat="sec in vm.securities | filter: { code: vm.keyword }" >
+                <div class="media">
+                    <!--<div class="pull-left p-relative">
+                        <img class="lv-img-sm" src="Content/img/profile-pics/2.jpg" alt="">
+                        <i class="chat-status-busy"></i>
+                    </div>-->
+                    <div class="media-body">
+                        <div class="lv-title">{{sec.code}}</div>
+                        <small class="lv-small">{{sec.exchange}}</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="online">
+        <div class="listview">
+            <a class="lv-item" href="" ng-repeat="wl in vm.watchlists | filter: { name: vm.keyword } ">
+                <div class="media">
+                    <!--<div class="pull-left p-relative">
+                        <img class="lv-img-sm" src="Content/img/profile-pics/2.jpg" alt="">
+                        <i class="chat-status-busy"></i>
+                    </div>-->
+                    <div class="media-body">
+                        <div class="lv-title">{{wl.name}}</div>
+                        <small class="lv-small">{{wl.type}}</small>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
