@@ -1,4 +1,19 @@
 materialAdmin
+    // =========================================================================
+    // Securities used by security Explorer
+    // =========================================================================
+
+    .service('securitiesExploreService', ['$resource', function ($resource) {
+        this.getSecurities = function (id, securityCode, securityName, exchange) {
+            var gsList = $resource("data/securities.json");
+            return gsList.get({
+                id: id,
+                securityCode: securityCode,
+                securityName: securityName,
+                exchange: exchange
+            });
+        }
+    }])
 
     // =========================================================================
     // Header Messages and Notifications list Data

@@ -1,0 +1,388 @@
+{
+    "list": [
+        {
+            "id": 508433,
+            "securityCode": "AADR",
+            "securityName": "WCM/BNY Mellon Focused Growth ADR",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 604787,
+            "securityCode": "ACIM",
+            "securityName": "SPDR MSCI ACWI IMI",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 2056357,
+            "securityCode": "ACWF",
+            "securityName": "iShares FactorSelect MSCI Global",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 589269,
+            "securityCode": "ACWV",
+            "securityName": "iShares MSCI All Country World Minimum Vol",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 382898,
+            "securityCode": "ADZ",
+            "securityName": "DB Agriculture Short",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 403051,
+            "securityCode": "AFK",
+            "securityName": "Market Vectors Africa",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 2034229,
+            "securityCode": "AFTY",
+            "securityName": "CSOP FTSE China A50",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 382899,
+            "securityCode": "AGA",
+            "securityName": "DB Agriculture Double Short",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 382900,
+            "securityCode": "AGF",
+            "securityName": "DB Agriculture Long",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 125286,
+            "securityCode": "AGG",
+            "securityName": "iShares Core US Aggregate Bond",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 2074266,
+            "securityCode": "AGGY",
+            "securityName": "WisdomTree Barclays US Aggregate Bd Enh Yield",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 508448,
+            "securityCode": "AGLS",
+            "securityName": "Accuvest Global Long Short",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 533082,
+            "securityCode": "AGOL",
+            "securityName": "ETFS Physical Asian Gold",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 431346,
+            "securityCode": "AGQ",
+            "securityName": "ProShares Ultra Silver",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 424786,
+            "securityCode": "AGZ",
+            "securityName": "iShares Agency Bond",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 354094,
+            "securityCode": "AIA",
+            "securityName": "iShares Asia 50",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 542063,
+            "securityCode": "ALD",
+            "securityName": "WisdomTree Asia Local Debt",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 622810,
+            "securityCode": "ALFA",
+            "securityName": "AlphaClone Alternative Alpha",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 1650608,
+            "securityCode": "ALTS",
+            "securityName": "ProShares Morningstar Alternatives Solution",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 455371,
+            "securityCode": "AMJ",
+            "securityName": "JP Morgan Chase Alerian",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 514301,
+            "securityCode": "AMLP",
+            "securityName": "ALPS Alerian MLP",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 601551,
+            "securityCode": "AMPS",
+            "securityName": "iShares Utilities Bond",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 658520,
+            "securityCode": "AMU",
+            "securityName": "UBS ETRACS Alerian MLP Index",
+            "exchange": "ARCX"
+        },
+        {
+            "id": 1649405,
+            "securityCode": "AMZA",
+            "securityName": "ETFis InfraCap MLP",
+            "exchange": "ARCX"
+        },
+        {
+                "id": 434779,
+                "securityCode": "AOA",
+                "securityName": "iShares Core Aggressive Allocation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 427482,
+                "securityCode": "AOK",
+                "securityName": "iShares Core Conservative Allocation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 424787,
+                "securityCode": "AOM",
+                "securityName": "iShares Core Moderate Allocation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 427483,
+                "securityCode": "AOR",
+                "securityName": "iShares Core Growth Allocation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 539782,
+                "securityCode": "ARGT",
+                "securityName": "Global X MSCI Argentina",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1656297,
+                "securityCode": "ARKG",
+                "securityName": "ARK Genomic Revolution Multi-Sector",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1656298,
+                "securityCode": "ARKK",
+                "securityName": "ARK Innovation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1648882,
+                "securityCode": "ARKQ",
+                "securityName": "ARK Industrial Innovation",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1648883,
+                "securityCode": "ARKW",
+                "securityName": "ARK Web X.0",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 537048,
+                "securityCode": "ASEA",
+                "securityName": "Global X Southeast Asia",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 859166,
+                "securityCode": "ASHR",
+                "securityName": "Deutsche X-trackers Hvst CSI 300 China A-Shs",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1596930,
+                "securityCode": "ASHS",
+                "securityName": "Deutsche X-trackers Hvst CSI500 China A-Shs SC",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 753096,
+                "securityCode": "ATMP",
+                "securityName": "Barclays Select MLP",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 400263,
+                "securityCode": "AUNZ",
+                "securityName": "WisdomTree Australia & New Zealand Debt Fd",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 208310,
+                "securityCode": "AUSE",
+                "securityName": "WisdomTree Australia Dividend",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 208309,
+                "securityCode": "AXJL",
+                "securityName": "WisdomTree Asia-Pacific ex-Japan",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1602065,
+                "securityCode": "AXJV",
+                "securityName": "iShares MSCI Asia Ex Japan Minimum Volatility",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 409805,
+                "securityCode": "AYT",
+                "securityName": "iPath GEMS Asia 8",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 767328,
+                "securityCode": "AZIA",
+                "securityName": "Global X Central Asia & Mongolia",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 479343,
+                "securityCode": "BAB",
+                "securityName": "PowerShares Build America Bond Port",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 502616,
+                "securityCode": "BABS",
+                "securityName": "SPDR Nuveen Barclays Build America Bond",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 403053,
+                "securityCode": "BAL",
+                "securityName": "Barclays Bank iPath Bloomberg Cotton Subindex Total Return",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 144818,
+                "securityCode": "BBH",
+                "securityName": "Market Vectors Biotech",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 662232,
+                "securityCode": "BBRC",
+                "securityName": "EGShares Beyond BRICs",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 1587170,
+                "securityCode": "BCHP",
+                "securityName": "EGShares Blue Chip",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 548204,
+                "securityCode": "BCM",
+                "securityName": "Barclays Bank iPath Pure Beta Broad Commodity",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 2074994,
+                "securityCode": "BDAT",
+                "securityName": "PureFunds ISE Big Data",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 553544,
+                "securityCode": "BDCL",
+                "securityName": "UBS 2 Lever Long Exchange Traded Access Securities Linked to Wells Fargo Business Dev",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 548205,
+                "securityCode": "BDCS",
+                "securityName": "UBS Exchange Traded Access Sec (E-TRACS) Linked to Wells Fargo Bus Deve Comp Index",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 400262,
+                "securityCode": "BDD",
+                "securityName": "DB Base Metals Double Long",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 407576,
+                "securityCode": "BDG",
+                "securityName": "DB Base Metals Long",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 792267,
+                "securityCode": "BFOR",
+                "securityName": "ALPS Barron's 400",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 284994,
+                "securityCode": "BIK",
+                "securityName": "SPDR S&P BRIC 40",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 280324,
+                "securityCode": "BIL",
+                "securityName": "SPDR Barclays 1-3 Month T-Bill",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 272000,
+                "securityCode": "BIV",
+                "securityName": "Vanguard Intermediate Term Bond",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 743243,
+                "securityCode": "BIZD",
+                "securityName": "Market Vectors BDC Income",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 368147,
+                "securityCode": "BJK",
+                "securityName": "Market Vectors Gaming",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 354095,
+                "securityCode": "BKF",
+                "securityName": "iShares MSCI BRIC",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 542064,
+                "securityCode": "BKLN",
+                "securityName": "PowerShares Senior Loan Portfolio",
+                "exchange": "ARCX"
+            },
+            {
+                "id": 548206,
+                "securityCode": "BLNG",
+                "securityName": "Barclays Bank iPath Pure Beta Precious Metals",
+                "exchange": "ARCX"
+            }
+    ]
+}

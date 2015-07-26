@@ -1,0 +1,34 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "name": "Watchlist 1",
+            "type": "Industry Watch List"
+        },
+        {
+            "id": 2,
+            "name": "Watchlist 2",
+            "type": "Industry Watch List"
+        },
+        {
+            "id": 3,
+            "name": "Watchlist 3",
+            "type": "Industry Watch List"
+        },
+        {
+            "id": 4,
+            "name": "Watchlist 4",
+            "type": "Industry Watch List"
+        },
+        {
+            "id": 5,
+            "name": "Watchlist 5",
+            "type": "Industry Watch List"
+        },
+        {
+            "id": 6,
+            "name": "Watchlist 6",
+            "type": "Industry Watch List"
+        }
+    ]
+}

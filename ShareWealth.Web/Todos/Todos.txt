@@ -1,0 +1,2 @@
+Fixes:
+1. Security explorer is blank when changing to a different view.

@@ -16,7 +16,7 @@ materialAdmin
         
             .state ('home', {
                 url: '/home',
-                templateUrl: 'views/home.html',
+                templateUrl: 'views/home-min.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -51,6 +51,11 @@ materialAdmin
                 templateUrl: 'views/typography.html'
             })
 
+            .state('securities', {
+                url: '/securities',
+                templateUrl: 'views/securities.html',
+                controller: 'securitiesCtrl as vm'
+            })
 
             //------------------------------
             // WIDGETS

@@ -64,6 +64,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-templates');
   
     // Default task(s).
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less', 'csssplit', 'ngtemplates']);
     
 };

@@ -219,18 +219,18 @@ materialAdmin
         //User
         this.profileSummary = "Sed eu est vulputate, fringilla ligula ac, maximus arcu. Donec sed felis vel magna mattis ornare ut non turpis. Sed id arcu elit. Sed nec sagittis tortor. Mauris ante urna, ornare sit amet mollis eu, aliquet ac ligula. Nullam dolor metus, suscipit ac imperdiet nec, consectetur sed ex. Sed cursus porttitor leo.";
     
-        this.fullName = "Mallinda Hollaway";
-        this.gender = "female";
-        this.birthDay = "23/06/1988";
-        this.martialStatus = "Single";
+        this.fullName = "John Doe";
+        this.gender = "male";
+        this.birthDay = "23/06/1978";
+        this.martialStatus = "Married";
         this.mobileNumber = "00971123456789";
-        this.emailAddress = "malinda.h@gmail.com";
-        this.twitter = "@malinda";
-        this.twitterUrl = "twitter.com/malinda";
-        this.skype = "malinda.hollaway";
+        this.emailAddress = "JohnDoeh@gmail.com";
+        this.twitter = "@johnDoe";
+        this.twitterUrl = "twitter.com/john";
+        this.skype = "john.doe";
         this.addressSuite = "10098 ABC Towers";
-        this.addressCity = "Dubai Silicon Oasis, Dubai";
-        this.addressCountry = "United Arab Emirates";
+        this.addressCity = "Sydney";
+        this.addressCountry = "Australia";
     
     
         //Edit
@@ -367,15 +367,23 @@ materialAdmin
     //=================================================
     // SECURITY EXPLORER
     //=================================================
-    .controller('securityCtrl', function () {
+    .controller('securityExploreCtrl', function (securitiesExploreService) {
         var vm = this;
         vm.keyword = "";
+        
+     
+        vm.id = securitiesExploreService.id;
+        vm.securityCode = securitiesExploreService.securityCode;
+        vm.securityName = securitiesExploreService.securityName;
+        vm.exchange = securitiesExploreService.exchange;
+        
+        vm.secResult = securitiesExploreService.getSecurities(vm.id, vm.securityCode, vm.securityName, vm.exchange);
 
-        vm.securities = [
-            { code: "XAO", exchange: "XAXS" },
-            { code: "BHP", exchange: "XNAS" },
-            { code: "COMP", exchange: "World Indices" }
-        ];
+        //vm.securities = [
+        //    { code: "XAO", exchange: "XAXS" },
+        //    { code: "BHP", exchange: "XNAS" },
+        //    { code: "COMP", exchange: "World Indices" }
+        //];
         
         vm.watchlists = [
             { name: "All Ordinaries", type: "Industry Watchlist" },
@@ -386,4 +394,70 @@ materialAdmin
             { name: "Portfolio A", type: "Your Watchlist" },
             { name: "Portfolio B", type: "Your Watchlist" },
         ];
+    })
+
+     //=================================================
+    // SECURITY EXPLORER
+    //=================================================
+    .controller('securitiesCtrl', function () {
+        var vm = this;
+        vm.mainGridOptions = {
+                dataSource: {
+                    type: "odata",
+                    transport: {
+                        read: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Employees"
+                    },
+                    pageSize: 10,
+                    serverPaging: true,
+                    serverSorting: true
+                },
+                filterable:true,
+                sortable: true,
+                pageable: true,
+                dataBound: function() {
+                    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                },
+                columns: [{
+                    field: "FirstName",
+                    title: "First Name",
+                    width: "120px"
+                    },{
+                    field: "LastName",
+                    title: "Last Name",
+                    width: "120px"
+                    },{
+                    field: "Country",
+                    width: "120px"
+                    },{
+                    field: "City",
+                    width: "120px"
+                    },{
+                    field: "Title"
+                }]
+            };
+
+        vm.detailGridOptions = function (dataItem) {
+             return {
+                 dataSource: {
+                     type: "odata",
+                     transport: {
+                         read: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"
+                     },
+                     serverPaging: true,
+                     serverSorting: true,
+                     serverFiltering: true,
+                     pageSize: 5,
+                     filter: { field: "EmployeeID", operator: "eq", value: dataItem.EmployeeID }
+                 },
+                 scrollable: false,
+                 sortable: true,
+                 pageable: true,
+                 columns: [
+                     { field: "OrderID", title: "ID", width: "56px" },
+                     { field: "ShipCountry", title: "Ship Country", width: "110px" },
+                     { field: "ShipAddress", title: "Ship Address" },
+                     { field: "ShipName", title: "Ship Name", width: "190px" }
+                 ]
+             };
+         }
     })

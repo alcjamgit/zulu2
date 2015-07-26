@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -189,6 +190,7 @@
     <Content Include="App\css\app.min.1.css" />
     <Content Include="App\css\app.min.2.css" />
     <Content Include="App\css\demo.css" />
+    <Content Include="App\fonts\fontawesome-webfont.svg" />
     <Content Include="App\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="App\fonts\roboto\Roboto-Bold-webfont.svg" />
     <Content Include="App\fonts\roboto\Roboto-Light-webfont.svg" />
@@ -4475,6 +4477,25 @@
     <Content Include="App\vendors\fileinput\fileinput.min.js" />
     <Content Include="App\vendors\input-mask\input-mask.js" />
     <Content Include="App\vendors\input-mask\input-mask.min.js" />
+    <Content Include="App\vendors\kendo-ui\js\angular.min.js" />
+    <Content Include="App\vendors\kendo-ui\js\kendo.all.min.js" />
+    <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
+    <Content Include="App\vendors\kendo-ui\styles\kendo.common.min.css" />
+    <Content Include="App\vendors\kendo-ui\styles\kendo.default.min.css" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\editor.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\imagebrowser.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\indeterminate.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\loading-image.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\loading.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\loading_2x.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\markers.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\markers_2x.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\slider-h.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\slider-v.gif" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\sprite.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\sprite_2x.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\sprite_kpi.png" />
+    <Content Include="App\vendors\kendo-ui\styles\Material\sprite_kpi_2x.png" />
     <Content Include="App\vendors\socicon\fonts\socicon-webfont.svg" />
     <Content Include="App\vendors\socicon\socicon.css" />
     <Content Include="App\vendors\socicon\socicon.min.css" />
@@ -4496,6 +4517,7 @@
     <Content Include="App\views\form-examples.html" />
     <Content Include="App\views\form-validations.html" />
     <Content Include="App\views\generic-classes.html" />
+    <Content Include="App\views\home-min.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\icons.html" />
     <Content Include="App\views\list-view.html" />
@@ -4509,6 +4531,7 @@
     <Content Include="App\views\profile-photos.html" />
     <Content Include="App\views\profile-timeline.html" />
     <Content Include="App\views\profile.html" />
+    <Content Include="App\views\securities.html" />
     <Content Include="App\views\tables.html" />
     <Content Include="App\views\typography.html" />
     <Content Include="App\views\widget-templates.html" />
@@ -4518,6 +4541,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Todos\Todos.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -6213,8 +6237,18 @@
     <Content Include="App\vendors\socicon\fonts\socicon-webfont.woff2" />
     <Content Include="App\vendors\weather-icons\weather-font.less" />
     <Content Include="App\vendors\weather-icons\weather-icons.less" />
+    <Content Include="App\less\inc\vendor-overrides\font-awesome.less" />
+    <Content Include="App\fonts\fontawesome-webfont.eot" />
+    <Content Include="App\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App\fonts\fontawesome-webfont.woff" />
+    <Content Include="App\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App\fonts\FontAwesome.otf" />
+    <Content Include="App\data\watchlist.json" />
+    <Content Include="App\data\securities.json" />
+    <Content Include="App\data\securities-all.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutSpa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\vendors\bower_components\angular-ui-router\api\angular-ui-router.d.ts" />
