@@ -1,22 +1,49 @@
+<div class="block-header">
+    <h2>SECURITIES</h2>
 
-    <kendo-grid options="vm.mainGridOptions">
-        <div k-detail-template>
-            <kendo-tabstrip>
-                <ul>
-                    <li class="k-state-active">Orders</li>
-                    <li>Contact information</li>
-                </ul>
-                <div>
-                    <div kendo-grid k-options="vm.detailGridOptions(dataItem)"></div>
-                </div>
-                <div>
-                    <ul>
-                        <li>Country: <input ng-model="vm.dataItem.Country" /></li>
-                        <li>City: <input ng-model="vm.dataItem.City" /></li>
-                        <li>Address: {{vm.dataItem.Address}}</li>
-                        <li>Home phone: {{vm.dataItem.HomePhone}}</li>
-                    </ul>
-                </div>
-            </kendo-tabstrip>
-        </div>
-    </kendo-grid>
+    <ul class="actions">
+        <li>
+            <a href="">
+                <i class="md md-trending-up"></i>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="md md-done-all"></i>
+            </a>
+        </li>
+        <li class="dropdown">
+            <a href="" data-toggle="dropdown">
+                <i class="md md-more-vert"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Refresh</a>
+                </li>
+                <li>
+                    <a href="">Manage Widgets</a>
+                </li>
+                <li>
+                    <a href="">Widgets Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<kendo-grid options="vm.mainGridOptions">
+</kendo-grid>
+
+<!--http://demos.telerik.com/kendo-ui/menu/context-menu-angular-->
+<ul kendo-context-menu
+    k-filter="'.hasMenu'"
+    k-on-open="menuOpen = menuOpen + 1"
+    k-on-close="menuOpen = menuOpen - 1"
+    k-on-select="onSelect(kendoEvent)">
+
+    <li><i class="fa fa-line-chart"></i> Open Chart</li>
+    <li>Add to Watchlist</li>
+    
+</ul>

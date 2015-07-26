@@ -161,3 +161,14 @@
   -o-transform: scale3d(@process);
   transform: scale3d(@process);
 }
+
+.circle-media(@radius: 40px, @bg-color:'#E91E63'){
+    width:@radius;
+    height:@radius;
+    border-radius:50%;
+    font-size:17px;
+    color:#fff;
+    line-height:@radius;
+    text-align:center;
+    background:@bg-color;
+}

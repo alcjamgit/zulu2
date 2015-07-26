@@ -6244,8 +6244,9 @@
     <Content Include="App\fonts\fontawesome-webfont.woff2" />
     <Content Include="App\fonts\FontAwesome.otf" />
     <Content Include="App\data\watchlist.json" />
-    <Content Include="App\data\securities.json" />
+    <Content Include="App\data\securities-explorer.json" />
     <Content Include="App\data\securities-all.json" />
+    <Content Include="App\data\securities-grid.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSpa.cshtml" />

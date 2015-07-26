@@ -16,6 +16,11 @@
             <div class="listview">
                 <a class="lv-item" href="" ng-repeat="sec in vm.secResult.list | filter: vm.keyword ">
                     <div class="media">
+
+                        <div class="pull-left p-relative">
+                            <div class="circle-pink">{{sec.firstChar()}}</div>
+                        </div>
+
                         <div class="media-body">
                             <div class="lv-title">{{sec.securityCode}}</div>
                             <small class="lv-small">{{sec.securityName +' | '+ sec.exchange}}</small>

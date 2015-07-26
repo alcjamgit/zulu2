@@ -54,7 +54,7 @@ materialAdmin
             .state('securities', {
                 url: '/securities',
                 templateUrl: 'views/securities.html',
-                controller: 'securitiesCtrl as vm'
+                controller: 'securitiesGridCtrl as vm'
             })
 
             //------------------------------

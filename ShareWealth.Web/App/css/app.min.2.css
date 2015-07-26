@@ -2787,13 +2787,13 @@ body.login-content:before {
 
 @media screen and (min-width: 768px) {
   .block-header {
-    padding: 0 22px;
+    padding: 0 0;
   }
 }
 
 @media screen and (max-width: 991px) {
   .block-header {
-    padding: 0 18px;
+    padding: 0 0;
   }
 }
 
@@ -3016,6 +3016,39 @@ body.login-content:before {
 
 .load-more a:hover {
   background-color: #ea1c0d;
+}
+
+.circle-red {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background: #f44336;
+}
+
+.circle-blue {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background: #f44336;
+}
+
+.circle-pink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background: #f44336;
 }
 
 .ie-warning {

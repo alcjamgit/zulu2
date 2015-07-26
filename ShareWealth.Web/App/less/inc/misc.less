@@ -4,11 +4,11 @@
  */
 .block-header {
     @media screen and (min-width: @screen-sm-min) {
-        padding: 0 22px;
+        padding: 0 0;
     }
     
     @media screen and (max-width: @screen-sm-max) {
-        padding: 0 18px;
+        padding: 0 0;
     }
     
     margin-bottom: 25px;
@@ -191,4 +191,14 @@
             background-color: darken(@m-red, 10%);
         }
     }
+}
+
+.circle-red{
+    .circle-media(40px, @m-red);
+}
+.circle-blue{
+    .circle-media(40px, @m-red);
+}
+.circle-pink{
+    .circle-media(40px, @m-red);
 }
