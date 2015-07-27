@@ -380,30 +380,18 @@ materialAdmin
     //=================================================
     // SECURITY EXPLORER
     //=================================================
-    .controller('securityExploreCtrl', function (securitiesExploreService) {
+    .controller('securityExploreCtrl', function (securityService) {
         var vm = this;
+
         vm.keyword = "";
 
-        securitiesExploreService.get().then(function (result) {
+        securityService.getSecurities().then(function (result) {
             vm.secResult = result.data;
         });
+        securityService.getWatchlist().then(function (result) {
+            vm.watchlists = result.data;
+        });
 
-        //vm.id = securitiesExploreService.id;
-        //vm.securityCode = securitiesExploreService.securityCode;
-        //vm.securityName = securitiesExploreService.securityName;
-        //vm.exchange = securitiesExploreService.exchange;
-        //vm.secResult = securitiesExploreService.getSecurities(vm.id, vm.securityCode, vm.securityName, vm.exchange);
-
-
-        vm.watchlists = [
-            { name: "All Ordinaries", type: "Industry Watchlist" },
-            { name: "Energy Industry", type: "Industry Watchlist" },
-            { name: "Technology", type: "Industry Watchlistt" },
-            { name: "Automotive", type: "Industry Watchlist" },
-            { name: "Entertainment", type: "Your Watchlist" },
-            { name: "Portfolio A", type: "Your Watchlist" },
-            { name: "Portfolio B", type: "Your Watchlist" },
-        ];
     })
 
      //=================================================

@@ -3,24 +3,19 @@ materialAdmin
     // Securities used by security Explorer
     // =========================================================================
 
-    //.service('securitiesExploreService', ['$resource', function ($resource) {
-    //    this.getSecurities = function (id, securityCode, securityName, exchange) {
-    //        var gsList = $resource("data/securities-explorer.json");
-    //        return gsList.get({
-    //            id: id,
-    //            securityCode: securityCode,
-    //            securityName: securityName,
-    //            exchange: exchange
-    //        });
-    //    }
-    //}])
-
-        .factory('securitiesExploreService', ['$http', function ($http) {
-            return {
-                get: function () {
-                    return $http.get('api/Seurity');
-                }
+        .factory('securityService', ['$http', function ($http) {
+            function securities(){
+                return $http.get('api/Seurity');
             }
+            function watchlists(){
+                return $http.get('api/Watchlist');
+            }
+
+            return {
+                getSecurities: securities,
+                getWatchlist: watchlists
+            }
+
         }])
 
     // =========================================================================

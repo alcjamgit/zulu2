@@ -14,7 +14,7 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="friends">
             <div class="listview">
-                <a class="lv-item" href="" ng-repeat="sec in vm.secResult | filter: vm.keyword ">
+                <a class="lv-item" href="" ng-repeat="sec in vm.secResult | filter: { securityCode: vm.keyword } ">
                     <div class="media">
 
                         <div class="pull-left p-relative">
@@ -24,6 +24,7 @@
                         <div class="media-body">
                             <div class="lv-title">{{sec.securityCode}}</div>
                             <small class="lv-small">{{sec.securityName +' | '+ sec.exchange}}</small>
+                            <span ng-hide="true" data-security-id={{sec.id}}></span>
                         </div>
                     </div>
                 </a>
@@ -40,6 +41,7 @@
                         <div class="media-body">
                             <div class="lv-title">{{wl.name}}</div>
                             <small class="lv-small">{{wl.type}}</small>
+                            <span hidden data-watchlist-id={{wl.id}}></span>
                         </div>
                     </div>
                 </a>
