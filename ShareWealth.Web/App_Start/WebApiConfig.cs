@@ -13,12 +13,21 @@ namespace ShareWealth.Web
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            
+            //$http.get in angular prepends the base ref
+            config.Routes.MapHttpRoute(
+                name: "promiseApi",
+                routeTemplate: "app/api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
         }
     }
 }

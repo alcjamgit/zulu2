@@ -39,26 +39,30 @@ materialAdmin
     // =========================================================================
     .controller('headerCtrl', function ($timeout, messageService) {
 
+        var vm = this;
         // Top Search
-        this.openSearch = function () {
+        vm.openSearch = function () {
             angular.element('#header').addClass('search-toggled');
             //growlService.growl('Welcome back Mallinda Hollaway', 'inverse');
         }
 
-        this.closeSearch = function () {
+        vm.closeSearch = function () {
             angular.element('#header').removeClass('search-toggled');
         }
 
         // Get messages and notification for header
-        this.img = messageService.img;
-        this.user = messageService.user;
-        this.user = messageService.text;
+        //this.img = messageService.img;
+        //this.user = messageService.user;
+        //this.user = messageService.text;
 
-        this.messageResult = messageService.getMessage(this.img, this.user, this.text);
+        //this.messageResult = messageService.getMessage(this.img, this.user, this.text);
 
+        messageService.get().then(function (result) {
+            vm.messageResult = result.data;
+        });
 
         //Clear Notification
-        this.clearNotification = function ($event) {
+        vm.clearNotification = function ($event) {
             $event.preventDefault();
 
             var x = angular.element($event.target).closest('.listview');
@@ -86,7 +90,7 @@ materialAdmin
         }
 
         // Clear Local Storage
-        this.clearLocalStorage = function () {
+        vm.clearLocalStorage = function () {
 
             //Get confirmation, if confirmed clear the localStorage
             swal({
@@ -105,7 +109,7 @@ materialAdmin
         }
 
         //Fullscreen View
-        this.fullScreen = function () {
+        vm.fullScreen = function () {
             //Launch
             function launchIntoFullscreen(element) {
                 if (element.requestFullscreen) {
@@ -138,6 +142,15 @@ materialAdmin
             }
         }
 
+        //Conditional Class
+        vm.whatClassIsIt = function (scanType) {
+            if(scanType=="S")
+                return "circle-red"
+            else if(scanType=="B")
+                return "circle-green";
+            else
+                return "circle-blue";
+        }
     })
 
 
@@ -371,20 +384,15 @@ materialAdmin
         var vm = this;
         vm.keyword = "";
 
+        securitiesExploreService.get().then(function (result) {
+            vm.secResult = result.data;
+        });
 
-        vm.id = securitiesExploreService.id;
-        vm.securityCode = securitiesExploreService.securityCode;
-        vm.securityName = securitiesExploreService.securityName;
-        vm.exchange = securitiesExploreService.exchange;
-        vm.firstChar = function () {
-            if (vm.securityCode.charAt(0) !== "$") {
-                return vm.securityCode.charAt(0);
-            } else {
-                return vm.securityCode.charAt(1);
-            }
-        };
-
-        vm.secResult = securitiesExploreService.getSecurities(vm.id, vm.securityCode, vm.securityName, vm.exchange);
+        //vm.id = securitiesExploreService.id;
+        //vm.securityCode = securitiesExploreService.securityCode;
+        //vm.securityName = securitiesExploreService.securityName;
+        //vm.exchange = securitiesExploreService.exchange;
+        //vm.secResult = securitiesExploreService.getSecurities(vm.id, vm.securityCode, vm.securityName, vm.exchange);
 
 
         vm.watchlists = [

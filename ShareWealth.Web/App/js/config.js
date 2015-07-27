@@ -4,7 +4,7 @@ materialAdmin
           $http.get('includes/templates.html', {cache:$templateCache});
     })
 
-    .config(function ($stateProvider, $urlRouterProvider){
+    .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
 
@@ -459,4 +459,5 @@ materialAdmin
                 url: '/breadcrumb-demo',
                 templateUrl: 'views/breadcrumb-demo.html'
             })
+
     });

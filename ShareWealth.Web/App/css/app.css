@@ -14978,34 +14978,44 @@ body.login-content:before {
   background-color: #ea1c0d;
 }
 .circle-red {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   font-size: 17px;
   color: #fff;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
   background: #f44336;
 }
 .circle-blue {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   font-size: 17px;
   color: #fff;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
-  background: #f44336;
+  background: #2196f3;
 }
 .circle-pink {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   font-size: 17px;
   color: #fff;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
-  background: #f44336;
+  background: #e91e63;
+}
+.circle-green {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  line-height: 36px;
+  text-align: center;
+  background: #4caf50;
 }
 .ie-warning {
   position: fixed;

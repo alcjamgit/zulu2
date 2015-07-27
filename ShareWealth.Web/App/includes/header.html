@@ -24,30 +24,7 @@
             <li id="top-search">
                 <a class="tm-search" href="" data-ng-click="hctrl.openSearch()"></a>
             </li>
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="tm-message" href=""><i class="tmn-counts">6</i></a>
-                <div class="dropdown-menu dropdown-menu-lg stop-propagate pull-right">
-                    <div class="listview">
-                        <div class="lv-header">
-                            Messages
-                        </div>
-                        <div class="lv-body c-overflow">
-                            <a class="lv-item" ng-href="" ng-repeat="w in hctrl.messageResult.list">
-                                <div class="media">
-                                    <div class="pull-left">
-                                        <img class="lv-img-sm" ng-src="img/profile-pics/{{ w.img }}" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="lv-title">{{ w.user }}</div>
-                                        <small class="lv-small">{{ w.text }}</small>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <a class="lv-footer" href="">View All</a>
-                    </div>
-                </div>
-            </li>
+            
             <li class="dropdown">
                 <a data-toggle="dropdown" class="tm-notification" href=""><i class="tmn-counts">9</i></a>
                 <div class="dropdown-menu dropdown-menu-lg stop-propagate pull-right">
@@ -64,14 +41,14 @@
                             </ul>
                         </div>
                         <div class="lv-body c-overflow">
-                            <a class="lv-item" ng-href="" ng-repeat="w in hctrl.messageResult.list">
+                            <a class="lv-item" ng-href="" ng-repeat="w in hctrl.messageResult">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img class="lv-img-sm" ng-src="img/profile-pics/{{ w.img }}" alt="">
+                                        <div ng-class="hctrl.whatClassIsIt(w.symbol)">{{w.symbol}}</div>
                                     </div>
                                     <div class="media-body">
-                                        <div class="lv-title">{{ w.user }}</div>
-                                        <small class="lv-small">{{ w.text }}</small>
+                                        <div class="lv-title">{{ w.message }}</div>
+                                        <small class="lv-small">{{ w.type }}</small>
                                     </div>
                                 </div>
                             </a>
@@ -82,7 +59,7 @@
 
                 </div>
             </li>
-            <li class="dropdown hidden-xs">
+            <!--<li class="dropdown hidden-xs">
                 <a data-toggle="dropdown" class="tm-task" href=""><i class="tmn-counts">2</i></a>
                 <div class="dropdown-menu pull-right dropdown-menu-lg">
                     <div class="listview">
@@ -140,7 +117,7 @@
                         <a class="lv-footer" href="">View All</a>
                     </div>
                 </div>
-            </li>
+            </li>-->
             <li class="dropdown">
                 <a data-toggle="dropdown" class="tm-settings" href=""></a>
                 <ul class="dropdown-menu dm-icon pull-right">
