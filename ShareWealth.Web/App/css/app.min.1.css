@@ -12117,7 +12117,7 @@ body #content {
 }
 
 #header {
-  background: #2196F3;
+  background: #0097a7;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
   height: 65px;
   position: fixed;
@@ -12630,7 +12630,7 @@ body #content {
   height: 129px;
   margin-bottom: 5px;
   width: 100%;
-  background: url(../img/profile-menu.png) no-repeat left top;
+  background: url(../img/swsSailor.png) no-repeat left top;
   background-size: 100%;
 }
 

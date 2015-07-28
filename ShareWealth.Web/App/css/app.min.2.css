@@ -3062,6 +3062,10 @@ body.login-content:before {
   background: #4caf50;
 }
 
+input[type=text].remove-clear::-ms-clear {
+  display: none;
+}
+
 .ie-warning {
   position: fixed;
   top: 0;

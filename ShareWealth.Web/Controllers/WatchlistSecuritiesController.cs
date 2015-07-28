@@ -1,47 +1,44 @@
-﻿using System;
+﻿using ShareWealth.Web.Models;
+using ShareWealth.Web.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using ShareWealth.Web.Models;
-using ShareWealth.Web.Services;
 
 namespace ShareWealth.Web.Controllers
 {
-    public class SecurityController : ApiController
+    public class WatchlistSecuritiesController : ApiController
     {
-
         private DataService _data;
-
-        public SecurityController()
+        public WatchlistSecuritiesController()
         {
             _data = new DataService();
         }
-
-        // GET: api/Seurity
-        public IEnumerable<Security> Get()
+        // GET: api/WatchlistSecurities
+        public IEnumerable<WatchlistSecurities> Get()
         {
-            return _data.GetSecurities();
+            return _data.GetWatchlistSecurities();
         }
 
-        // GET: api/Seurity/5
+        // GET: api/WatchlistSecurities/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Seurity
+        // POST: api/WatchlistSecurities
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Seurity/5
+        // PUT: api/WatchlistSecurities/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Seurity/5
+        // DELETE: api/WatchlistSecurities/5
         public void Delete(int id)
         {
         }

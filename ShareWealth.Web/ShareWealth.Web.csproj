@@ -177,8 +177,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\SecurityExtendedController.cs" />
     <Compile Include="Controllers\SeurityController.cs" />
     <Compile Include="Controllers\WatchlistController.cs" />
+    <Compile Include="Controllers\WatchlistSecuritiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,8 +189,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Security.cs" />
+    <Compile Include="Models\SecurityExtended.cs" />
     <Compile Include="Models\Watchlist.cs" />
+    <Compile Include="Models\WatchlistSecurities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +233,7 @@
     <Content Include="App\img\contacts\7.jpg" />
     <Content Include="App\img\contacts\8.jpg" />
     <Content Include="App\img\contacts\9.jpg" />
+    <Content Include="App\img\profile-pics\GaryStonePhoto.png" />
     <Content Include="App\img\headers\1.png" />
     <Content Include="App\img\headers\10.png" />
     <Content Include="App\img\headers\11.png" />
@@ -351,6 +357,7 @@
     <Content Include="App\img\social\wordpress-128.png" />
     <Content Include="App\img\social\yahoo-128.png" />
     <Content Include="App\img\social\youtube-128.png" />
+    <Content Include="App\img\swsSailor.png" />
     <Content Include="App\img\thumbs-up.png" />
     <Content Include="App\img\widgets\535.jpg" />
     <Content Include="App\img\widgets\alpha-2.jpg" />
@@ -358,7 +365,7 @@
     <Content Include="App\img\widgets\mate7.jpg" />
     <Content Include="App\img\widgets\note4.jpg" />
     <Content Include="App\img\widgets\preview.jpg" />
-    <Content Include="App\includes\chat.html" />
+    <Content Include="App\includes\security-explorer.html" />
     <Content Include="App\includes\footer.html" />
     <Content Include="App\includes\header.html" />
     <Content Include="App\includes\profile-menu.html" />
@@ -4538,7 +4545,8 @@
     <Content Include="App\views\profile-photos.html" />
     <Content Include="App\views\profile-timeline.html" />
     <Content Include="App\views\profile.html" />
-    <Content Include="App\views\securities.html" />
+    <Content Include="App\views\watchlist-grid.html" />
+    <Content Include="App\views\securities-grid.html" />
     <Content Include="App\views\tables.html" />
     <Content Include="App\views\typography.html" />
     <Content Include="App\views\widget-templates.html" />

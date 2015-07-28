@@ -11,10 +11,10 @@ namespace ShareWealth.Web.Controllers
     public class WatchlistController : ApiController
     {
         private IEnumerable<Watchlist> _watchlistData = new List<Watchlist> {
-            new Watchlist { Id=1 , Name = "ETF Watch List" , Type = "Custom" },
-            new Watchlist { Id=2 , Name = "SPA3 Watch List" , Type = "Custom" },
-            new Watchlist { Id=3 , Name = "Portfolio Watch List" , Type = "Custom" },
-            new Watchlist { Id=4 , Name = "Prospect Watch List" , Type = "Custom" },
+            new Watchlist { Id=1 , Name = "ETF Watch List" , Type = "System" },
+            new Watchlist { Id=2 , Name = "SPA3 Watch List" , Type = "System" },
+            new Watchlist { Id=3 , Name = "Open Trades" , Type = "Portfolio" },
+            new Watchlist { Id=4 , Name = "Prospect Watch List" , Type = "User Defined" },
             new Watchlist { Id=5 , Name = "All Ordinaries" , Type = "Industry" },
             new Watchlist { Id=6 , Name = "ASX Dividend Paying Securities" , Type = "Industry" },
             new Watchlist { Id=7 , Name = "ASX Franked Dividend Paying Securities" , Type = "Industry" },

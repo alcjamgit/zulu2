@@ -394,24 +394,41 @@ materialAdmin
 
     })
 
-     //=================================================
-    // SECURITY EXPLORER
     //=================================================
-    .controller('securitiesGridCtrl', function (securitiesList) {
+    // SECURITY GRID
+    //=================================================
+    .controller('securitiesGridCtrl', function (securityService) {
         var vm = this;
-        vm.secResult = securitiesList.getSecurities;
+        var readData = function( options ){
+                            return securityService.getExtendedSecurities().then(function (result) {
+                                options.success(result.data);
+                            }); 
+                        }
 
+        //http://ernpac.net/?p=566
         vm.mainGridOptions = {
             dataSource: {
-                data: vm.secResult,
+                transport: {
+                    read: readData,
+                },
                 schema: {
                     model: {
                         fields: {
-                            code: { type: "string" },
+                            id: { type: "number" },
+                            securityCode: { type: "string" },
                             securityName: { type: "string" },
                             exchange: { type: "string" },
+                            symbol: { type: "string" },
                             type: { type: "string" },
+                            gicsSector: { type: "string" },
                             icbIndustry: { type: "string" },
+                            open: { type: "number" },
+                            high: { type: "number" },
+                            low: { type: "number" },
+                            close: { type: "number" },
+                            volume: { type: "number" },
+                            lastDate: { type: "date" },
+                            marketCap: { type: "number" }
                         }
                     }
                 },
@@ -420,23 +437,27 @@ materialAdmin
             height: 600,
             scrollable: true,
             sortable: true,
+            groupable: true,
             filterable: true,
             selectable: true,
             navigatable: true,
-            groupable:true,
             pageable: {
                 input: true,
-                numeric: false
+                numeric: true
             },
             columns: [
-                { field: "code", title: "Code", width: "80px"},
+                { field: "securityCode", title: "Security Code", width:120 },
                 { field: "securityName", title: "Security Name" },
-                { field: "type", title: "Type", width: "160px", filterable: { multi: true } },
-                { field: "exchange", title: "Exchange", width: "160px", filterable: { multi: true } },
-                { field: "close" , title: "Closing Price", width: "160px", format: "{0:c}"},
+                { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
+                { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+                { field: "icbIndustry" , title: "ICB Industry", width: 160,  filterable: { multi: true } },
+                { field: "close", title: "Closed Price", width: 120, format: "{0:c}",  attributes: {style:"text-align:right;"} },
+                { field: "volume", title: "Volume", width: 120, format: "{0:n}",  attributes: {style:"text-align:right;"} },
+                { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}",  attributes: {style:"text-align:right;"} },
             ],
             dataBound: function () {
                 $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
             }
         };
 
@@ -447,4 +468,114 @@ materialAdmin
             vm.selected = $(e.item).children(".k-link").text();
         };
 
+    })
+
+    //=================================================
+    // WATCHLIST GRID
+    //=================================================
+    .controller('watchListGridCtrl', function (watchlistService) {
+        var vm = this;
+        var readDataMain = function( options ){
+            return watchlistService.getWatchlist().then(function (result) {
+                options.success(result.data);
+            }); 
+        };
+        var readDataDetails = function( options ) {
+            return watchlistService.getWatchlistSecurities().then(function (result) {
+                options.success(result.data);
+            }); 
+        };
+
+        //http://ernpac.net/?p=566
+        vm.mainGridOptions = {
+            dataSource: {
+                transport: {
+                    read: readDataMain,
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            id: { type: "number" },
+                            name: { type: "string" },
+                            type: { type: "string" },
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            height: 600,
+            scrollable: true,
+            sortable: true,
+            groupable: true,
+            filterable: true,
+            selectable: true,
+            navigatable: true,
+            pageable: {
+                input: true,
+                numeric: true
+            },
+            columns: [
+                { field: "id", title: "Id", width:120 },
+                { field: "name", title: "Name" },
+                { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+            ],
+        };
+
+         //http://ernpac.net/?p=566 & http://demos.telerik.com/kendo-ui/grid/angular
+        vm.detailGridOptions = function(dataItem){
+            return {
+                dataSource: {
+                transport: {
+                    read: readDataDetails,
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            id: { type: "number" },
+                            securityCode: { type: "string" },
+                            securityName: { type: "string" },
+                            exchange: { type: "string" },
+                            symbol: { type: "string" },
+                            type: { type: "string" },
+                            gicsSector: { type: "string" },
+                            icbIndustry: { type: "string" },
+                            open: { type: "number" },
+                            high: { type: "number" },
+                            low: { type: "number" },
+                            close: { type: "number" },
+                            volume: { type: "number" },
+                            lastDate: { type: "date" },
+                            marketCap: { type: "number" },
+                            watchlistId: { type: "number" }
+                        }
+                    }
+                },
+                pageSize: 10,
+                filter: { field: "watchlistId", operator: "eq", value: dataItem.id }
+            },
+            height: 300,
+            scrollable: true,
+            filterable: false,
+            selectable: true,
+            navigatable: true,
+            pageable: {
+                input: true,
+                numeric: true
+            },
+            columns: [
+                { field: "securityCode", title: "Security Code", width:120 },
+                { field: "securityName", title: "Security Name" },
+                { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
+                { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+                { field: "icbIndustry" , title: "ICB Industry", width: 160,  filterable: { multi: true } },
+                { field: "close", title: "Closed Price", width: 120, format: "{0:c}",  attributes: {style:"text-align:right;"} },
+                { field: "volume", title: "Volume", width: 120, format: "{0:n}",  attributes: {style:"text-align:right;"} },
+                { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}",  attributes: {style:"text-align:right;"} },
+            ],
+            dataBound: function () {
+                $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
+            }
+            };
+        };
     })

@@ -43,18 +43,23 @@ materialAdmin
         
 
             //------------------------------
-            // TYPOGRAPHY
+            // SECURITIES GRID
             //------------------------------
-        
-            .state ('typography', {
-                url: '/typography',
-                templateUrl: 'views/typography.html'
-            })
 
             .state('securities', {
                 url: '/securities',
-                templateUrl: 'views/securities.html',
+                templateUrl: 'views/securities-grid.html',
                 controller: 'securitiesGridCtrl as vm'
+            })
+            
+            //------------------------------
+            // SECURITIES GRID
+            //------------------------------
+
+            .state('watchlist', {
+                url: '/watchlist',
+                templateUrl: 'views/watchlist-grid.html',
+                controller: 'watchListGridCtrl as vm'
             })
 
             //------------------------------

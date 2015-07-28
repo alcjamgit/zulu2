@@ -193,6 +193,7 @@
     }
 }
 
+
 .circle-red{
     .circle-media(36px, @m-red);
 }
@@ -204,4 +205,10 @@
 }
 .circle-green{
     .circle-media(36px, @m-green);
+}
+
+//Remove 'x' button in IE's input
+input[type=text].remove-clear::-ms-clear {
+    display:none;
+
 }

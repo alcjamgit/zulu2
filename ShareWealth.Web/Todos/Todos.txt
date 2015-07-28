@@ -1,2 +1,23 @@
+FEATURES:
+1. Dashboard
+	1.1 Complete the dashboard
+	2.2 Include daily scan results
+2. Security Grid
+	2.1 Customize Hidden Columns
+	2.2 Right click context menu
+	2.3 Get selected row info in Kendo Grid
+	2.4 Behaviour - determine what action menu is selected or handle click event.
+3. Profile - replace photo with circled icon or circled div
+4. Watchlist Grid
+	4.1 Create grid
+	4.2 Expanding with details about the securities.
+	4.3 Right click context menu to display it in teh securities grid (datasheet)
+	4.4 Add menu for new watchlist
+	4.4 Add menu for securities inside wachlist
+5. Portfolio
+	5.1 Grid for portfolio
+	5.2 Add menu for creating new portfolios
+
+
 Fixes:
 1. Security explorer is blank when changing to a different view.

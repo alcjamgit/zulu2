@@ -11,5 +11,11 @@ namespace ShareWealth.Web.Models
         public string SecurityCode { get; set; }
         public string SecurityName { get; set; }
         public string Exchange { get; set; }
+        public string Symbol { 
+            get{
+                var firstLetter = this.SecurityCode[0].ToString();
+                return firstLetter == "$" || firstLetter == "#" ? this.SecurityCode[1].ToString() : firstLetter;
+            }
+        }
     }
 }

@@ -5,7 +5,10 @@ materialAdmin
 
         .factory('securityService', ['$http', function ($http) {
             function securities(){
-                return $http.get('api/Seurity');
+                return $http.get('api/Security');
+            }
+            function securitiesExtended() {
+                return $http.get('api/SecurityExtended');
             }
             function watchlists(){
                 return $http.get('api/Watchlist');
@@ -13,18 +16,27 @@ materialAdmin
 
             return {
                 getSecurities: securities,
+                getExtendedSecurities: securitiesExtended,
                 getWatchlist: watchlists
             }
 
         }])
 
-    // =========================================================================
-    // Securities used by security grid
-    // =========================================================================
-    .service('securitiesList', ['$resource', function ($resource) {
-        var vm = this;
-        vm.getSecurities = [];
-    }])
+        // =========================================================================
+        // Header Messages and Notifications list Data
+        // =========================================================================
+
+        .service('watchlistService', ['$http', function ($http) {
+
+            return {
+                getWatchlist: function () {
+                    return $http.get('api/watchlist');
+                },
+                getWatchlistSecurities: function () {
+                    return $http.get('api/watchlistSecurities');
+                }
+            }
+        }])
 
     // =========================================================================
     // Header Messages and Notifications list Data
