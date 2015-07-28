@@ -233,6 +233,7 @@
     <Content Include="App\img\contacts\7.jpg" />
     <Content Include="App\img\contacts\8.jpg" />
     <Content Include="App\img\contacts\9.jpg" />
+    <Content Include="App\img\logoBC.png" />
     <Content Include="App\img\profile-pics\GaryStonePhoto.png" />
     <Content Include="App\img\headers\1.png" />
     <Content Include="App\img\headers\10.png" />
