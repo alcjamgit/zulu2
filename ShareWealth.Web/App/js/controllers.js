@@ -668,3 +668,55 @@ materialAdmin
                 }
             };
     })
+
+    //=================================================
+    // PORTFOLIO MANAGER
+    //=================================================
+    .controller('activePortfolioCtrl', function () {
+
+        var vm = this;
+        vm.profileSummary = "Sed eu est vulputate, fringilla ligula ac, maximus arcu. Donec sed felis vel magna mattis ornare ut non turpis. Sed id arcu elit. Sed nec sagittis tortor. Mauris ante urna, ornare sit amet mollis eu, aliquet ac ligula. Nullam dolor metus, suscipit ac imperdiet nec, consectetur sed ex. Sed cursus porttitor leo.";
+
+        vm.general = {
+            //General
+            name: "Default",
+            createDate: new Date(2013, 6, 1),
+            system: "ETF System",
+            currency: "AUD",
+            exchange: "XASX",
+            watclistName: "Portfolio Watchlist",
+            //Money Mgmt
+            maxOpenPositions: "",
+            //Costs
+            minBrokerage: 30,
+            brokeragePercentage: 0.5,
+            brokerageThreshold: 100
+        };
+
+
+        //Edit
+        vm.editSummary = 0;
+        vm.editInfo = 0;
+        vm.editContact = 0;
+
+
+        vm.submit = function (item, message) {
+            if (item === 'profileSummary') {
+                this.editSummary = 0;
+            }
+
+            if (item === 'profileInfo') {
+                this.editInfo = 0;
+            }
+
+            if (item === 'profileContact') {
+                this.editContact = 0;
+            }
+
+            growlService.growl(message + ' has updated Successfully!', 'inverse');
+        }
+    })
+
+    .controller('activePortfolioGeneralCtrl', function () {
+
+    })

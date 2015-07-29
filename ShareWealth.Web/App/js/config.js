@@ -73,6 +73,25 @@ materialAdmin
             })
 
             //------------------------------
+            // PORTFOLIO
+            //------------------------------
+            .state ('portfolio', {
+                url: '/portfolio',
+                templateUrl: 'views/portfolio-common.html',
+            })
+
+                .state ('portfolio.active-portfolio', {
+                    url: '/active-portfolio',
+                    templateUrl: 'views/active-portfolio-common.html',
+                    controller: 'activePortfolioCtrl as vm'
+                })
+
+                    .state('portfolio.active-portfolio.general', {
+                            url: '/general',
+                            templateUrl: 'views/active-portfolio-general.html',
+                    })
+
+            //------------------------------
             // WIDGETS
             //------------------------------
         

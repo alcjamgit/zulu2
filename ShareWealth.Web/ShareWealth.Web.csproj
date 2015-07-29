@@ -4518,6 +4518,7 @@
     <Content Include="App\vendors\socicon\socicon.min.css" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.js" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.min.js" />
+    <Content Include="App\views\portfolio-common.html" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\animations.html" />
     <Content Include="App\views\box-shadow.html" />
@@ -4534,6 +4535,8 @@
     <Content Include="App\views\form-examples.html" />
     <Content Include="App\views\form-validations.html" />
     <Content Include="App\views\generic-classes.html" />
+    <Content Include="App\views\active-portfolio-general.html" />
+    <Content Include="App\views\active-portfolio-common.html" />
     <Content Include="App\views\stock-chart.html" />
     <Content Include="App\views\home-min.html" />
     <Content Include="App\views\home.html" />
