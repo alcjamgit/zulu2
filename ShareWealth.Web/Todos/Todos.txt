@@ -7,10 +7,10 @@ FEATURES:
 	2.2 Right click context menu
 	2.3 Get selected row info in Kendo Grid
 	2.4 Behaviour - determine what action menu is selected or handle click event.
-3. Profile - replace photo with circled icon or circled div
+3. Profile - replace photo with circled icon or circled div - DONE
 4. Watchlist Grid
-	4.1 Create grid
-	4.2 Expanding with details about the securities.
+	4.1 Create grid - DONE
+	4.2 Expanding with details about the securities. - DONE
 	4.3 Right click context menu to display it in teh securities grid (datasheet)
 	4.4 Add menu for new watchlist
 	4.4 Add menu for securities inside wachlist

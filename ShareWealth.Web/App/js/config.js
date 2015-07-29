@@ -63,6 +63,16 @@ materialAdmin
             })
 
             //------------------------------
+            // STOCK CHART
+            //------------------------------
+
+            .state('stock-chart', {
+                url: '/stock-chart',
+                templateUrl: 'views/stock-chart.html',
+                controller: 'stockChartCtrl as vm'
+            })
+
+            //------------------------------
             // WIDGETS
             //------------------------------
         

@@ -503,6 +503,8 @@ materialAdmin
                 },
                 pageSize: 20
             },
+            toolbar: ["create"],
+            editable: "popup",
             height: 600,
             scrollable: true,
             sortable: true,
@@ -578,4 +580,11 @@ materialAdmin
             }
             };
         };
+    })
+
+    //=================================================
+    // STOCK CHART
+    //=================================================
+    .controller('stockChartCtrl', function (securityService) {
+        var vm = this;
     })

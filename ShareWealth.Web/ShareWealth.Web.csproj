@@ -4532,6 +4532,7 @@
     <Content Include="App\views\form-examples.html" />
     <Content Include="App\views\form-validations.html" />
     <Content Include="App\views\generic-classes.html" />
+    <Content Include="App\views\stock-chart.html" />
     <Content Include="App\views\home-min.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\icons.html" />
@@ -6262,6 +6263,7 @@
     <Content Include="App\data\securities-explorer.json" />
     <Content Include="App\data\securities-all.json" />
     <Content Include="App\data\securities-grid.json" />
+    <Content Include="App\less\inc\vendor-overrides\kendo-ui.less" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSpa.cshtml" />
