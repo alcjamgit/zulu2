@@ -18,13 +18,13 @@
                     <div class="media">
 
                         <div class="pull-left p-relative">
-                            <div class="circle-pink">{{sec.symbol}}</div>
+                            <div class="circle-pink">{{::sec.symbol}}</div>
                         </div>
 
                         <div class="media-body">
-                            <div class="lv-title">{{sec.securityCode}}</div>
+                            <div class="lv-title">{{::sec.securityCode}}</div>
                             <small class="lv-small">{{sec.securityName +' | '+ sec.exchange}}</small>
-                            <span ng-hide data-security-id={{sec.id}}></span>
+                            <span ng-hide data-security-id={{::sec.id}}></span>
                         </div>
                     </div>
                 </a>
@@ -39,9 +39,9 @@
                             <i class="chat-status-busy"></i>
                         </div>-->
                         <div class="media-body">
-                            <div class="lv-title">{{wl.name}}</div>
-                            <small class="lv-small">{{wl.type}}</small>
-                            <span hidden data-watchlist-id={{wl.id}}></span>
+                            <div class="lv-title">{{::wl.name}}</div>
+                            <small class="lv-small">{{::wl.type}}</small>
+                            <span hidden data-watchlist-id={{::wl.id}}></span>
                         </div>
                     </div>
                 </a>

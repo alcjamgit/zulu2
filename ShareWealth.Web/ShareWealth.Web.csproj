@@ -177,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\PriceDataController.cs" />
     <Compile Include="Controllers\SecurityExtendedController.cs" />
     <Compile Include="Controllers\SeurityController.cs" />
     <Compile Include="Controllers\WatchlistController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\PriceData.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SecurityExtended.cs" />
     <Compile Include="Models\Watchlist.cs" />

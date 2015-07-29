@@ -13,11 +13,14 @@ materialAdmin
             function watchlists(){
                 return $http.get('api/Watchlist');
             }
-
+            function priceData(){
+                return $http.get('api/PriceData');
+            }
             return {
                 getSecurities: securities,
                 getExtendedSecurities: securitiesExtended,
-                getWatchlist: watchlists
+                getWatchlist: watchlists,
+                getPriceData: priceData,
             }
 
         }])
