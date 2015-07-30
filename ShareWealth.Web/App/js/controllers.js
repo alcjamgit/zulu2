@@ -628,7 +628,7 @@ materialAdmin
                         to: "2015/07/20"
                     }
                 },
-                chartArea: { height: 600},
+                chartArea: { height: 500},
                 categoryAxis: {
                     baseUnit: "fit",
                     maxDateGroups: 60,
@@ -672,51 +672,59 @@ materialAdmin
     //=================================================
     // PORTFOLIO MANAGER
     //=================================================
-    .controller('activePortfolioCtrl', function () {
-
+    .controller('activePortfolioCtrl', function (growlService) {
+        //PROFILE
         var vm = this;
-        vm.profileSummary = "Sed eu est vulputate, fringilla ligula ac, maximus arcu. Donec sed felis vel magna mattis ornare ut non turpis. Sed id arcu elit. Sed nec sagittis tortor. Mauris ante urna, ornare sit amet mollis eu, aliquet ac ligula. Nullam dolor metus, suscipit ac imperdiet nec, consectetur sed ex. Sed cursus porttitor leo.";
-
-        vm.general = {
+        vm.profile = {
             //General
             name: "Default",
             createDate: new Date(2013, 6, 1),
-            system: "ETF System",
+            system: "SPA3",
             currency: "AUD",
             exchange: "XASX",
             watclistName: "Portfolio Watchlist",
             //Money Mgmt
-            maxOpenPositions: "",
+            riskOptions: "Default XASX SIROC 21:08",
+            maxOpenPositions: 30,
+            allocationRisk: 0.03 ,
             //Costs
             minBrokerage: 30,
-            brokeragePercentage: 0.5,
+            brokeragePercentage: 0.02,
             brokerageThreshold: 100
         };
 
-
         //Edit
-        vm.editSummary = 0;
-        vm.editInfo = 0;
-        vm.editContact = 0;
-
-
+        vm.editGeneral = 0;
+        vm.editMoneyManagement= 0;
         vm.submit = function (item, message) {
-            if (item === 'profileSummary') {
-                this.editSummary = 0;
+            if (item === 'generalInfo') {
+                this.editGeneral = 0;
             }
 
-            if (item === 'profileInfo') {
-                this.editInfo = 0;
+            if (item === 'moneyManagement') {
+                this.editMoneyManagement = 0;
             }
 
-            if (item === 'profileContact') {
-                this.editContact = 0;
-            }
 
             growlService.growl(message + ' has updated Successfully!', 'inverse');
         }
+
+        //CURRENT STATUS
+        vm.status = {
+            //General
+            openTrades: 21,
+            marketValue: 75000,
+            profit: 15000,
+            allocated: 60000,
+            available: 0,
+            initialCapital: 57000,
+            addedCapital:5000,
+            withdrawnCapital: 2500,
+            fees: 500,
+            totalBalance: 75000,
+        };
     })
 
-    .controller('activePortfolioGeneralCtrl', function () {
+    .controller('activePortfolioAdjustmentCtrl', function (){
 
     })

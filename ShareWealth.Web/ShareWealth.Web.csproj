@@ -332,6 +332,7 @@
     <Content Include="App\img\profile-pics\7.jpg" />
     <Content Include="App\img\profile-pics\8.jpg" />
     <Content Include="App\img\profile-pics\9.jpg" />
+    <Content Include="App\img\profile-pics\ic_account_circle_white_36dp_2x.png" />
     <Content Include="App\img\profile-pics\profile-pic-2.jpg" />
     <Content Include="App\img\profile-pics\profile-pic.jpg" />
     <Content Include="App\img\select%402x.png" />
@@ -4518,6 +4519,7 @@
     <Content Include="App\vendors\socicon\socicon.min.css" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.js" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.min.js" />
+    <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\portfolio-common.html" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\animations.html" />
@@ -4535,7 +4537,7 @@
     <Content Include="App\views\form-examples.html" />
     <Content Include="App\views\form-validations.html" />
     <Content Include="App\views\generic-classes.html" />
-    <Content Include="App\views\active-portfolio-general.html" />
+    <Content Include="App\views\active-portfolio-profile.html" />
     <Content Include="App\views\active-portfolio-common.html" />
     <Content Include="App\views\stock-chart.html" />
     <Content Include="App\views\home-min.html" />

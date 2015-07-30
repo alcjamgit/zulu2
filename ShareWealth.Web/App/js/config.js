@@ -86,9 +86,13 @@ materialAdmin
                     controller: 'activePortfolioCtrl as vm'
                 })
 
-                    .state('portfolio.active-portfolio.general', {
-                            url: '/general',
-                            templateUrl: 'views/active-portfolio-general.html',
+                    .state('portfolio.active-portfolio.profile', {
+                            url: '/profile',
+                            templateUrl: 'views/active-portfolio-profile.html',
+                    })
+                    .state('portfolio.active-portfolio.status', {
+                            url: '/status',
+                            templateUrl: 'views/active-portfolio-status.html',
                     })
 
             //------------------------------

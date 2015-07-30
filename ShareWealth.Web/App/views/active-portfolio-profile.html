@@ -3,7 +3,7 @@
     <div class="pmbb-header">
         <h2><i class="md md-person m-r-5"></i> General</h2>
 
-        <ul class="actions" data-ng-if="vm.editInfo === 0">
+        <ul class="actions" data-ng-if="vm.editGeneral === 0">
             <li class="dropdown">
                 <a href="" data-toggle="dropdown">
                     <i class="md md-more-vert"></i>
@@ -11,38 +11,38 @@
 
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li>
-                        <a data-ng-click="vm.editInfo = 1" href="">Edit</a>
+                        <a data-ng-click="vm.editGeneral = 1" href="">Edit</a>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
     <div class="pmbb-body p-l-30">
-        <div class="pmbb-view" data-ng-if="vm.editInfo === 0">
+        <div class="pmbb-view" data-ng-if="vm.editGeneral === 0">
             <dl class="dl-horizontal">
                 <dt>Portfolio Name</dt>
-                <dd>{{ vm.general.name}}</dd>
+                <dd>{{ vm.profile.name}}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>System</dt>
-                <dd>{{ vm.general.system }}</dd>
+                <dd>{{ vm.profile.system }}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>Stock Exchange</dt>
-                <dd>{{ vm.general.exchange}}</dd>
+                <dd>{{ vm.profile.exchange}}</dd>
             </dl>
             <dl class="dl-horizontal">
                 <dt>Cyrrency</dt>
-                <dd>{{ vm.general.currency}}</dd>
+                <dd>{{ vm.profile.currency}}</dd>
             </dl>
         </div>
 
-        <form data-ng-submit="vm.submit('profileInfo', 'Portfolio Information')" class="pmbb-edit" data-ng-if="vm.editInfo === 1">
+        <form data-ng-submit="vm.submit('generalInfo', 'Portfolio Profile')" class="pmbb-edit" data-ng-if="vm.editGeneral === 1">
             <dl class="dl-horizontal">
                 <dt class="p-t-10">Portfolio Name</dt>
                 <dd>
                     <div class="fg-line">
-                        <input data-ng-model="vm.general.name" type="text" class="form-control"  placeholder="Porftolio Name">
+                        <input data-ng-model="vm.profile.name" type="text" class="form-control" placeholder="Porftolio Name">
                     </div>
 
                 </dd>
@@ -51,7 +51,7 @@
                 <dt class="p-t-10">System</dt>
                 <dd>
                     <div class="fg-line">
-                        <select class="form-control">
+                        <select class="form-control" ng-model="vm.profile.system">
                             <option>SPA3</option>
                             <option>SPA3 ETF</option>
                         </select>
@@ -62,7 +62,7 @@
                 <dt class="p-t-10">Stock Exchange</dt>
                 <dd>
                     <div class="fg-line">
-                        <select class="form-control">
+                        <select class="form-control" ng-model="vm.profile.exchange">
                             <option>XASX</option>
                             <option>XNYS</option>
                         </select>
@@ -72,7 +72,7 @@
             <dl class="dl-horizontal">
                 <dt class="p-t-10">Currency</dt>
                 <dd>
-                    <div class="fg-line">
+                    <div class="fg-line" ng-model="vm.profile.currency">
                         <select class="form-control">
                             <option>AUD</option>
                             <option>USD</option>
@@ -84,12 +84,83 @@
 
             <div class="m-t-30">
                 <button class="btn btn-primary btn-sm" type="submit">Save</button>
-                <button class="btn btn-link btn-sm" data-ng-click="vm.editInfo = 0" >Cancel</button>
+                <button class="btn btn-link btn-sm" data-ng-click="vm.editGeneral = 0">Cancel</button>
             </div>
         </form>
     </div>
 </div>
+<div class="pmb-block">
+    <div class="pmbb-header">
+        <h2><i class="md md-person m-r-5"></i> Money Management</h2>
 
+        <ul class="actions" data-ng-if="vm.editMoneyManagement === 0">
+            <li class="dropdown">
+                <a href="" data-toggle="dropdown">
+                    <i class="md md-more-vert"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li>
+                        <a data-ng-click="vm.editMoneyManagement = 1" href="">Edit</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="pmbb-body p-l-30">
+        <div class="pmbb-view" data-ng-if="vm.editMoneyManagement === 0">
+            <dl class="dl-horizontal">
+                <dt>Risk Table</dt>
+                <dd>{{ vm.profile.riskOptions}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Max Open Positions</dt>
+                <dd>{{ vm.profile.maxOpenPositions }}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Allocation Risk</dt>
+                <dd>{{ vm.profile.allocationRisk * 100 | number: 1}}%</dd>
+            </dl>
+        </div>
+
+        <form data-ng-submit="vm.submit('moneyManagement', 'Money Management')" class="pmbb-edit" data-ng-if="vm.editMoneyManagement === 1">
+            <dl class="dl-horizontal">
+                <dt class="p-t-10">Risk Table</dt>
+                <dd>
+                    <div class="fg-line" >
+                        <select class="form-control" ng-model="vm.profile.riskOptions" >
+                            <option>Default XASX SIROC 21:08</option>
+                            <option>Default XASX SIROC 19:07</option>
+                            <option>Default XASX SIROC 17:07</option>
+                            <option>Default XASX SIROC 13:05</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt class="p-t-10">Max Open Postions</dt>
+                <dd>
+                    <div class="fg-line">
+                        <input data-ng-model="vm.profile.maxOpenPositions" type="text" class="form-control" placeholder="Max Open Positions">
+                    </div>
+                </dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt class="p-t-10">Allocation Risks</dt>
+                <dd>
+                    <div class="fg-line">
+                        <input data-ng-model="vm.profile.allocationRisk" type="text" class="form-control" placeholder="Allocation Risk">
+                    </div>
+                </dd>
+            </dl>
+
+            <div class="m-t-30">
+                <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                <button class="btn btn-link btn-sm" data-ng-click="vm.editMoneyManagement = 0">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!--<div class="pmb-block">
     <div class="pmbb-header">
