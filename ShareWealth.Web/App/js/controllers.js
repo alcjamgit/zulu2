@@ -693,6 +693,13 @@ materialAdmin
             brokerageThreshold: 100
         };
 
+        vm.showRiskOptions = function () {
+            if (vm.profile.system === 'SPA3') {
+                return true;
+            }
+            return false;
+        };
+
         //Edit
         vm.editGeneral = 0;
         vm.editMoneyManagement= 0;

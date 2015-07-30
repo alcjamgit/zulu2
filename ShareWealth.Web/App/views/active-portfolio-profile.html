@@ -1,7 +1,7 @@
 
 <div class="pmb-block">
     <div class="pmbb-header">
-        <h2><i class="md md-person m-r-5"></i> General</h2>
+        <h2><i class="md md-settings m-r-5"></i> General</h2>
 
         <ul class="actions" data-ng-if="vm.editGeneral === 0">
             <li class="dropdown">
@@ -91,7 +91,7 @@
 </div>
 <div class="pmb-block">
     <div class="pmbb-header">
-        <h2><i class="md md-person m-r-5"></i> Money Management</h2>
+        <h2><i class="md md-attach-money m-r-5"></i> Money Management</h2>
 
         <ul class="actions" data-ng-if="vm.editMoneyManagement === 0">
             <li class="dropdown">
@@ -109,7 +109,7 @@
     </div>
     <div class="pmbb-body p-l-30">
         <div class="pmbb-view" data-ng-if="vm.editMoneyManagement === 0">
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal" ng-show="vm.showRiskOptions()">
                 <dt>Risk Table</dt>
                 <dd>{{ vm.profile.riskOptions}}</dd>
             </dl>
