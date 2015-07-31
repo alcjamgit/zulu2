@@ -1,0 +1,61 @@
+
+<div class="pmb-block">
+    <div class="pmbb-header">
+        <h2><i class="md  md-description m-r-5"></i> Summary</h2>
+    </div>
+    <div class="pmbb-body p-l-30">
+        <div class="pmbb-view">
+            <dl class="dl-horizontal">
+                <dt>Open Trades</dt>
+                <dd>{{ vm.status.openTrades | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Market Value</dt>
+                <dd>{{ vm.status.marketValue | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Total Profit</dt>
+                <dd>{{ vm.status.profit | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Allocated</dt>
+                <dd>{{ vm.status.allocated | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Allocated</dt>
+                <dd>{{ vm.status.available | number: 0}}</dd>
+            </dl>
+        </div>
+
+    </div>
+</div>
+<div class="pmb-block">
+    <div class="pmbb-header">
+        <h2><i class="md md-account-balance-wallet m-r-5"></i> Capital</h2>
+    </div>
+    <div class="pmbb-body p-l-30">
+        <div class="pmbb-view">
+            <dl class="dl-horizontal">
+                <dt>Initial Capital</dt>
+                <dd>{{ vm.status.initialCapital | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Added</dt>
+                <dd>{{ vm.status.addedCapital | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Withdrawn</dt>
+                <dd>{{ vm.status.withdrawnCapital | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Fees</dt>
+                <dd>{{ vm.status.fees | number: 0}}</dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Total Balance</dt>
+                <dd>{{ vm.status.totalBalance | number: 0}}</dd>
+            </dl>
+        </div>
+
+    </div>
+</div>

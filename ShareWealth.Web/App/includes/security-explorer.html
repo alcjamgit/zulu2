@@ -1,5 +1,5 @@
 
-<div ng-controller="securityExploreCtrl as vm">
+<div ng-controller="securityExploreCtrl as vm" class="h-100">
 
     <ul class="tab-nav tn-justified" role="tablist">
         <li role="presentation" class="active"><a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">Securities</a></li>
@@ -11,9 +11,9 @@
             <input type="text" ng-model="vm.keyword" class="form-control remove-clear" placeholder="Search Items">
         </div>
     </div>
-    <div class="tab-content">
+    <div class="tab-content c-overflow h-100">
         <div role="tabpanel" class="tab-pane fade in active" id="friends">
-            <div class="listview">
+            <div class="listview h-100">
                 <a class="lv-item" href="" ng-repeat="sec in vm.secResult | filter: { securityCode: vm.keyword } ">
                     <div class="media">
 
@@ -31,13 +31,13 @@
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="online">
-            <div class="listview">
+            <div class="listview h-100">
                 <a class="lv-item" href="" ng-repeat="wl in vm.watchlists | filter: { name: vm.keyword } ">
                     <div class="media">
                         <!--<div class="pull-left p-relative">
-                            <img class="lv-img-sm" src="Content/img/profile-pics/2.jpg" alt="">
-                            <i class="chat-status-busy"></i>
-                        </div>-->
+                    <img class="lv-img-sm" src="Content/img/profile-pics/2.jpg" alt="">
+                    <i class="chat-status-busy"></i>
+                </div>-->
                         <div class="media-body">
                             <div class="lv-title">{{::wl.name}}</div>
                             <small class="lv-small">{{::wl.type}}</small>

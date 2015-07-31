@@ -199,6 +199,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\views\active-portfolio-status.html" />
+    <Content Include="favicon.ico" />
     <Content Include="App\404.html" />
     <Content Include="App\css\app.css" />
     <Content Include="App\css\app.min.1.css" />
@@ -4519,7 +4521,6 @@
     <Content Include="App\vendors\socicon\socicon.min.css" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.js" />
     <Content Include="App\vendors\sparklines\jquery.sparkline.min.js" />
-    <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\portfolio-common.html" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\animations.html" />
@@ -4560,7 +4561,6 @@
     <Content Include="App\views\typography.html" />
     <Content Include="App\views\widget-templates.html" />
     <Content Include="App\views\widgets.html" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

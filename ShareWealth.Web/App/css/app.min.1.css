@@ -11945,6 +11945,14 @@ a.waves-effect .waves-ripple {
 }
 
 /*
+ * width - James
+ */
+
+.h-100 {
+  height: 100% !important;
+}
+
+/*
  * Media - Overriding the Media object to 3.2 version in order to prevent issues like text overflow.
  */
 

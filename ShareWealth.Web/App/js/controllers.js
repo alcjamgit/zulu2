@@ -633,37 +633,37 @@ materialAdmin
                     baseUnit: "fit",
                     maxDateGroups: 60,
                     notes: {
-                        data: [{
-                            value: "2010/01/01",
-                            label: {
-                                text: "01"
-                            }
-                        }, {
-                            value: "2011/01/01",
-                            label: {
-                                text: "02"
-                            }
-                        }, {
-                            value: "2012/01/01",
-                            label: {
-                                text: "03"
-                            }
-                        }, {
-                            value: "2013/01/01",
-                            label: {
-                                text: "04"
-                            }
-                        }, {
-                            value: "2014/01/01",
-                            label: {
-                                text: "05"
-                            }
-                        }, {
-                            value: "2015/01/01",
-                            label: {
-                                text: "06"
-                            }
-                        }]
+                        //data: [{
+                        //    value: "2010/01/01",
+                        //    label: {
+                        //        text: "01"
+                        //    }
+                        //}, {
+                        //    value: "2011/01/01",
+                        //    label: {
+                        //        text: "02"
+                        //    }
+                        //}, {
+                        //    value: "2012/01/01",
+                        //    label: {
+                        //        text: "03"
+                        //    }
+                        //}, {
+                        //    value: "2013/01/01",
+                        //    label: {
+                        //        text: "04"
+                        //    }
+                        //}, {
+                        //    value: "2014/01/01",
+                        //    label: {
+                        //        text: "05"
+                        //    }
+                        //}, {
+                        //    value: "2015/01/01",
+                        //    label: {
+                        //        text: "06"
+                        //    }
+                        //}]
                     }
                 }
             };

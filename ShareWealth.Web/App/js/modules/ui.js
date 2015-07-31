@@ -52,18 +52,19 @@ materialAdmin
 
     
     //Chosen 
-
-    .directive('tabNav', ['nicescrollService', function(nicescrollService){
-        return {
-            restrict: 'C',
-            link: function(scope, element) {
+    //This is having issues with bootstraps tab-nav class since they have the same class name
+    //.directive('tabNav', ['nicescrollService', function(nicescrollService){
+    //    return {
+    //        restrict: 'C',
+    //        link: function(scope, element) {
         
-                if (!$('html').hasClass('ismobile')) {                    
-                    nicescrollService.niceScroll(element, 'rgba(0,0,0,0.3)', '1px');
-                }
-            }
-        }
-    }])
+    //            if (!$('html').hasClass('ismobile')) {                    
+    //                //nicescrollService.niceScroll(element, 'rgba(0,0,0,0.3)', '5px');
+    //                nicescrollService.niceScroll(element, 'rgba(0,0,0,0.3)', '5px');
+    //            }
+    //        }
+    //    }
+    //}])
 
     
     //For custom class
