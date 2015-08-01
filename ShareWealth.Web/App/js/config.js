@@ -99,6 +99,19 @@ materialAdmin
                         templateUrl: 'views/active-portfolio-adjustments.html',
                         controller: 'activePortfolioAdjustmentCtrl as vm',
                     })
+
+            //------------------------------
+            // SCANS
+            //------------------------------
+            .state('scan-profiles', {
+                url: '/scan-profiles',
+                templateUrl: 'views/scan-profiles.html',
+            })
+            .state('scan-daily', {
+                url: '/scan-daily',
+                templateUrl: 'views/scan-daily.html',
+            })
+
             //------------------------------
             // WIDGETS
             //------------------------------

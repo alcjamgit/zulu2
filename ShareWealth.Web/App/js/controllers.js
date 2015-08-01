@@ -691,7 +691,7 @@ materialAdmin
             //Costs
             minBrokerage: 30,
             brokeragePercentage: 0.02,
-            brokerageThreshold: 100
+            brokerageThreshold: 100,
         };
 
         vm.showRiskOptions = function () {
@@ -701,6 +701,17 @@ materialAdmin
             return false;
         };
 
+        //PROFILE IMAGE
+        vm.getImgUrl = function () {
+            if (vm.profile.system === 'SPA3') {
+                return 'img/spa3_box.png';
+            }
+            if (vm.profile.system === 'SPA3 ETF') {
+                return 'img/spa3_etf_box.png';
+            }
+            return "";
+        };
+http://localhost:56055/../img/spa3_etf_box.png
         //Edit
         vm.editGeneral = 0;
         vm.editMoneyManagement= 0;
@@ -731,6 +742,9 @@ materialAdmin
             fees: 500,
             totalBalance: 75000,
         };
+
+
+        
     })
 
     .controller('activePortfolioAdjustmentCtrl', function (portfolioService, $stateParams) {

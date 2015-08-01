@@ -30,7 +30,8 @@
             <div class="pmo-pic">
                 <div class="p-relative">
                     <a href="">
-                        <img class="img-responsive" src="" alt="">
+                        <img class="img-responsive" ng-src="{{vm.getImgUrl()}}" />
+                        <!--<img class="img-responsive" src="" alt="">-->
                     </a>
 
                     <div class="dropdown pmop-message">
@@ -52,15 +53,15 @@
 
 
                 <div class="pmo-stat">
-                    <h2 class="m-0 c-white">1562</h2>
-                    Total Connections
+                    <h2 class="m-0 c-white">{{vm.profile.system}}</h2>
+                    <!--{{vm.profile.system}}-->
                 </div>
             </div>
 
-            <div class="pmo-block pmo-contact hidden-xs">
+            <!--<div class="pmo-block pmo-contact hidden-xs">
                 <h2>Contact</h2>
-
-                <!--<ul>
+                
+                <ul>
                     <li><i class="md md-phone"></i> {{ pctrl.mobileNumber }}</li>
                     <li><i class="md md-email"></i> {{ pctrl.emailAddress }}</li>
                     <li><i class="socicon socicon-skype"></i> {{ pctrl.skype }}</li>
@@ -73,53 +74,8 @@
                             {{ pctrl.addressCountry }}
                         </address>
                     </li>
-                </ul>-->
-            </div>
-
-            <div class="pmo-block pmo-items hidden-xs">
-                <h2>Connections</h2>
-
-                <div class="pmob-body">
-                    <div class="row">
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/1.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/2.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/3.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/4.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/5.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/6.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/7.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/8.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/1.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/2.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/3.jpg" alt="">
-                        </a>
-                        <a href="" class="col-xs-2">
-                            <img class="img-circle" src="img/profile-pics/4.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
+                </ul>
+            </div>-->
         </div>
 
         <div class="pm-body clearfix">
