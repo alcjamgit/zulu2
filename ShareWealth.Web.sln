@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareWealth.Web", "ShareWealth.Web\ShareWealth.Web.csproj", "{8B5F2745-5E13-4FC6-A8C6-C113BBF16006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareWealth.Core", "ShareWealth.Core\ShareWealth.Core.csproj", "{CF55FE68-A118-460D-AE32-76FBFDE1DBF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareWealth.Infrastructure", "ShareWealth.Infrastructure\ShareWealth.Infrastructure.csproj", "{76F8B3E3-8910-4050-A32C-7B9340118386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8B5F2745-5E13-4FC6-A8C6-C113BBF16006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B5F2745-5E13-4FC6-A8C6-C113BBF16006}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B5F2745-5E13-4FC6-A8C6-C113BBF16006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF55FE68-A118-460D-AE32-76FBFDE1DBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF55FE68-A118-460D-AE32-76FBFDE1DBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF55FE68-A118-460D-AE32-76FBFDE1DBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF55FE68-A118-460D-AE32-76FBFDE1DBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F8B3E3-8910-4050-A32C-7B9340118386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F8B3E3-8910-4050-A32C-7B9340118386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F8B3E3-8910-4050-A32C-7B9340118386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F8B3E3-8910-4050-A32C-7B9340118386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

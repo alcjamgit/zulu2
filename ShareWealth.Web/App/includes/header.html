@@ -8,8 +8,11 @@
     </li>
 
     <!--<li class="logo hidden-xs">-->
-    <li class="logo">
+    <li class="logo hidden-xs">
         <a href="/">Beyond Charts {{ layoutSS }}</a>
+    </li>
+    <li class="logo hidden-lg hidden-md hidden-sm">
+        <a href="/">BC {{ layoutSS }}</a>
     </li>
 
     <li class="pull-right">
@@ -122,18 +125,10 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="tm-settings" href=""></a>
                 <ul class="dropdown-menu dm-icon pull-right">
-                    <li>
-                        <a data-ng-click="hctrl.fullScreen()" href=""><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
-                    </li>
-                    <li>
-                        <a data-ng-click="hctrl.clearLocalStorage()" href=""><i class="md md-delete"></i> Clear Local Storage</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="md md-person"></i> Privacy Settings</a>
-                    </li>
-                    <li>
-                        <a href=""><i class="md md-settings"></i> Other Settings</a>
-                    </li>
+                    <li><a data-ng-click="hctrl.fullScreen()" href=""><i class="md md-fullscreen"></i> Toggle Fullscreen</a></li>
+                    <li><a data-ng-click="hctrl.clearLocalStorage()" href=""><i class="md md-delete"></i> Clear Local Storage</a></li>
+                    <li><a href=""><i class="md md-person"></i> Privacy Settings</a></li>
+                    <li><a href=""><i class="md md-settings"></i> Other Settings</a></li>
                 </ul>
             </li>
             <li class="" data-target="chat" data-toggle-sidebar data-model-right="mactrl.sidebarToggle.right" data-ng-class="{ 'open': mactrl.sidebarToggle.right === true }">

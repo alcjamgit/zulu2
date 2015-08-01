@@ -3,41 +3,55 @@ materialAdmin
     // Securities used by security Explorer
     // =========================================================================
 
-        .factory('securityService', ['$http', function ($http) {
-            function securities(){
-                return $http.get('api/Security');
+    .factory('securityService', ['$http', function ($http) {
+        function securities(){
+            return $http.get('api/Security');
+        }
+        function securitiesExtended() {
+            return $http.get('api/SecurityExtended');
+        }
+        function watchlists(){
+            return $http.get('api/Watchlist');
+        }
+        function priceData(){
+            return $http.get('api/PriceData');
+        }
+        return {
+            getSecurities: securities,
+            getExtendedSecurities: securitiesExtended,
+            getWatchlist: watchlists,
+            getPriceData: priceData,
+        }
+
+    }])
+
+    // =========================================================================
+    // Watchlist servce
+    // =========================================================================
+
+    .service('watchlistService', ['$http', function ($http) {
+
+        return {
+            getWatchlist: function () {
+                return $http.get('api/watchlist');
+            },
+            getWatchlistSecurities: function () {
+                return $http.get('api/watchlistSecurities');
             }
-            function securitiesExtended() {
-                return $http.get('api/SecurityExtended');
-            }
-            function watchlists(){
-                return $http.get('api/Watchlist');
-            }
-            function priceData(){
-                return $http.get('api/PriceData');
+        }
+    }])
+
+    // =========================================================================
+    // Portfolio servce
+    // =========================================================================
+        .factory('portfolioService', ['$http','$stateParams', function ($http, $stateParams) {
+            function adjustments() {
+                return $http.get('api/PortfolioAdjustment', 
+                    { params: { id: $stateParams.id } }
+                );
             }
             return {
-                getSecurities: securities,
-                getExtendedSecurities: securitiesExtended,
-                getWatchlist: watchlists,
-                getPriceData: priceData,
-            }
-
-        }])
-
-        // =========================================================================
-        // Header Messages and Notifications list Data
-        // =========================================================================
-
-        .service('watchlistService', ['$http', function ($http) {
-
-            return {
-                getWatchlist: function () {
-                    return $http.get('api/watchlist');
-                },
-                getWatchlistSecurities: function () {
-                    return $http.get('api/watchlistSecurities');
-                }
+                getAdjustments: adjustments
             }
         }])
 

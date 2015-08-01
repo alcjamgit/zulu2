@@ -94,7 +94,11 @@ materialAdmin
                             url: '/status',
                             templateUrl: 'views/active-portfolio-status.html',
                     })
-
+                    .state('portfolio.active-portfolio.adjustments', {
+                        url: '/adjustments/{id}',
+                        templateUrl: 'views/active-portfolio-adjustments.html',
+                        controller: 'activePortfolioAdjustmentCtrl as vm',
+                    })
             //------------------------------
             // WIDGETS
             //------------------------------

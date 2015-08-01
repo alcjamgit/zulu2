@@ -177,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\PortfolioAdjustmentController.cs" />
     <Compile Include="Controllers\PriceDataController.cs" />
     <Compile Include="Controllers\SecurityExtendedController.cs" />
     <Compile Include="Controllers\SeurityController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\PortfolioAdjustment.cs" />
     <Compile Include="Models\PriceData.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SecurityExtended.cs" />
@@ -200,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\views\active-portfolio-status.html" />
+    <Content Include="App\views\active-portfolio-adjustments.html" />
     <Content Include="favicon.ico" />
     <Content Include="App\404.html" />
     <Content Include="App\css\app.css" />
@@ -374,7 +377,6 @@
     <Content Include="App\includes\security-explorer.html" />
     <Content Include="App\includes\footer.html" />
     <Content Include="App\includes\header.html" />
-    <Content Include="App\includes\profile-menu.html" />
     <Content Include="App\includes\sidebar-left.html" />
     <Content Include="App\includes\templates.html" />
     <Content Include="App\index.html" />
