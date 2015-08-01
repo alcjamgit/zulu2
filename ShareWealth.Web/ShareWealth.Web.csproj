@@ -4608,6 +4608,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\node_modules\grunt-contrib-less\node_modules\less\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\" />
+    <Folder Include="App\vendors\bower_components\angular-ui-router\api\" />
     <Folder Include="App\vendors\bower_components\bower\Packager\" />
     <Folder Include="App\vendors\bower_components\nouislider\submodules\libLink\" />
     <Folder Include="App\vendors\bower_components\nouislider\submodules\wNumb\" />
@@ -6278,9 +6279,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSpa.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="App\vendors\bower_components\angular-ui-router\api\angular-ui-router.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
