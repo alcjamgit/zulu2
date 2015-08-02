@@ -26,6 +26,10 @@ namespace ShareWealth.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/bundle/kendo-css").Include(
+                      "~/app/vendors/kendo-ui/styles/kendo.common.min.css",
+                      "~/app/vendors/kendo-ui/styles/kendo.common-material.min.css"));
         }
     }
 }
