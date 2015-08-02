@@ -203,6 +203,25 @@
   <ItemGroup>
     <Content Include="App\img\spa3_box.png" />
     <Content Include="App\img\spa3_etf_box.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\js\angular.min.js" />
+    <Content Include="App\vendors\bower_components\kendo-ui\js\kendo.all.min.js" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\kendo.common-material.min.css" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\kendo.common.min.css" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\kendo.default.min.css" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\editor.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\imagebrowser.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\indeterminate.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\loading-image.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\loading.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\loading_2x.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\markers.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\markers_2x.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\slider-h.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\slider-v.gif" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_2x.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi.png" />
+    <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi_2x.png" />
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
     <Content Include="favicon.ico" />
