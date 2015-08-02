@@ -24,7 +24,7 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/fullcalendar/dist/fullcalendar.min.css',
+                                    'vendors/bower_components/fullcalendar/dist/fullcalendar.min.css'
                                 ]
                             },
                             {

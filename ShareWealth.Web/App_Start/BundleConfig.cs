@@ -27,9 +27,16 @@ namespace ShareWealth.Web
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/bundle/kendo-css").Include(
-                      "~/app/vendors/kendo-ui/styles/kendo.common.min.css",
-                      "~/app/vendors/kendo-ui/styles/kendo.common-material.min.css"));
+            bundles.Add(new StyleBundle("~/bundles/vendor-css").Include(
+                "~/app/vendors/bower_components/animate.css/animate.min.css",
+                "~/app/vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css",
+                "~/app/vendors/bower_components/sweetalert/dist/sweetalert-override.min.css",
+                "~/app/vendors/bower_components/angular-loading-bar/src/loading-bar.css",
+                "~/app/vendors/kendo-ui/styles/kendo.common.min.css",
+                "~/app/vendors/kendo-ui/styles/kendo.common-material.min.css"));
+
+            BundleTable.EnableOptimizations = false;
+
         }
     }
 }
