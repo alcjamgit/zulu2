@@ -222,6 +222,8 @@
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_2x.png" />
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi.png" />
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi_2x.png" />
+    <Content Include="App\vendors\kendo-ui\styles\kendo.common-bootstrap.min.css" />
+    <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
     <Content Include="favicon.ico" />
@@ -4522,7 +4524,6 @@
     <Content Include="App\vendors\input-mask\input-mask.min.js" />
     <Content Include="App\vendors\kendo-ui\js\angular.min.js" />
     <Content Include="App\vendors\kendo-ui\js\kendo.all.min.js" />
-    <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.default.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\Material\editor.png" />

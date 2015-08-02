@@ -14,23 +14,22 @@
 
     <title>Beyond Charts</title>
 
-    <!-- Jquery is at top to avoid conflict with kendo ui -->
-    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Vendor CSS -->
+
     <link href="vendors/socicon/socicon.min.css" rel="stylesheet">
     <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
     <link href="vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
     <link href="vendors/bower_components/sweetalert/dist/sweetalert-override.min.css" rel="stylesheet">
     <link href="vendors/bower_components/angular-loading-bar/src/loading-bar.css" rel="stylesheet">
+    <link href="vendors/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="vendors/kendo-ui/styles/kendo.common-material.min.css" rel="stylesheet" />
 
-    <link href="vendors/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" /> 
-    <link href="vendors/kendo-ui/styles/kendo.common.material.min.css" rel="stylesheet" /> 
 
     <!-- CSS -->
     <link href="css/app.min.1.css" rel="stylesheet" id="app-level">
     <link href="css/app.min.2.css" rel="stylesheet">
     <link href="css/demo.css" rel="stylesheet">
-    
+
 
 </head>
 
@@ -44,7 +43,7 @@
         <aside id="chat" data-ng-include src="'includes/security-explorer.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
 
         <section id="content">
-            
+
             <div class="container">
                 <data ui-view></data>
             </div>
@@ -96,9 +95,9 @@
         </div>
     <![endif]-->
     <!-- Core -->
-    @*<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>*@
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    
+
 
 
     <!-- Angular -->
@@ -118,6 +117,7 @@
     <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
     <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
     <script src="vendors/kendo-ui/js/kendo.all.min.js"></script>
+
     <!-- Placeholder for IE9 -->
     <!--[if IE 9 ]>
         <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
