@@ -54,7 +54,19 @@ materialAdmin
                 getAdjustments: adjustments
             }
         }])
+    
+    // =========================================================================
+    // Watchlist servce
+    // =========================================================================
 
+    .service('scanProfileService', ['$http', function ($http) {
+
+        return {
+            getScanProfiles: function () {
+                return $http.get('api/scan');
+            }
+        }
+    }])
     // =========================================================================
     // Header Messages and Notifications list Data
     // =========================================================================

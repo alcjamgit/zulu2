@@ -57,17 +57,42 @@ materialAdmin
     // BOOTSTRAP SELECT
     // =========================================================================
 
-    .directive('selectPicker', function(){
+    //.directive('selectPicker', function(){
+    //    return {
+    //        restrict: 'A',
+    //        link: function(scope, element, attrs) {
+    //            //if (element[0]) {
+    //                element.selectpicker();
+    //            //}
+    //        }
+    //    }
+    //})
+
+        //http://codepen.io/joaoneto/pen/azoEdG
+      .directive('selectpicker', ['$parse', function ($parse) {
         return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                //if (element[0]) {
-                    element.selectpicker();
-                //}
-            }
-        }
-    })
-    
+          restrict: 'A',
+          link: function (scope, element, attrs) {
+            element.selectpicker($parse(attrs.selectpicker)());
+            element.selectpicker('refresh');
+        
+            scope.$watch(attrs.ngModel, function (newVal, oldVal) {
+              scope.$parent[attrs.ngModel] = newVal;
+              scope.$evalAsync(function () {
+                if (!attrs.ngOptions || /track by/.test(attrs.ngOptions)) element.val(newVal);
+                element.selectpicker('refresh');
+              });
+            });
+        
+            scope.$on('$destroy', function () {
+              scope.$evalAsync(function () {
+                element.selectpicker('destroy');
+              });
+            });
+          }
+        };
+      }])
+
 
 
     // =========================================================================
@@ -186,6 +211,7 @@ materialAdmin
             scope: {
                 viewMode: '@',
                 format: '@'
+                //format: '@'
             },
             link: function(scope, element, attrs, ngModel){
                 element.datetimepicker({
@@ -203,9 +229,20 @@ materialAdmin
         }
     })
 
-
-
-
+    //http://stackoverflow.com/questions/26634301/bootstrap-datepicker-format-not-working-on-initialization
+    directive('datepickerPopup', function (dateFilter, datepickerPopupConfig) {
+        return {
+            restrict: 'A',
+            priority: 1,
+            require: 'ngModel',
+            link: function(scope, element, attr, ngModel) {
+                var dateFormat = attr.datepickerPopup || datepickerPopupConfig.datepickerPopup;
+                ngModel.$formatters.push(function (value) {
+                    return dateFilter(value, dateFormat);
+                });
+            }
+        };
+    })
     
     // =========================================================================
     // COLOR PICKER

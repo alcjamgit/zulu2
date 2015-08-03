@@ -106,6 +106,39 @@ materialAdmin
             .state('scan-profiles', {
                 url: '/scan-profiles',
                 templateUrl: 'views/scan-profiles.html',
+                controller: 'scanProfilesCtrl as vm',
+                    resolve: {
+                        loadPlugin: function($ocLazyLoad) {
+                            return $ocLazyLoad.load ([
+                                {
+                                    name: 'css',
+                                    insertBefore: '#app-level',
+                                    files: [
+                                        'vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
+                                        'vendors/chosen_v1.4.2/chosen.min.css',
+                                        'vendors/bower_components/nouislider/distribute/jquery.nouislider.min.css',
+                                        'vendors/farbtastic/farbtastic.css',
+                                        'vendors/bower_components/summernote/dist/summernote.css',
+                                        'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                                    ]
+                                },
+                                {
+                                    name: 'vendors',
+                                    files: [
+                                        'vendors/input-mask/input-mask.min.js',
+                                        'vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+                                        'vendors/chosen_v1.4.2/chosen.jquery.min.js',
+                                        'vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
+                                        'vendors/bower_components/moment/min/moment.min.js',
+                                        'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                        'vendors/farbtastic/farbtastic.min.js',
+                                        'vendors/bower_components/summernote/dist/summernote.min.js',
+                                        'vendors/fileinput/fileinput.min.js'
+                                    ]
+                                }
+                            ])
+                        }
+                    }
             })
             .state('scan-daily', {
                 url: '/scan-daily',

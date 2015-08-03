@@ -144,9 +144,9 @@ materialAdmin
 
         //Conditional Class
         vm.whatClassIsIt = function (scanType) {
-            if(scanType=="S")
+            if (scanType == "S")
                 return "circle-red"
-            else if(scanType=="B")
+            else if (scanType == "B")
                 return "circle-green";
             else
                 return "circle-blue";
@@ -399,11 +399,11 @@ materialAdmin
     //=================================================
     .controller('securitiesGridCtrl', function (securityService) {
         var vm = this;
-        var readData = function( options ){
-                            return securityService.getExtendedSecurities().then(function (result) {
-                                options.success(result.data);
-                            }); 
-                        }
+        var readData = function (options) {
+            return securityService.getExtendedSecurities().then(function (result) {
+                options.success(result.data);
+            });
+        }
 
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
@@ -446,14 +446,14 @@ materialAdmin
                 numeric: true
             },
             columns: [
-                { field: "securityCode", title: "Security Code", width:120 },
+                { field: "securityCode", title: "Security Code", width: 120 },
                 { field: "securityName", title: "Security Name" },
                 { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
                 { field: "type", title: "Type", width: 160, filterable: { multi: true } },
-                { field: "icbIndustry" , title: "ICB Industry", width: 160,  filterable: { multi: true } },
-                { field: "close", title: "Closed Price", width: 120, format: "{0:c}",  attributes: {style:"text-align:right;"} },
-                { field: "volume", title: "Volume", width: 120, format: "{0:n}",  attributes: {style:"text-align:right;"} },
-                { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}",  attributes: {style:"text-align:right;"} },
+                { field: "icbIndustry", title: "ICB Industry", width: 160, filterable: { multi: true } },
+                { field: "close", title: "Closed Price", width: 120, format: "{0:c}", attributes: { style: "text-align:right;" } },
+                { field: "volume", title: "Volume", width: 120, format: "{0:n}", attributes: { style: "text-align:right;" } },
+                { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}", attributes: { style: "text-align:right;" } },
             ],
             dataBound: function () {
                 $(".k-grid-content tbody").find("tr").addClass("hasMenu");
@@ -475,15 +475,15 @@ materialAdmin
     //=================================================
     .controller('watchListGridCtrl', function (watchlistService) {
         var vm = this;
-        var readDataMain = function( options ){
+        var readDataMain = function (options) {
             return watchlistService.getWatchlist().then(function (result) {
                 options.success(result.data);
-            }); 
+            });
         };
-        var readDataDetails = function( options ) {
+        var readDataDetails = function (options) {
             return watchlistService.getWatchlistSecurities().then(function (result) {
                 options.success(result.data);
-            }); 
+            });
         };
 
         //http://ernpac.net/?p=566
@@ -517,156 +517,272 @@ materialAdmin
                 numeric: true
             },
             columns: [
-                { field: "id", title: "Id", width:120 },
+                { field: "id", title: "Id", width: 120 },
                 { field: "name", title: "Name" },
                 { field: "type", title: "Type", width: 160, filterable: { multi: true } },
             ],
         };
 
-         //http://ernpac.net/?p=566 & http://demos.telerik.com/kendo-ui/grid/angular
-        vm.detailGridOptions = function(dataItem){
+        //http://ernpac.net/?p=566 & http://demos.telerik.com/kendo-ui/grid/angular
+        vm.detailGridOptions = function (dataItem) {
             return {
                 dataSource: {
+                    transport: {
+                        read: readDataDetails,
+                    },
+                    schema: {
+                        model: {
+                            fields: {
+                                id: { type: "number" },
+                                securityCode: { type: "string" },
+                                securityName: { type: "string" },
+                                exchange: { type: "string" },
+                                symbol: { type: "string" },
+                                type: { type: "string" },
+                                gicsSector: { type: "string" },
+                                icbIndustry: { type: "string" },
+                                open: { type: "number" },
+                                high: { type: "number" },
+                                low: { type: "number" },
+                                close: { type: "number" },
+                                volume: { type: "number" },
+                                lastDate: { type: "date" },
+                                marketCap: { type: "number" },
+                                watchlistId: { type: "number" }
+                            }
+                        }
+                    },
+                    pageSize: 10,
+                    filter: { field: "watchlistId", operator: "eq", value: dataItem.id }
+                },
+                height: 400,
+                scrollable: true,
+                filterable: false,
+                selectable: true,
+                navigatable: true,
+                pageable: {
+                    input: true,
+                    numeric: true
+                },
+                columns: [
+                    { field: "securityCode", title: "Security Code", width: 120 },
+                    { field: "securityName", title: "Security Name" },
+                    { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
+                    { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+                    { field: "icbIndustry", title: "ICB Industry", width: 160, filterable: { multi: true } },
+                    { field: "close", title: "Closed Price", width: 120, format: "{0:c}", attributes: { style: "text-align:right;" } },
+                    { field: "volume", title: "Volume", width: 120, format: "{0:n}", attributes: { style: "text-align:right;" } },
+                    { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}", attributes: { style: "text-align:right;" } },
+                ],
+                dataBound: function () {
+                    $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
+                }
+            };
+        };
+        vm.scanSettingsOption = function(dataItem){
+            vm.theDate = dataItem.startDate;
+        };
+    })
+    //=================================================
+    // SCAN PROFILES
+    //=================================================
+    .controller('scanProfilesCtrl', function (scanProfileService, watchlistService) {
+        var vm = this;
+        var readDataMain = function (options) {
+            return scanProfileService.getScanProfiles().then(function (result) {
+                options.success(result.data);
+            });
+        };
+        var readDataSecurities = function (options) {
+            return watchlistService.getWatchlistSecurities().then(function (result) {
+                options.success(result.data);
+            });
+        };
+        //var readDataSettings = function( options ) {
+        //    return scanProfileService.getScanSettings().then(function (result) {
+        //        options.success(result.data);
+        //    }); 
+        //};
+
+        //http://ernpac.net/?p=566
+        vm.mainGridOptions = {
+            dataSource: {
                 transport: {
-                    read: readDataDetails,
+                    read: readDataMain,
                 },
                 schema: {
                     model: {
                         fields: {
                             id: { type: "number" },
-                            securityCode: { type: "string" },
-                            securityName: { type: "string" },
-                            exchange: { type: "string" },
-                            symbol: { type: "string" },
-                            type: { type: "string" },
-                            gicsSector: { type: "string" },
-                            icbIndustry: { type: "string" },
-                            open: { type: "number" },
-                            high: { type: "number" },
-                            low: { type: "number" },
-                            close: { type: "number" },
-                            volume: { type: "number" },
-                            lastDate: { type: "date" },
-                            marketCap: { type: "number" },
-                            watchlistId: { type: "number" }
+                            name: { type: "string" },
+                            system: { type: "string" },
+                            locked: { type: "boolean" },
+                            scanType: { type: "string" },
+                            parameters: { type: "string" },
+                            chartOptions: { type: "string" },
+                            entry: { type: "boolean" },
+                            exit: { type: "boolean" },
+                            pyramid: { type: "boolean" },
+                            lighten: { type: "boolean" },
+                            timeFrameType: { type: "boolean" },
+                            period: { type: "number" },
+                            periodType: { type: "string" },
+                            startDate: { type: "date" },
+                            endDate: { type: "date" },
+
                         }
                     }
                 },
-                pageSize: 10,
-                filter: { field: "watchlistId", operator: "eq", value: dataItem.id }
+                pageSize: 20
             },
-            height: 300,
+            toolbar: ["create"],
+            editable: "popup",
+            height: 600,
             scrollable: true,
-            filterable: false,
+            sortable: true,
+            groupable: true,
+            filterable: true,
             selectable: true,
             navigatable: true,
             pageable: {
                 input: true,
-                numeric: true
+                numeric: true,
+                refresh: true,
             },
             columns: [
-                { field: "securityCode", title: "Security Code", width:120 },
-                { field: "securityName", title: "Security Name" },
-                { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
-                { field: "type", title: "Type", width: 160, filterable: { multi: true } },
-                { field: "icbIndustry" , title: "ICB Industry", width: 160,  filterable: { multi: true } },
-                { field: "close", title: "Closed Price", width: 120, format: "{0:c}",  attributes: {style:"text-align:right;"} },
-                { field: "volume", title: "Volume", width: 120, format: "{0:n}",  attributes: {style:"text-align:right;"} },
-                { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}",  attributes: {style:"text-align:right;"} },
+                { field: "id", title: "Id", width: 120 },
+                { field: "name", title: "Name" },
+                { field: "system", title: "Type", width: 80, filterable: { multi: true } },
+                { field: "locked", title: "Locked", width: 80, filterable: { multi: true } },
             ],
-            dataBound: function () {
-                $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+        };
 
-            }
+        //http://ernpac.net/?p=566 & http://demos.telerik.com/kendo-ui/grid/angular
+        vm.detailGridOptions = function (dataItem) {
+            return {
+                dataSource: {
+                    transport: {
+                        read: readDataSecurities,
+                    },
+                    schema: {
+                        model: {
+                            fields: {
+                                id: { type: "number" },
+                                securityCode: { type: "string" },
+                                securityName: { type: "string" },
+                                exchange: { type: "string" },
+                                watchlistId: { type: "number" }
+                            }
+                        }
+                    },
+                    pageSize: 10,
+                    filter: { field: "watchlistId", operator: "eq", value: dataItem.id }
+                },
+                height: 300,
+                scrollable: true,
+                filterable: false,
+                selectable: true,
+                navigatable: true,
+                pageable: {
+                    input: true,
+                    numeric: true
+                },
+                columns: [
+                    { field: "securityCode", title: "Security Code", width: 120 },
+                    { field: "securityName", title: "Security Name" },
+                    { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
+                ]
             };
         };
-    })
 
+
+    })
     //=================================================
     // STOCK CHART
     //=================================================
     .controller('stockChartCtrl', function (securityService) {
         var vm = this;
-        var readPriceData = function( options ){
-                    return securityService.getPriceData().then(function (result) {
-                        options.success(result.data);
-                    }); 
-                };
+        var readPriceData = function (options) {
+            return securityService.getPriceData().then(function (result) {
+                options.success(result.data);
+            });
+        };
 
         //http://docs.telerik.com/kendo-ui/api/javascript/dataviz/ui/stock-chart#configuration-categoryAxis.baseUnit
         vm.chartOptions = {
-                dataSource: {
-                    transport: {
-                        read: readPriceData,
-                    },
-                     schema: {
-                        model: {
-                            fields: {
-                                date: { type: "date" }
-                            }
+            dataSource: {
+                transport: {
+                    read: readPriceData,
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            date: { type: "date" }
                         }
                     }
-                },
-                title: {
-                    text: "BHP - XASX"
-                },
-                dateField: "date",
-                series: [{
-                    type: "candlestick",
-                    openField: "open",
-                    highField: "high",
-                    lowField: "low",
-                    closeField: "close"
-                }],
-                navigator: {
-                    series: {
-                        type: "area",
-                        field: "close"
-                    },
-                    select: {
-                        from: "2010/04/01",
-                        to: "2015/07/20"
-                    }
-                },
-                chartArea: { height: 500},
-                categoryAxis: {
-                    baseUnit: "fit",
-                    maxDateGroups: 60,
-                    notes: {
-                        //data: [{
-                        //    value: "2010/01/01",
-                        //    label: {
-                        //        text: "01"
-                        //    }
-                        //}, {
-                        //    value: "2011/01/01",
-                        //    label: {
-                        //        text: "02"
-                        //    }
-                        //}, {
-                        //    value: "2012/01/01",
-                        //    label: {
-                        //        text: "03"
-                        //    }
-                        //}, {
-                        //    value: "2013/01/01",
-                        //    label: {
-                        //        text: "04"
-                        //    }
-                        //}, {
-                        //    value: "2014/01/01",
-                        //    label: {
-                        //        text: "05"
-                        //    }
-                        //}, {
-                        //    value: "2015/01/01",
-                        //    label: {
-                        //        text: "06"
-                        //    }
-                        //}]
-                    }
                 }
-            };
+            },
+            title: {
+                text: "BHP - XASX"
+            },
+            dateField: "date",
+            series: [{
+                type: "candlestick",
+                openField: "open",
+                highField: "high",
+                lowField: "low",
+                closeField: "close"
+            }],
+            navigator: {
+                series: {
+                    type: "area",
+                    field: "close"
+                },
+                select: {
+                    from: "2010/04/01",
+                    to: "2015/07/20"
+                }
+            },
+            chartArea: { height: 500 },
+            categoryAxis: {
+                baseUnit: "fit",
+                maxDateGroups: 60,
+                notes: {
+                    //data: [{
+                    //    value: "2010/01/01",
+                    //    label: {
+                    //        text: "01"
+                    //    }
+                    //}, {
+                    //    value: "2011/01/01",
+                    //    label: {
+                    //        text: "02"
+                    //    }
+                    //}, {
+                    //    value: "2012/01/01",
+                    //    label: {
+                    //        text: "03"
+                    //    }
+                    //}, {
+                    //    value: "2013/01/01",
+                    //    label: {
+                    //        text: "04"
+                    //    }
+                    //}, {
+                    //    value: "2014/01/01",
+                    //    label: {
+                    //        text: "05"
+                    //    }
+                    //}, {
+                    //    value: "2015/01/01",
+                    //    label: {
+                    //        text: "06"
+                    //    }
+                    //}]
+                }
+            }
+        };
     })
 
     //=================================================
@@ -687,7 +803,7 @@ materialAdmin
             //Money Mgmt
             riskOptions: "Default XASX SIROC 21:08",
             maxOpenPositions: 30,
-            allocationRisk: 0.03 ,
+            allocationRisk: 0.03,
             //Costs
             minBrokerage: 30,
             brokeragePercentage: 0.02,
@@ -704,17 +820,17 @@ materialAdmin
         //PROFILE IMAGE
         vm.getImgUrl = function () {
             if (vm.profile.system === 'SPA3') {
-                return 'img/spa3_box.png';
+                return 'img/spa3_600x600.png';
             }
             if (vm.profile.system === 'SPA3 ETF') {
-                return 'img/spa3_etf_box.png';
+                return 'img/etf_600x600.png';
             }
             return "";
         };
-http://localhost:56055/../img/spa3_etf_box.png
+
         //Edit
         vm.editGeneral = 0;
-        vm.editMoneyManagement= 0;
+        vm.editMoneyManagement = 0;
         vm.submit = function (item, message) {
             if (item === 'generalInfo') {
                 this.editGeneral = 0;
@@ -737,14 +853,14 @@ http://localhost:56055/../img/spa3_etf_box.png
             allocated: 60000,
             available: 0,
             initialCapital: 57000,
-            addedCapital:5000,
+            addedCapital: 5000,
             withdrawnCapital: 2500,
             fees: 500,
             totalBalance: 75000,
         };
 
 
-        
+
     })
 
     .controller('activePortfolioAdjustmentCtrl', function (portfolioService, $stateParams) {

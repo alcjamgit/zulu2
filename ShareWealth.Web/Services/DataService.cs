@@ -5469,5 +5469,46 @@ new PriceData { SecurityId=3 , Date = DateTime.Parse("2015-07-28") , Open=5063.4
             return stockPrice;
 
         }
+        public IEnumerable<ScanProfile> GetScanProfiles() 
+        {
+            var scanProfiles = new List<ScanProfile> 
+            {
+                new ScanProfile { Id = 1, 
+                    Name = "Default SPA3", 
+                    System = "SPA3", 
+                    Locked = true,
+                    ScanType = "PORTFOLIO",
+                    Parameters = "Default XASX SIROC 21:08",
+                    ChartOptions = "None",
+                    Entry = true,
+                    Exit = false,
+                    Pyramid = true,
+                    Lighten = true,
+                    TimeFrameType = "All Available Data",
+                    Period = 1,
+                    PeriodType = "Last Trade Period",
+                    StartDate = new DateTime(2014,03,15),
+                    EndDate = new DateTime(2014,06,30)
+                },
+                new ScanProfile { Id = 2, 
+                    Name = "Default SPA3 ETF", 
+                    System = "SPA3 ETF", 
+                    Locked = true,
+                    ScanType = "ADVANCED",
+                    Parameters = "Default XASX SIROC 21:08",
+                    ChartOptions = "None",
+                    Entry = false,
+                    Exit = true,
+                    Pyramid = true,
+                    Lighten = true,
+                    TimeFrameType = "Specific Period",
+                    Period = 1,
+                    PeriodType = "None",
+                    StartDate = new DateTime(2014,04,15),
+                    EndDate = new DateTime(2014,07,30)
+                },
+            };
+            return scanProfiles;
+        }
     }
 }

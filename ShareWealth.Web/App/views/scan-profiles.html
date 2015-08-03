@@ -1,0 +1,128 @@
+<kendo-grid options="vm.mainGridOptions">
+    <div k-detail-template>
+        <kendo-tabstrip>
+            <ul>
+                <li class="k-state-active">Settings</li>
+                <li>Securities</li>
+            </ul>
+            <div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group m-t-15 m-b-15">
+                        <label class="col-sm-2 control-label">Scan Type</label>
+                        <div class="col-sm-4">
+                            <div class="fg-line">
+                                <select ng-model="dataItem.scanType" class="selectpicker" data-selectpicker>
+                                    <option>ADVANCED</option>
+                                    <option>PORTFOLIO</option>
+                                    <option>NEW ENTRIES</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label">Parameters</label>
+                        <div class="col-sm-4">
+                            <div class="fg-line">
+                                <select ng-model="dataItem.parameters" class="selectpicker" data-selectpicker>
+                                    <option>DEFAULT XASX SIROC 21:08</option>
+                                    <option>DEFAULT XASX SIROC 19:07</option>
+                                    <option>DEFAULT XASX SIROC 17:07</option>
+                                    <option>DEFAULT XASX SIROC 13:05</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label">Chart Options</label>
+                        <div class="col-sm-4">
+                            <div class="fg-line">
+                                <select ng-model="dataItem.chartOptions" class="selectpicker" data-selectpicker>
+                                    <option>NONE</option>
+                                    <option>SPA 3 DAILY</option>
+                                    <option>SPA 3 VOLATILITY STOP</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label p-t-0">Entry</label>
+                        <div class="col-sm-4">
+                            <div class="toggle-switch" data-ts-color="cyan">
+                                <input id="ts1" type="checkbox" hidden="hidden" ng-model="dataItem.entry">
+                                <label for="ts1" class="ts-helper"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label p-t-0">Exit</label>
+                        <div class="col-sm-4">
+                            <div class="toggle-switch" data-ts-color="cyan">
+                                <input id="ts2" type="checkbox" hidden="hidden" ng-model="dataItem.exit">
+                                <label for="ts2" class="ts-helper"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label p-t-0">Pyramid</label>
+                        <div class="col-sm-4">
+                            <div class="toggle-switch" data-ts-color="cyan">
+                                <input id="ts3" type="checkbox" hidden="hidden" ng-model="dataItem.pyramid">
+                                <label for="ts3" class="ts-helper"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label p-t-0">Lighten</label>
+                        <div class="col-sm-4">
+                            <div class="toggle-switch" data-ts-color="cyan">
+                                <input id="ts4" type="checkbox" hidden="hidden" ng-model="dataItem.lighten">
+                                <label for="ts4" class="ts-helper"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label">Time Frame Type</label>
+                        <div class="col-sm-4">
+                            <div class="fg-line">
+                                <select ng-model="dataItem.timeFrameType" class="selectpicker" data-selectpicker>
+                                    <option>ALL AVAILABLE DATA</option>
+                                    <option>LAST TRADE PERIOD</option>
+                                    <option>SPECIFIC PERIOD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label">Start Date</label>
+                        <div class="col-sm-4">
+                            <div class="dtp-container dropdown fg-line">
+                                <input data-ng-model="dataItem.startDate" type="text" class="form-control" data-dt-picker data-format="DD/MM/YYYY" data-toggle="dropdown" placeholder="Start Date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label class="col-sm-2 control-label">End Date</label>
+                        <div class="col-sm-4">
+                            <div class="dtp-container dropdown fg-line">
+                                <input data-ng-model="dataItem.endDate" type="text" class="form-control" data-datepicker-popup data-format="DD/MM/YYYY" data-toggle="dropdown" placeholder="End Date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-sm waves-effect">Scan</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div>
+                <div kendo-grid k-options="vm.detailGridOptions(dataItem)"></div>
+            </div>
+
+        </kendo-tabstrip>
+    </div>
+</kendo-grid>

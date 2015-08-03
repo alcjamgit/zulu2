@@ -179,8 +179,9 @@
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PortfolioAdjustmentController.cs" />
     <Compile Include="Controllers\PriceDataController.cs" />
+    <Compile Include="Controllers\ScanController.cs" />
     <Compile Include="Controllers\SecurityExtendedController.cs" />
-    <Compile Include="Controllers\SeurityController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\WatchlistController.cs" />
     <Compile Include="Controllers\WatchlistSecuritiesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,6 +193,7 @@
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\PortfolioAdjustment.cs" />
     <Compile Include="Models\PriceData.cs" />
+    <Compile Include="Models\ScanProfile.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SecurityExtended.cs" />
     <Compile Include="Models\Watchlist.cs" />
@@ -201,6 +203,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\areas\app-main\app.js" />
+    <Content Include="App\areas\app-main\config.js" />
+    <Content Include="App\img\etf_600x600.png" />
+    <Content Include="App\img\spa3_600x600.png" />
     <Content Include="App\img\spa3_box.png" />
     <Content Include="App\img\spa3_etf_box.png" />
     <Content Include="App\vendors\bower_components\kendo-ui\js\angular.min.js" />
@@ -224,6 +230,7 @@
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi_2x.png" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-bootstrap.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
+    <Content Include="App\views\scan-profiles.html" />
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
     <Content Include="favicon.ico" />
@@ -4627,6 +4634,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\areas\home\" />
+    <Folder Include="App\areas\portfolio\" />
+    <Folder Include="App\areas\scans\" />
+    <Folder Include="App\areas\security\" />
+    <Folder Include="App\areas\watchlist\" />
     <Folder Include="App\node_modules\grunt-contrib-less\node_modules\less\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\" />
     <Folder Include="App\vendors\bower_components\angular-ui-router\api\" />
     <Folder Include="App\vendors\bower_components\bower\Packager\" />
