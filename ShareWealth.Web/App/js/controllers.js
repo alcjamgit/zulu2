@@ -820,10 +820,10 @@ materialAdmin
         //PROFILE IMAGE
         vm.getImgUrl = function () {
             if (vm.profile.system === 'SPA3') {
-                return 'img/spa3_600x600.png';
+                return 'app/img/spa3_600x600.png';
             }
             if (vm.profile.system === 'SPA3 ETF') {
-                return 'img/etf_600x600.png';
+                return 'app/img/etf_600x600.png';
             }
             return "";
         };
