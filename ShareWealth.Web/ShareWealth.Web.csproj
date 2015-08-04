@@ -194,8 +194,11 @@
     <Compile Include="Models\PortfolioAdjustment.cs" />
     <Compile Include="Models\PriceData.cs" />
     <Compile Include="Models\ScanProfile.cs" />
+    <Compile Include="Models\ScanResult.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SecurityExtended.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Models\StockTransaction.cs" />
     <Compile Include="Models\Watchlist.cs" />
     <Compile Include="Models\WatchlistSecurities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,6 +209,7 @@
     <Content Include="App\areas\app-main\app.js" />
     <Content Include="App\areas\app-main\config.js" />
     <Content Include="App\img\etf_600x600.png" />
+    <Content Include="App\img\my_logo.png" />
     <Content Include="App\img\spa3_600x600.png" />
     <Content Include="App\img\spa3_box.png" />
     <Content Include="App\img\spa3_etf_box.png" />
@@ -230,6 +234,8 @@
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi_2x.png" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-bootstrap.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
+    <Content Include="App\views\scan-common.html" />
+    <Content Include="App\views\scans-daily.html" />
     <Content Include="App\views\active-portfolio-transactions.html" />
     <Content Include="App\views\scan-profiles.html" />
     <Content Include="App\views\active-portfolio-status.html" />

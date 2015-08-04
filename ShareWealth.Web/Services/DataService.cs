@@ -5510,5 +5510,37 @@ new PriceData { SecurityId=3 , Date = DateTime.Parse("2015-07-28") , Open=5063.4
             };
             return scanProfiles;
         }
+        public IEnumerable<ScanResult> GetScanResults() 
+        { 
+            var scanResults = new List<ScanResult> {
+                new ScanResult { SignalName = "ATR TS", SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "XAO", SignalType = "BUY", SignalPrice = 1257.50  },
+                new ScanResult { SignalName = "ATR BO",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "XEJ", SignalType = "BUY", SignalPrice = 350.45 },
+                new ScanResult { SignalName = "ISL",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "BHP", SignalType = "EXIT", SignalPrice = 12.14 },
+                new ScanResult { SignalName = "L4T",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "COMP", SignalType = "EXIT", SignalPrice = 85.4 },
+                new ScanResult { SignalName = "H&S",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "DJUCY", SignalType = "EXIT", SignalPrice = 3650.12 },
+                new ScanResult { SignalName = "ATR TS",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "DUI", SignalType = "BUY", SignalPrice = 78.9 },
+                new ScanResult { SignalName = "ATR BO",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "EWW", SignalType = "BUY", SignalPrice = 25.32 },
+                new ScanResult { SignalName = "ATR TS",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "XJM", SignalType = "BUY", SignalPrice = 91.1 },
+                new ScanResult { SignalName = "ATR BO",SignalDate = new DateTime(2013,10,21), ActionDate = new DateTime(2013,10,22), SecurityCode = "DIA", SignalType = "BUY", SignalPrice = 89.7 },
+            };
+            return scanResults;
+            
+        }
+        public IEnumerable<StockTransaction> GetStockTransactions()
+        {
+            var scanResults = new List<StockTransaction> {
+                new StockTransaction { SignalName = "ATR BO", TransactionDate = new DateTime(2012,8,15), SecurityCode = "BHP", TransactionType = "BUY", Price = 1257.50 , Quantity = 10 },
+                new StockTransaction { SignalName = "ATR BO", TransactionDate = new DateTime(2013,10,21), SecurityCode = "EWW", TransactionType = "BUY", Price = 450.35 , Quantity = 30 },
+                new StockTransaction { SignalName = "ATR BO", TransactionDate = new DateTime(2013,12,23), SecurityCode = "BHP", TransactionType = "PYRAMID", Price = 1257.75 , Quantity = 3 },
+                new StockTransaction { SignalName = "ATR TS", TransactionDate = new DateTime(2014,2,10), SecurityCode = "EWW", TransactionType = "SELL", Price = 442.15 , Quantity = 30 },
+                new StockTransaction { SignalName = "ATR BO", TransactionDate = new DateTime(2014,2,13), SecurityCode = "XEJ", TransactionType = "BUY", Price = 331.15 , Quantity = 5 },
+                new StockTransaction { SignalName = "ATR BO", TransactionDate = new DateTime(2014,2,24), SecurityCode = "DJI", TransactionType = "BUY", Price = 30.35 , Quantity = 12 },
+                new StockTransaction { SignalName = "H&S", TransactionDate = new DateTime(2014,3,11), SecurityCode = "EWW", TransactionType = "LIGHTEN", Price = 450.35 , Quantity = 20 },
+                new StockTransaction { SignalName = "4LT", TransactionDate = new DateTime(2014,5,21), SecurityCode = "XEJ", TransactionType = "SELL", Price = 450.35 , Quantity = 5 },
+                new StockTransaction { SignalName = "ISL", TransactionDate = new DateTime(2014,6,30), SecurityCode = "DJI", TransactionType = "SELL", Price = 327.15 , Quantity = 12 },
+            };
+            return scanResults;
+
+        }
     }
 }

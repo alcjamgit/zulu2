@@ -5,7 +5,7 @@ materialAdmin
 
     .controller('materialadminCtrl', function ($timeout, $state, growlService) {
         //Welcome Message
-        growlService.growl('Welcome back John Doe!', 'inverse')
+        //growlService.growl('Welcome back John Doe!', 'inverse')
 
 
         // Detact Mobile Browser
@@ -587,10 +587,10 @@ materialAdmin
     //=================================================
     // SCAN PROFILES
     //=================================================
-    .controller('scanProfilesCtrl', function (scanProfileService, watchlistService) {
+    .controller('scanProfilesCtrl', function (scanService, watchlistService) {
         var vm = this;
         var readDataMain = function (options) {
-            return scanProfileService.getScanProfiles().then(function (result) {
+            return scanService.getScanProfiles().then(function (result) {
                 options.success(result.data);
             });
         };
@@ -599,11 +599,7 @@ materialAdmin
                 options.success(result.data);
             });
         };
-        //var readDataSettings = function( options ) {
-        //    return scanProfileService.getScanSettings().then(function (result) {
-        //        options.success(result.data);
-        //    }); 
-        //};
+
 
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
@@ -698,6 +694,62 @@ materialAdmin
 
 
     })
+    .controller('scanDailyCtrl', function(scanService){
+        var vm = this;
+        var readDataMain = function (options) {
+            return scanService.getDailyScans().then(function (result) {
+                options.success(result.data);
+            });
+        };
+
+        //http://ernpac.net/?p=566
+        vm.mainGridOptions = {
+            dataSource: {
+                transport: {
+                    read: readDataMain,
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            securityCode: {type: "string"},
+                            signalDate: { type: "date" },
+                            actionDate: { type: "date" },
+                            signalName: { type: "string" },
+                            signalType: { type: "string" },
+                            signalPrice: { type: "number" },
+
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            height: 600,
+            scrollable: true,
+            sortable: true,
+            groupable: true,
+            filterable: true,
+            selectable: true,
+            navigatable: true,
+            pageable: {
+                input: true,
+                numeric: true,
+                refresh: true,
+            },
+            columns: [
+                { field: "securityCode", title: "Security", width: 120 },
+                { field: "signalName", title: "Signal" },
+                { field: "signalType", title: "Type", width: 80, filterable: { multi: true } },
+                { field: "signalDate", title: "Signal Date", filterable: true, format: "{0:dd/MM/yyyy}" },
+                { field: "actionDate", title: "Action Date", filterable: true, format: "{0:dd/MM/yyyy}" },
+                { field: "signalPrice", title: "Signal Price", filterable: true, format: "{0:n}" },
+            ],
+             dataBound: function () {
+                $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
+            }
+        };
+
+    })
     //=================================================
     // STOCK CHART
     //=================================================
@@ -723,9 +775,9 @@ materialAdmin
                     }
                 }
             },
-            title: {
-                text: "BHP - XASX"
-            },
+            //title: {
+            //    text: "BHP - XASX"
+            //},
             dateField: "date",
             series: [{
                 type: "candlestick",
@@ -903,6 +955,7 @@ materialAdmin
                 input: true,
                 numeric: true
             },
+            toolbar: ["create"],
             columns: [
                 { field: "id", title: "Id", width: 64 },
                 { field: "date", title: "Date", format: "{0:dd/MM/yyyy}" },
@@ -922,7 +975,7 @@ materialAdmin
         var vm = this;
         //alert($stateParams.id);
         var readData = function (options) {
-            return portfolioService.getAdjustments().then(function (result) {
+            return portfolioService.getTransactions().then(function (result) {
                 options.success(result.data);
             });
         };
@@ -937,11 +990,13 @@ materialAdmin
                 schema: {
                     model: {
                         fields: {
-                            id: { type: "number" },
-                            date: { type: "date" },
-                            type: { type: "string" },
-                            portfolioId: { type: "number" },
-                            amount: { type: "string" },
+                            transactionDate: { type: "date" },
+                            securityCode: {type: "string"},
+                            signalName: {type: "string"},
+                            transactionType: { type: "string" },
+                            price: { type: "number" },
+                            quantity: { type: "number" },
+                            tradeValue: { type: "number" },
                         }
                     }
                 },
@@ -956,13 +1011,17 @@ materialAdmin
             navigatable: true,
             pageable: {
                 input: true,
-                numeric: true
+                numeric: true,
+                refresh: true,
             },
             columns: [
-                { field: "id", title: "Id", width: 64 },
-                { field: "date", title: "Date", format: "{0:dd/MM/yyyy}" },
-                { field: "type", title: "Type", filterable: { multi: true } },
-                { field: "amount", title: "Amount", width: 120, format: "{0:n}", attributes: { style: "text-align:right;" } },
+                { field: "transactionDate", title: "Date", filterable: true, format: "{0:dd/MM/yyyy}" },
+                { field: "securityCode", title: "Security"},
+                { field: "signalName", title: "Signal" },
+                { field: "transactionType", title: "Type", filterable: { multi: true } },
+                { field: "price", title: "Price", filterable: true, format: "{0:n}", attributes: { style: "text-align:right;" } },
+                { field: "quantity", title: "Qty", filterable: true, format: "{0:n0}", attributes: { style: "text-align:right;" } },
+                { field: "tradeValue", title: "Trade Value", filterable: true, format: "{0:n}", attributes: { style: "text-align:right;" } },
             ],
             dataBound: function () {
                 $(".k-grid-content tbody").find("tr").addClass("hasMenu");

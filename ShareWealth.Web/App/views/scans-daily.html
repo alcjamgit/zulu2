@@ -1,0 +1,15 @@
+
+<kendo-grid options="vm.mainGridOptions">
+</kendo-grid>
+
+<!--http://demos.telerik.com/kendo-ui/menu/context-menu-angular-->
+<ul kendo-context-menu
+    k-filter="'.hasMenu'"
+    k-on-open="menuOpen = menuOpen + 1"
+    k-on-close="menuOpen = menuOpen - 1"
+    k-on-select="onSelect(kendoEvent)">
+
+    <li>Open Chart</li>
+    <li>Add to Watchlist</li>
+
+</ul>

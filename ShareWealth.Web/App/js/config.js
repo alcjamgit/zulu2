@@ -33,7 +33,7 @@ materialAdmin
                                 files: [
                                     '/app/vendors/sparklines/jquery.sparkline.min.js',
                                     '/app/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
-                                    '/app/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js'
+                                    '/app/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js',
                                 ]
                             }
                         ])
@@ -109,7 +109,12 @@ materialAdmin
             //------------------------------
             // SCANS
             //------------------------------
-            .state('scan-profiles', {
+             .state('scans', {
+                url: '/scans',
+                templateUrl: '/app/views/scan-common.html',
+                
+            })
+            .state('scans.scan-profiles', {
                 url: '/scan-profiles',
                 templateUrl: '/app/views/scan-profiles.html',
                 controller: 'scanProfilesCtrl as vm',
@@ -146,9 +151,10 @@ materialAdmin
                         }
                     }
             })
-            .state('scan-daily', {
+            .state('scans.scan-daily', {
                 url: '/scan-daily',
-                templateUrl: '/app/views/scan-daily.html',
+                templateUrl: '/app/views/scans-daily.html',
+                controller: 'scanDailyCtrl as vm'
             })
 
             //------------------------------

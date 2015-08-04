@@ -316,7 +316,7 @@ materialAdmin
     
                 var data = [];
                 var totalPoints = 300;
-                var updateInterval = 30;
+                var updateInterval = 3000;
 
                 function getRandomData() {
                     if (data.length > 0)
@@ -347,7 +347,7 @@ materialAdmin
 
                 var plot = $.plot(element, [ getRandomData() ], {
                     series: {
-                        label: "Server Process Data",
+                        label: "Latest Price",
                         lines: {
                             show: true,
                             lineWidth: 0.2,
@@ -371,7 +371,7 @@ materialAdmin
                     },
                     xaxis: {
                         tickColor: '#eee',
-                        show: true,
+                        show: false,
                         font :{
                             lineHeight: 13,
                             style: "normal",

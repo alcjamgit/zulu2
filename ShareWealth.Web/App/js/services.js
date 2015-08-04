@@ -50,8 +50,12 @@ materialAdmin
                     { params: { id: $stateParams.id } }
                 );
             }
+            function transactions(){
+                return $http.get('api/stockTransactions');
+            };
             return {
-                getAdjustments: adjustments
+                getAdjustments: adjustments,
+                getTransactions: transactions
             }
         }])
     
@@ -59,11 +63,14 @@ materialAdmin
     // Watchlist servce
     // =========================================================================
 
-    .service('scanProfileService', ['$http', function ($http) {
+    .factory('scanService', ['$http', function ($http) {
 
         return {
             getScanProfiles: function () {
-                return $http.get('api/scan');
+                return $http.get('api/scanProfiles')
+            },
+            getDailyScans: function () {
+                return $http.get('api/scanResults')
             }
         }
     }])

@@ -20,12 +20,17 @@ namespace ShareWealth.Web.Controllers
         }
 
         // GET: api/Scan
-        [Route("api/scan")]
-        public IEnumerable<ScanProfile> Get()
+        [Route("api/scanprofiles")]
+        public IEnumerable<ScanProfile> GetScanProfiles()
         {
             return _data.GetScanProfiles();
         }
 
+        [Route("api/scanresults")]
+        public IEnumerable<ScanResult> GetScanResults()
+        {
+            return _data.GetScanResults();
+        }
         // GET: api/Scan/5
         public string Get(int id)
         {

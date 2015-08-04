@@ -19,19 +19,19 @@
     </div>
     <div class="pmbb-body p-l-30">
         <div class="pmbb-view" data-ng-if="vm.editGeneral === 0">
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>Portfolio Name</dt>
                 <dd>{{ vm.profile.name}}</dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>System</dt>
                 <dd>{{ vm.profile.system }}</dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>Stock Exchange</dt>
                 <dd>{{ vm.profile.exchange}}</dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>Cyrrency</dt>
                 <dd>{{ vm.profile.currency}}</dd>
             </dl>
@@ -109,15 +109,15 @@
     </div>
     <div class="pmbb-body p-l-30">
         <div class="pmbb-view" data-ng-if="vm.editMoneyManagement === 0">
-            <dl class="dl-horizontal" ng-show="vm.showRiskOptions()">
+            <dl class="dl-horizontal m-b-10" ng-show="vm.showRiskOptions()">
                 <dt>Risk Table</dt>
                 <dd>{{ vm.profile.riskOptions}}</dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>Max Open Positions</dt>
                 <dd>{{ vm.profile.maxOpenPositions }}</dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-10">
                 <dt>Allocation Risk</dt>
                 <dd>{{ vm.profile.allocationRisk * 100 | number: 1}}%</dd>
             </dl>
