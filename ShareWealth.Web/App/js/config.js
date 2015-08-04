@@ -24,16 +24,16 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/fullcalendar/dist/fullcalendar.min.css'
+                                    '/app/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css'
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 insertBefore: '#app-level-js',
                                 files: [
-                                    'vendors/sparklines/jquery.sparkline.min.js',
-                                    'vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
-                                    'vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js'
+                                    '/app/vendors/sparklines/jquery.sparkline.min.js',
+                                    '/app/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
+                                    '/app/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js'
                                 ]
                             }
                         ])
@@ -120,26 +120,26 @@ materialAdmin
                                     name: 'css',
                                     insertBefore: '#app-level',
                                     files: [
-                                        'vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
-                                        'vendors/chosen_v1.4.2/chosen.min.css',
-                                        'vendors/bower_components/nouislider/distribute/jquery.nouislider.min.css',
-                                        'vendors/farbtastic/farbtastic.css',
-                                        'vendors/bower_components/summernote/dist/summernote.css',
-                                        'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                                        '/app/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
+                                        '/app/vendors/chosen_v1.4.2/chosen.min.css',
+                                        '/app/vendors/bower_components/nouislider/distribute/jquery.nouislider.min.css',
+                                        '/app/vendors/farbtastic/farbtastic.css',
+                                        '/app/vendors/bower_components/summernote/dist/summernote.css',
+                                        '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
                                     ]
                                 },
                                 {
                                     name: 'vendors',
                                     files: [
-                                        'vendors/input-mask/input-mask.min.js',
-                                        'vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
-                                        'vendors/chosen_v1.4.2/chosen.jquery.min.js',
-                                        'vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
-                                        'vendors/bower_components/moment/min/moment.min.js',
-                                        'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-                                        'vendors/farbtastic/farbtastic.min.js',
-                                        'vendors/bower_components/summernote/dist/summernote.min.js',
-                                        'vendors/fileinput/fileinput.min.js'
+                                        '/app/vendors/input-mask/input-mask.min.js',
+                                        '/app/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+                                        '/app/vendors/chosen_v1.4.2/chosen.jquery.min.js',
+                                        '/app/vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
+                                        '/app/vendors/bower_components/moment/min/moment.min.js',
+                                        '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                        '/app/vendors/farbtastic/farbtastic.min.js',
+                                        '/app/vendors/bower_components/summernote/dist/summernote.min.js',
+                                        '/app/vendors/fileinput/fileinput.min.js'
                                     ]
                                 }
                             ])
@@ -170,13 +170,13 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/mediaelement/build/mediaelementplayer.css',
+                                    '/app/vendors/bower_components/mediaelement/build/mediaelementplayer.css',
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/mediaelement/build/mediaelement-and-player.js'
+                                    '/app/vendors/bower_components/mediaelement/build/mediaelement-and-player.js'
                                 ]
                             }
                         ])
@@ -214,13 +214,13 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css',
+                                    '/app/vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid.min.css',
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid-override.min.js'
+                                    '/app/vendors/bower_components/jquery.bootgrid/dist/jquery.bootgrid-override.min.js'
                                 ]
                             }
                         ])
@@ -246,7 +246,7 @@ materialAdmin
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/autosize/dist/autosize.min.js'
+                                    '/app/vendors/bower_components/autosize/dist/autosize.min.js'
                                 ]
                             }
                         ])
@@ -264,26 +264,26 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
+                                    '/app/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
                                     'vendors/chosen_v1.4.2/chosen.min.css',
-                                    'vendors/bower_components/nouislider/distribute/jquery.nouislider.min.css',
-                                    'vendors/farbtastic/farbtastic.css',
-                                    'vendors/bower_components/summernote/dist/summernote.css',
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                                    '/app/vendors/bower_components/nouislider/distribute/jquery.nouislider.min.css',
+                                    '/app/vendors/farbtastic/farbtastic.css',
+                                    '/app/vendors/bower_components/summernote/dist/summernote.css',
+                                    '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/input-mask/input-mask.min.js',
-                                    'vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
-                                    'vendors/chosen_v1.4.2/chosen.jquery.min.js',
-                                    'vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
-                                    'vendors/bower_components/moment/min/moment.min.js',
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-                                    'vendors/farbtastic/farbtastic.min.js',
-                                    'vendors/bower_components/summernote/dist/summernote.min.js',
-                                    'vendors/fileinput/fileinput.min.js'
+                                    '/app/vendors/input-mask/input-mask.min.js',
+                                    '/app/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+                                    '/app/vendors/chosen_v1.4.2/chosen.jquery.min.js',
+                                    '/app/vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
+                                    '/app/vendors/bower_components/moment/min/moment.min.js',
+                                    '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                    '/app/vendors/farbtastic/farbtastic.min.js',
+                                    '/app/vendors/bower_components/summernote/dist/summernote.min.js',
+                                    '/app/vendors/fileinput/fileinput.min.js'
                                 ]
                             }
                         ])
@@ -356,15 +356,15 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/mediaelement/build/mediaelementplayer.css',
-                                    'vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
+                                    '/app/vendors/bower_components/mediaelement/build/mediaelementplayer.css',
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/mediaelement/build/mediaelement-and-player.js',
-                                    'vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
+                                    '/app/vendors/bower_components/mediaelement/build/mediaelement-and-player.js',
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
                                 ]
                             }
                         ])
@@ -406,8 +406,8 @@ materialAdmin
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/sparklines/jquery.sparkline.min.js',
-                                    'vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
+                                    '/app/vendors/sparklines/jquery.sparkline.min.js',
+                                    '/app/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
                                 ]
                             }
                         ])
@@ -430,14 +430,14 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/fullcalendar/dist/fullcalendar.min.css',
+                                    '/app/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css',
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/moment/min/moment.min.js',
-                                    'vendors/bower_components/fullcalendar/dist/fullcalendar.min.js'
+                                    '/app/vendors/bower_components/moment/min/moment.min.js',
+                                    '/app/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js'
                                 ]
                             }
                         ])
@@ -488,13 +488,13 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
                                 ]
                             }
                         ])
@@ -512,13 +512,13 @@ materialAdmin
                                 name: 'css',
                                 insertBefore: '#app-level',
                                 files: [
-                                    'vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'
                                 ]
                             },
                             {
                                 name: 'vendors',
                                 files: [
-                                    'vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
+                                    '/app/vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'
                                 ]
                             }
                         ])
