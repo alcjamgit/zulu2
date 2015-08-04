@@ -12,12 +12,15 @@ namespace ShareWealth.Web.Controllers
     public class ScanController : ApiController
     {
         private DataService _data;
+
+
         public ScanController()
         {
             _data = new DataService();
         }
 
         // GET: api/Scan
+        [Route("api/scan")]
         public IEnumerable<ScanProfile> Get()
         {
             return _data.GetScanProfiles();

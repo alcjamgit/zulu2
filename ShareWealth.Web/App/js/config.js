@@ -100,6 +100,12 @@ materialAdmin
                         controller: 'activePortfolioAdjustmentCtrl as vm',
                     })
 
+            .state('portfolio.active-portfolio-transactions', {
+                url: '/transactions',
+                templateUrl: 'views/active-portfolio-transactions.html',
+                controller: 'transactionCtrl as vm',
+            })
+
             //------------------------------
             // SCANS
             //------------------------------

@@ -230,7 +230,7 @@ materialAdmin
     })
 
     //http://stackoverflow.com/questions/26634301/bootstrap-datepicker-format-not-working-on-initialization
-    directive('datepickerPopup', function (dateFilter, datepickerPopupConfig) {
+    .directive('datepickerPopup', function (dateFilter, datepickerPopupConfig) {
         return {
             restrict: 'A',
             priority: 1,

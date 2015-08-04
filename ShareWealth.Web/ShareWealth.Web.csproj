@@ -230,6 +230,7 @@
     <Content Include="App\vendors\bower_components\kendo-ui\styles\Material\sprite_kpi_2x.png" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-bootstrap.min.css" />
     <Content Include="App\vendors\kendo-ui\styles\kendo.common-material.min.css" />
+    <Content Include="App\views\active-portfolio-transactions.html" />
     <Content Include="App\views\scan-profiles.html" />
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
