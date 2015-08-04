@@ -16,7 +16,7 @@ materialAdmin
         
             .state ('home', {
                 url: '/home',
-                templateUrl: 'views/home-min.html',
+                templateUrl: '/app/views/home-min.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -48,7 +48,7 @@ materialAdmin
 
             .state('securities', {
                 url: '/securities',
-                templateUrl: 'views/securities-grid.html',
+                templateUrl: '/app/views/securities-grid.html',
                 controller: 'securitiesGridCtrl as vm'
             })
             
@@ -58,7 +58,7 @@ materialAdmin
 
             .state('watchlist', {
                 url: '/watchlist',
-                templateUrl: 'views/watchlist-grid.html',
+                templateUrl: '/app/views/watchlist-grid.html',
                 controller: 'watchListGridCtrl as vm'
             })
 
@@ -68,7 +68,7 @@ materialAdmin
 
             .state('stock-chart', {
                 url: '/stock-chart',
-                templateUrl: 'views/stock-chart.html',
+                templateUrl: '/app/views/stock-chart.html',
                 controller: 'stockChartCtrl as vm'
             })
 
@@ -77,32 +77,32 @@ materialAdmin
             //------------------------------
             .state ('portfolio', {
                 url: '/portfolio',
-                templateUrl: 'views/portfolio-common.html',
+                templateUrl: '/app/views/portfolio-common.html',
             })
 
                 .state ('portfolio.active-portfolio', {
                     url: '/active-portfolio',
-                    templateUrl: 'views/active-portfolio-common.html',
+                    templateUrl: '/app/views/active-portfolio-common.html',
                     controller: 'activePortfolioCtrl as vm'
                 })
 
                     .state('portfolio.active-portfolio.profile', {
                             url: '/profile',
-                            templateUrl: 'views/active-portfolio-profile.html',
+                            templateUrl: '/app/views/active-portfolio-profile.html',
                     })
                     .state('portfolio.active-portfolio.status', {
                             url: '/status',
-                            templateUrl: 'views/active-portfolio-status.html',
+                            templateUrl: '/app/views/active-portfolio-status.html',
                     })
                     .state('portfolio.active-portfolio.adjustments', {
                         url: '/adjustments/{id}',
-                        templateUrl: 'views/active-portfolio-adjustments.html',
+                        templateUrl: '/app/views/active-portfolio-adjustments.html',
                         controller: 'activePortfolioAdjustmentCtrl as vm',
                     })
 
             .state('portfolio.active-portfolio-transactions', {
                 url: '/transactions',
-                templateUrl: 'views/active-portfolio-transactions.html',
+                templateUrl: '/app/views/active-portfolio-transactions.html',
                 controller: 'transactionCtrl as vm',
             })
 
@@ -111,7 +111,7 @@ materialAdmin
             //------------------------------
             .state('scan-profiles', {
                 url: '/scan-profiles',
-                templateUrl: 'views/scan-profiles.html',
+                templateUrl: '/app/views/scan-profiles.html',
                 controller: 'scanProfilesCtrl as vm',
                     resolve: {
                         loadPlugin: function($ocLazyLoad) {
@@ -148,7 +148,7 @@ materialAdmin
             })
             .state('scan-daily', {
                 url: '/scan-daily',
-                templateUrl: 'views/scan-daily.html',
+                templateUrl: '/app/views/scan-daily.html',
             })
 
             //------------------------------
@@ -157,12 +157,12 @@ materialAdmin
         
             .state ('widgets', {
                 url: '/widgets',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
 
             .state ('widgets.widgets', {
                 url: '/widgets',
-                templateUrl: 'views/widgets.html',
+                templateUrl: '/app/views/widgets.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -186,7 +186,7 @@ materialAdmin
 
             .state ('widgets.widget-templates', {
                 url: '/widget-templates',
-                templateUrl: 'views/widget-templates.html'
+                templateUrl: '/app/views/widget-templates.html'
             })
 
 
@@ -196,17 +196,17 @@ materialAdmin
         
             .state ('tables', {
                 url: '/tables',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
 
             .state ('tables.tables', {
                 url: '/tables',
-                templateUrl: 'views/tables.html'
+                templateUrl: '/app/views/tables.html'
             })
 
             .state ('tables.data-tables', {
                 url: '/data-tables',
-                templateUrl: 'views/data-tables.html',
+                templateUrl: '/app/views/data-tables.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -234,12 +234,12 @@ materialAdmin
             //------------------------------
             .state ('form', {
                 url: '/form',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
 
             .state ('form.basic-form-elements', {
                 url: '/basic-form-elements',
-                templateUrl: 'views/form-elements.html',
+                templateUrl: '/app/views/form-elements.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -256,7 +256,7 @@ materialAdmin
 
             .state ('form.form-components', {
                 url: '/form-components',
-                templateUrl: 'views/form-components.html',
+                templateUrl: '/app/views/form-components.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -293,12 +293,12 @@ materialAdmin
         
             .state ('form.form-examples', {
                 url: '/form-examples',
-                templateUrl: 'views/form-examples.html'
+                templateUrl: '/app/views/form-examples.html'
             })
         
             .state ('form.form-validations', {
                 url: '/form-validations',
-                templateUrl: 'views/form-validations.html'
+                templateUrl: '/app/views/form-validations.html'
             })
         
             
@@ -308,47 +308,47 @@ materialAdmin
         
             .state ('user-interface', {
                 url: '/user-interface',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
 
             .state ('user-interface.colors', {
                 url: '/colors',
-                templateUrl: 'views/colors.html'
+                templateUrl: '/app/views/colors.html'
             })
 
             .state ('user-interface.animations', {
                 url: '/animations',
-                templateUrl: 'views/animations.html'
+                templateUrl: '/app/views/animations.html'
             })
         
             .state ('user-interface.box-shadow', {
                 url: '/box-shadow',
-                templateUrl: 'views/box-shadow.html'
+                templateUrl: '/app/views/box-shadow.html'
             })
         
             .state ('user-interface.buttons', {
                 url: '/buttons',
-                templateUrl: 'views/buttons.html'
+                templateUrl: '/app/views/buttons.html'
             })
         
             .state ('user-interface.icons', {
                 url: '/icons',
-                templateUrl: 'views/icons.html'
+                templateUrl: '/app/views/icons.html'
             })
         
             .state ('user-interface.alerts', {
                 url: '/alerts',
-                templateUrl: 'views/alerts.html'
+                templateUrl: '/app/views/alerts.html'
             })
         
             .state ('user-interface.notifications-dialogs', {
                 url: '/notifications-dialogs',
-                templateUrl: 'views/notification-dialog.html'
+                templateUrl: '/app/views/notification-dialog.html'
             })
         
             .state ('user-interface.media', {
                 url: '/media',
-                templateUrl: 'views/media.html',
+                templateUrl: '/app/views/media.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -374,12 +374,12 @@ materialAdmin
         
             .state ('user-interface.components', {
                 url: '/components',
-                templateUrl: 'views/components.html'
+                templateUrl: '/app/views/components.html'
             })
         
             .state ('user-interface.other-components', {
                 url: '/other-components',
-                templateUrl: 'views/other-components.html'
+                templateUrl: '/app/views/other-components.html'
             })
             
         
@@ -389,17 +389,17 @@ materialAdmin
             
             .state ('charts', {
                 url: '/charts',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
 
             .state ('charts.flot-charts', {
                 url: '/flot-charts',
-                templateUrl: 'views/flot-charts.html',
+                templateUrl: '/app/views/flot-charts.html',
             })
 
             .state ('charts.other-charts', {
                 url: '/other-charts',
-                templateUrl: 'views/other-charts.html',
+                templateUrl: '/app/views/other-charts.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -422,7 +422,7 @@ materialAdmin
             
             .state ('calendar', {
                 url: '/calendar',
-                templateUrl: 'views/calendar.html',
+                templateUrl: '/app/views/calendar.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -452,7 +452,7 @@ materialAdmin
             
             .state ('generic-classes', {
                 url: '/generic-classes',
-                templateUrl: 'views/generic-classes.html'
+                templateUrl: '/app/views/generic-classes.html'
             })
         
             
@@ -462,7 +462,7 @@ materialAdmin
             
             .state ('pages', {
                 url: '/pages',
-                templateUrl: 'views/common.html'
+                templateUrl: '/app/views/common.html'
             })
             
         
@@ -470,17 +470,17 @@ materialAdmin
         
             .state ('pages.profile', {
                 url: '/profile',
-                templateUrl: 'views/profile.html'
+                templateUrl: '/app/views/profile.html'
             })
         
             .state ('pages.profile.profile-about', {
                 url: '/profile-about',
-                templateUrl: 'views/profile-about.html'
+                templateUrl: '/app/views/profile-about.html'
             })
         
             .state ('pages.profile.profile-timeline', {
                 url: '/profile-timeline',
-                templateUrl: 'views/profile-timeline.html',
+                templateUrl: '/app/views/profile-timeline.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -504,7 +504,7 @@ materialAdmin
 
             .state ('pages.profile.profile-photos', {
                 url: '/profile-photos',
-                templateUrl: 'views/profile-photos.html',
+                templateUrl: '/app/views/profile-photos.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
                         return $ocLazyLoad.load ([
@@ -528,7 +528,7 @@ materialAdmin
         
             .state ('pages.profile.profile-connections', {
                 url: '/profile-connections',
-                templateUrl: 'views/profile-connections.html'
+                templateUrl: '/app/views/profile-connections.html'
             })
         
         
@@ -536,12 +536,12 @@ materialAdmin
         
             .state ('pages.listview', {
                 url: '/listview',
-                templateUrl: 'views/list-view.html'
+                templateUrl: '/app/views/list-view.html'
             })
         
             .state ('pages.messages', {
                 url: '/messages',
-                templateUrl: 'views/messages.html'
+                templateUrl: '/app/views/messages.html'
             })
         
             
@@ -551,7 +551,7 @@ materialAdmin
             //------------------------------
             .state ('breadcrumb-demo', {
                 url: '/breadcrumb-demo',
-                templateUrl: 'views/breadcrumb-demo.html'
+                templateUrl: '/app/views/breadcrumb-demo.html'
             })
 
     });
