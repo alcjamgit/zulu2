@@ -404,7 +404,10 @@ materialAdmin
                 options.success(result.data);
             });
         }
-
+        vm.showChart = function (sel) {
+            alert("Work in progress");
+            //alert(sel.securityCode);
+        };
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
             dataSource: {
@@ -464,7 +467,7 @@ materialAdmin
         //Context menu
         vm.menuOpen = 0;
         vm.onSelect = function (e) {
-            console.log("Test");
+
             vm.selected = $(e.item).children(".k-link").text();
         };
 
@@ -584,6 +587,66 @@ materialAdmin
             vm.theDate = dataItem.startDate;
         };
     })
+
+      .controller('watchlistTestCtrl', function (watchlistService) {
+          var vm = this;
+          vm.localData = [];
+          var readDataMain = function (options) {
+              return watchlistService.getWatchlist().then(function (result) {
+                  options.success(result.data);
+                  vm.localData = result.data;
+              });
+          };
+          var newData = { id: 4, name: "Test Add", type: "SPA3" };
+          vm.addData = function () {
+              alert("pushing data");
+              vm.localData.push(newData);
+              alert(newData);
+              alert("done pushing data");
+          };
+          vm.gridData = {
+              transport: {
+                  read: readDataMain,
+              },
+              schema: {
+                  model: {
+                      fields: {
+                          id: { type: "number" },
+                          name: { type: "string" },
+                          type: { type: "string" },
+                      }
+                  }
+              },
+              pageSize: 20
+          };
+
+          vm.gridColumns = [
+            { field: "id", title: "Id", width: 120 },
+            { field: "name", title: "Name" },
+            { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+          ];
+
+          //http://ernpac.net/?p=566
+          vm.mainGridOptions = {
+              toolbar: ["create"],
+              editable: "popup",
+              height: 600,
+              scrollable: true,
+              sortable: true,
+              groupable: true,
+              filterable: true,
+              selectable: true,
+              navigatable: true,
+              pageable: {
+                  input: true,
+                  numeric: true
+              },
+              dataBound: function () {
+                  $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
+              }
+          };
+      })
     //=================================================
     // SCAN PROFILES
     //=================================================
@@ -707,6 +770,7 @@ materialAdmin
                 options.success(result.data);
             });
         };
+
 
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {

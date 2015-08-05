@@ -99,7 +99,11 @@ materialAdmin
                         templateUrl: '/app/views/active-portfolio-adjustments.html',
                         controller: 'activePortfolioAdjustmentCtrl as vm',
                     })
-
+            .state('portfolio.portfolios', {
+                url: '/portfolios',
+                templateUrl: '/app/views/watchlist-grid-test.html',
+                controller: 'watchlistTestCtrl as vm',
+            })
             .state('portfolio.active-portfolio-transactions', {
                 url: '/transactions',
                 templateUrl: '/app/views/active-portfolio-transactions.html',

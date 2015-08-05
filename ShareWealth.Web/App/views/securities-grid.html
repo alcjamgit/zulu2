@@ -33,7 +33,7 @@
 
 </div>
 
-<kendo-grid options="vm.mainGridOptions">
+<kendo-grid options="vm.mainGridOptions" k-on-change="selected = data">
 </kendo-grid>
 
 <!--http://demos.telerik.com/kendo-ui/menu/context-menu-angular-->
@@ -42,8 +42,9 @@
     k-on-open="menuOpen = menuOpen + 1"
     k-on-close="menuOpen = menuOpen - 1"
     k-on-select="onSelect(kendoEvent)">
+    
 
-    <li><i class="fa fa-line-chart"></i> Open Chart</li>
+    <li ng-click="vm.showChart(selected)"><i class="fa fa-line-chart"></i> Open Chart</li>
     <li>Add to Watchlist</li>
     
 </ul>
