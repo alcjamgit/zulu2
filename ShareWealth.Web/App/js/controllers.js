@@ -584,6 +584,52 @@ materialAdmin
             vm.theDate = dataItem.startDate;
         };
     })
+      .controller('watchlistTestCtrl', function (watchlistService) {
+          var vm = this;
+          var readDataMain = function (options) {
+              return watchlistService.getWatchlist().then(function (result) {
+                  options.success(result.data);
+              });
+          };
+
+
+          //http://ernpac.net/?p=566
+          vm.mainGridOptions = {
+              dataSource: {
+                  transport: {
+                      read: readDataMain,
+                  },
+                  schema: {
+                      model: {
+                          fields: {
+                              id: { type: "number" },
+                              name: { type: "string" },
+                              type: { type: "string" },
+                          }
+                      }
+                  },
+                  pageSize: 20
+              },
+              toolbar: ["create"],
+              editable: "popup",
+              height: 600,
+              scrollable: true,
+              sortable: true,
+              groupable: true,
+              filterable: true,
+              selectable: true,
+              navigatable: true,
+              pageable: {
+                  input: true,
+                  numeric: true
+              },
+              columns: [
+                  { field: "id", title: "Id", width: 120 },
+                  { field: "name", title: "Name" },
+                  { field: "type", title: "Type", width: 160, filterable: { multi: true } },
+              ],
+          };
+      })
     //=================================================
     // SCAN PROFILES
     //=================================================

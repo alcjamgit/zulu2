@@ -1,0 +1,17 @@
+
+<div kendo-grid
+     k-data-source="vm.gridData"
+     k-columns="vm.gridColumns"
+     k-selectable="true"
+     k-on-change="selected = data"></div>
+
+<p ng-show="selected">
+    <label>Id: <input ng-model="selected.id" /></label>
+    <br />
+    <label>Name: <input ng-model="selected.name" /></label>
+    <label>Name: <input ng-model="selected.type" /></label>
+</p>
+
+<button kendo-button ng-click="update()">
+    Update from code
+</button>
