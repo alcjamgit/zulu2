@@ -16,6 +16,7 @@ namespace ShareWealth.Web.Controllers
         {
             _data = new DataService();
         }
+
         // GET: api/WatchlistSecurities
         public IEnumerable<WatchlistSecurities> Get()
         {
@@ -29,8 +30,10 @@ namespace ShareWealth.Web.Controllers
         }
 
         // POST: api/WatchlistSecurities
-        public void Post([FromBody]string value)
+        [Route("api/watchlists/add")]
+        public string Post([FromBody]Watchlist wl)
         {
+            return "value";
         }
 
         // PUT: api/WatchlistSecurities/5
