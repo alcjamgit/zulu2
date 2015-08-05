@@ -64,14 +64,25 @@ materialAdmin
     // =========================================================================
 
     .factory('scanService', ['$http', function ($http) {
-
+        function addScanProfile(data)
+        {
+            return   $http.post('api/scanprofiles/add', JSON.stringify(data), {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            ).success(function (data) {
+                alert('ahoo');
+            });
+        };
         return {
             getScanProfiles: function () {
                 return $http.get('api/scanProfiles')
             },
             getDailyScans: function () {
                 return $http.get('api/scanResults')
-            }
+            },
+            addScanProfile: addScanProfile
         }
     }])
     // =========================================================================

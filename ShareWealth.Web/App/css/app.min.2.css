@@ -1,3 +1,7 @@
+.btn-link:hover {
+  color: #0a0a0a;
+}
+
 .btn-link:hover,
 .btn-link:active,
 .btn-link:focus {

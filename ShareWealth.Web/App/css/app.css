@@ -9946,6 +9946,15 @@ body #content {
     background-size: 24px 24px;
   }
 }
+.top-menu > li > a.tm-share {
+  background-image: url("../img/icons/share.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .top-menu > li > a.tm-share {
+    background-image: url("../img/icons/share@2x.png");
+    background-size: 24px 24px;
+  }
+}
 .top-menu > li:before {
   top: -1px !important;
 }

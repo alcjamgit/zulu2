@@ -25,6 +25,12 @@ namespace ShareWealth.Web.Controllers
         {
             return _data.GetScanProfiles();
         }
+        
+        [Route("api/scanprofiles/add")]
+        public HttpResponseMessage PostScanProfiles([FromBody] ScanProfile scanProfile)
+        {
+            return new HttpResponseMessage(HttpStatusCode.Created);
+        }
 
         [Route("api/scanresults")]
         public IEnumerable<ScanResult> GetScanResults()

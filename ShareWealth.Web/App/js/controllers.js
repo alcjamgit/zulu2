@@ -594,6 +594,11 @@ materialAdmin
                 options.success(result.data);
             });
         };
+        var addData = function (options) {
+            return scanService.addScanProfile(options.data).then(function (result) {
+                //options.success(result.data);
+            });
+        };
         var readDataSecurities = function (options) {
             return watchlistService.getWatchlistSecurities().then(function (result) {
                 options.success(result.data);
@@ -606,6 +611,7 @@ materialAdmin
             dataSource: {
                 transport: {
                     read: readDataMain,
+                    create: addData
                 },
                 schema: {
                     model: {

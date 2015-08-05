@@ -209,6 +209,8 @@
     <Content Include="App\areas\app-main\app.js" />
     <Content Include="App\areas\app-main\config.js" />
     <Content Include="App\img\etf_600x600.png" />
+    <Content Include="App\img\icons\share.png" />
+    <Content Include="App\img\icons\share%402x.png" />
     <Content Include="App\img\my_logo.png" />
     <Content Include="App\img\spa3_600x600.png" />
     <Content Include="App\img\spa3_box.png" />
