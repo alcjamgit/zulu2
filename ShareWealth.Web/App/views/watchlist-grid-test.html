@@ -1,5 +1,6 @@
 
 <div kendo-grid
+     options ="vm.mainGridOptions"
      k-data-source="vm.gridData"
      k-columns="vm.gridColumns"
      k-selectable="true"
@@ -12,6 +13,18 @@
     <label>Name: <input ng-model="selected.type" /></label>
 </p>
 
-<button kendo-button ng-click="update()">
+<button kendo-button ng-click="update('selected')">
     Update from code
 </button>
+
+<!--http://demos.telerik.com/kendo-ui/menu/context-menu-angular-->
+<ul kendo-context-menu
+    k-filter="'.hasMenu'"
+    k-on-open="menuOpen = menuOpen + 1"
+    k-on-close="menuOpen = menuOpen - 1"
+    k-on-select="onSelect(kendoEvent)">
+
+    <li><i class="fa fa-line-chart"></i> Open Chart</li>
+    <li ng-click="vm.addData()">Add to Watchlist</li>
+
+</ul>
