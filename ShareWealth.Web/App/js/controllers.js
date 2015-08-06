@@ -597,6 +597,13 @@ materialAdmin
                   vm.localData = result.data;
               });
           };
+          var addData = function (options) {
+                return watchlistService.addWatchlist(options.data).then(function (result) {
+                    alert('success');
+                    options.success(result.data);
+                });
+          };
+
           var newData = { id: 4, name: "Test Add", type: "SPA3" };
           vm.addData = function () {
               alert("pushing data");
@@ -604,21 +611,24 @@ materialAdmin
               alert(newData);
               alert("done pushing data");
           };
-          vm.gridData = {
+
+          vm.gridData = new kendo.data.DataSource({
               transport: {
                   read: readDataMain,
+                  create: addData
               },
               schema: {
                   model: {
+                      id: "id",
                       fields: {
-                          id: { type: "number" },
+                          id: { type: "number", editable: false, nullable: true },
                           name: { type: "string" },
                           type: { type: "string" },
                       }
                   }
               },
               pageSize: 20
-          };
+          });
 
           vm.gridColumns = [
             { field: "id", title: "Id", width: 120 },
@@ -657,11 +667,7 @@ materialAdmin
                 options.success(result.data);
             });
         };
-        var addData = function (options) {
-            return scanService.addScanProfile(options.data).then(function (result) {
-                //options.success(result.data);
-            });
-        };
+
         var readDataSecurities = function (options) {
             return watchlistService.getWatchlistSecurities().then(function (result) {
                 options.success(result.data);
@@ -674,7 +680,6 @@ materialAdmin
             dataSource: {
                 transport: {
                     read: readDataMain,
-                    create: addData
                 },
                 schema: {
                     model: {

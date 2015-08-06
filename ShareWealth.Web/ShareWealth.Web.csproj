@@ -188,7 +188,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\PortfolioAdjustment.cs" />
@@ -6321,6 +6320,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSpa.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShareWealth.Core\ShareWealth.Core.csproj">
+      <Project>{cf55fe68-a118-460d-ae32-76fbfde1dbf2}</Project>
+      <Name>ShareWealth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShareWealth.Infrastructure\ShareWealth.Infrastructure.csproj">
+      <Project>{76f8b3e3-8910-4050-a32c-7b9340118386}</Project>
+      <Name>ShareWealth.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

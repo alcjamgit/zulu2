@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareWealth.Core
+namespace ShareWealth.Core.Entities
 {
-    public class Class1
+    public class Stock
     {
     }
 }

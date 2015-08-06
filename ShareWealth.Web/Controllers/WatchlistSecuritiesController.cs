@@ -31,9 +31,9 @@ namespace ShareWealth.Web.Controllers
 
         // POST: api/WatchlistSecurities
         [Route("api/watchlists/add")]
-        public string Post([FromBody]Watchlist wl)
+        public HttpResponseMessage Post([FromBody]Watchlist wl)
         {
-            return "value";
+            return new HttpResponseMessage(HttpStatusCode.Created);
         }
 
         // PUT: api/WatchlistSecurities/5

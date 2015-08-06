@@ -30,13 +30,34 @@ materialAdmin
     // =========================================================================
 
     .service('watchlistService', ['$http', function ($http) {
-
+        function addWatchlist(data) {
+            return $http.post('api/watchlists/add', JSON.stringify(data), {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            ).success(function (data) {
+                alert('ahoo');
+            });
+        };
         return {
             getWatchlist: function () {
                 return $http.get('api/watchlist');
             },
             getWatchlistSecurities: function () {
                 return $http.get('api/watchlistSecurities');
+            },
+            addWatchlist: function(data) {
+                //return $http.get('api/watchlist');
+                return $http.post('api/watchlists/add', JSON.stringify(data), {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+                ).success(function (data) {
+                    alert('ahoo');
+                    return data;
+                });
             }
         }
     }])
@@ -66,7 +87,7 @@ materialAdmin
     .factory('scanService', ['$http', function ($http) {
         function addScanProfile(data)
         {
-            return   $http.post('api/scanprofiles/add', JSON.stringify(data), {
+            return   $http.post('api/watchlists/add', JSON.stringify(data), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
