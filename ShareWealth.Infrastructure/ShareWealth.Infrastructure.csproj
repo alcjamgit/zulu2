@@ -55,14 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201508060514431_Init.cs" />
-    <Compile Include="Migrations\201508060514431_Init.Designer.cs">
-      <DependentUpon>201508060514431_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508060716441_Update001.cs" />
-    <Compile Include="Migrations\201508060716441_Update001.Designer.cs">
-      <DependentUpon>201508060716441_Update001.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,14 +73,6 @@
       <Project>{cf55fe68-a118-460d-ae32-76fbfde1dbf2}</Project>
       <Name>ShareWealth.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508060514431_Init.resx">
-      <DependentUpon>201508060514431_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508060716441_Update001.resx">
-      <DependentUpon>201508060716441_Update001.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
