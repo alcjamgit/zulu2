@@ -11,7 +11,7 @@ namespace ShareWealth.Infrastructure.DataLayer
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("swscon", throwIfV1Schema: false)
         {
         }
         public DbSet<Security> Securities { get; set; }

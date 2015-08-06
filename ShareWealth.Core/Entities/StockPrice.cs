@@ -9,6 +9,7 @@ namespace ShareWealth.Core.Entities
 {
     public class StockPrice
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public int SecurityId { get; set; }
         public DateTime Date { get; set; }
