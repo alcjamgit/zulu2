@@ -599,17 +599,8 @@ materialAdmin
           };
           var addData = function (options) {
                 return watchlistService.addWatchlist(options.data).then(function (result) {
-                    alert('success');
                     options.success(result.data);
                 });
-          };
-
-          var newData = { id: 4, name: "Test Add", type: "SPA3" };
-          vm.addData = function () {
-              alert("pushing data");
-              vm.localData.push(newData);
-              alert(newData);
-              alert("done pushing data");
           };
 
           vm.gridData = new kendo.data.DataSource({
@@ -938,7 +929,7 @@ materialAdmin
         };
 
         vm.showRiskOptions = function () {
-            if (vm.profile.system === 'SPA3') {
+            if (vm.profile.system === 'SPA3') { {get;}
                 return true;
             }
             return false;

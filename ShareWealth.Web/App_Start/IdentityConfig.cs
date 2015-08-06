@@ -12,6 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using ShareWealth.Web.Models;
 using ShareWealth.Core.Entities;
+using ShareWealth.Infrastructure.DataLayer;
 
 namespace ShareWealth.Web
 {
@@ -55,10 +56,10 @@ namespace ShareWealth.Web
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configure user lockout defaults

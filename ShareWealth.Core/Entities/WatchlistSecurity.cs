@@ -7,18 +7,15 @@ using System.Threading.Tasks;
 
 namespace ShareWealth.Core.Entities
 {
-    public class StockPrice
+    public class WatchlistSecurity
     {
         public int Id { get; set; }
+        public int WatchlistId { get; set; }
         public int SecurityId { get; set; }
-        public DateTime Date { get; set; }
-        public double Open { get; set; }
-        public double High { get; set; }
-        public double Low { get; set; }
-        public double Close { get; set; }
 
         [ForeignKey("SecurityId")]
-        public virtual Security Security { get; set; }
-
+        public Security Security { get; set; }
+        [ForeignKey("WatchlistId")]
+        public Watchlist Watchlist { get; set; }
     }
 }

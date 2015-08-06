@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace ShareWealth.Web.Controllers
@@ -25,11 +26,13 @@ namespace ShareWealth.Web.Controllers
         {
             return _data.GetScanProfiles();
         }
-        
+
         [Route("api/scanprofiles/add")]
         public HttpResponseMessage PostScanProfiles([FromBody] ScanProfile scanProfile)
         {
-            return new HttpResponseMessage(HttpStatusCode.Created);
+            scanProfile.Id = 75;
+            return Request.CreateResponse(HttpStatusCode.Created, scanProfile);
+
         }
 
         [Route("api/scanresults")]

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShareWealth.Core.Entities
 {
-    public class Watchlist
+    public class Security
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
+        public string SecurityCode { get; set; }
+        public string SecurityName { get; set; }
+        public string Exchange { get; set; }
 
+        public virtual ICollection<StockPrice> StockPrices { get; set; }
         public virtual ICollection<WatchlistSecurity> WatchlistSecurities { get; set; }
     }
 }

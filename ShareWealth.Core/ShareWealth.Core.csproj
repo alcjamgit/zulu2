@@ -61,13 +61,13 @@
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Portfolio.cs" />
     <Compile Include="Entities\PortfolioAdjustment.cs" />
+    <Compile Include="Entities\ScanResult.cs" />
     <Compile Include="Entities\ScanProfile.cs" />
-    <Compile Include="Entities\ScanProfileSettings.cs" />
-    <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Entities\Security.cs" />
     <Compile Include="Entities\StockPrice.cs" />
     <Compile Include="Entities\StockTransaction.cs" />
     <Compile Include="Entities\Watchlist.cs" />
-    <Compile Include="Entities\WatchlistSecurities.cs" />
+    <Compile Include="Entities\WatchlistSecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

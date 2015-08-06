@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using ShareWealth.Core.Entities;
 
-namespace ShareWealth.Web.Models
+namespace ShareWealth.Infrastructure.DataLayer
 {
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -14,6 +14,15 @@ namespace ShareWealth.Web.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Security> Securities { get; set; }
+        public DbSet<StockPrice> StockPrices { get; set; }
+        public DbSet<Watchlist> Watchlists { get; set; }
+        public DbSet<WatchlistSecurity> WatchlistSecurities { get; set; }
+        public DbSet<StockTransaction> StockTransactions { get; set; }
+        public DbSet<ScanProfile> ScanProfiles { get; set; }
+        public DbSet<ScanResult> ScanResults { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<PortfolioAdjustment> PortfolioAdjustments { get; set; }
 
         public static ApplicationDbContext Create()
         {

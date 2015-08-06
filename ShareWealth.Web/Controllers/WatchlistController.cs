@@ -81,10 +81,13 @@ namespace ShareWealth.Web.Controllers
             return _watchlistData;
         }
 
-        // GET: api/Watchlist/5
-        public string Get(int id)
+        [Route("api/watchlist/add")]
+        public HttpResponseMessage Post([FromBody] Watchlist watchlist)
         {
-            return "value";
+            watchlist.Id = 66;
+            //watchlist.Name = "Changed in the server";
+            var response = Request.CreateResponse(HttpStatusCode.Created, watchlist);
+            return response;
         }
 
         // POST: api/Watchlist
