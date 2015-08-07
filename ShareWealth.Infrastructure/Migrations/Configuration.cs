@@ -33,7 +33,7 @@ namespace ShareWealth.Infrastructure.Migrations
             SeedScanProfiles(context);
             SeedScanResults(context);
             SeedStockTransaction(context);
-            SeedStockPrice(context);
+            //SeedStockPrice(context);
 
             context.SaveChanges();
         }

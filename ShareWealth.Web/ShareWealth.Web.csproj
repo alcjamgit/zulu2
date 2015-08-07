@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\PortfolioAdjustmentController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\PriceDataController.cs" />
     <Compile Include="Controllers\ScanController.cs" />
     <Compile Include="Controllers\SecurityExtendedController.cs" />
@@ -241,7 +242,7 @@
     <Content Include="App\views\scan-profiles.html" />
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
-    <Content Include="App\views\watchlist-grid-test.html" />
+    <Content Include="App\views\portfolioGrid.html" />
     <Content Include="favicon.ico" />
     <Content Include="App\404.html" />
     <Content Include="App\css\app.css" />

@@ -397,15 +397,20 @@ materialAdmin
     //=================================================
     // SECURITY GRID
     //=================================================
-    .controller('securitiesGridCtrl', function (securityService) {
+    .controller('securitiesGridCtrl', function (securityService, $state) {
         var vm = this;
         var readData = function (options) {
             return securityService.getExtendedSecurities().then(function (result) {
                 options.success(result.data);
             });
         }
-        vm.showChart = function (sel) {
-            alert("Work in progress");
+        vm.showChart = function (selected) {
+            alert(selected.securityCode);
+            $state.go('stock-chart');
+            //alert(sel.securityCode);
+        };
+         vm.addToWatchlist = function (selected) {
+            alert(selected.securityCode);
             //alert(sel.securityCode);
         };
         //http://ernpac.net/?p=566
@@ -929,7 +934,7 @@ materialAdmin
         };
 
         vm.showRiskOptions = function () {
-            if (vm.profile.system === 'SPA3') { {get;}
+            if (vm.profile.system === 'SPA3'){
                 return true;
             }
             return false;
@@ -1096,4 +1101,66 @@ materialAdmin
         };
 
 
+    })
+    .controller('portfolioGridCtrl', function(portfolioService){
+         var vm = this;
+          
+          var readDataMain = function (options) {
+              return portfolioService.getPortfolios().then(function (result) {
+                  options.success(result.data);
+                  vm.localData = result.data;
+              });
+          };
+          //var addData = function (options) {
+          //      return watchlistService.addWatchlist(options.data).then(function (result) {
+          //          options.success(result.data);
+          //      });
+          //};
+
+          vm.gridData = new kendo.data.DataSource({
+              transport: {
+                  read: readDataMain,
+                  //create: addData
+              },
+              schema: {
+                  model: {
+                      id: "id",
+                      fields: {
+                          id: { type: "string", editable: false, nullable: true },
+                          name: { type: "string" },
+                          system: { type: "string" },
+                          currency: { type: "string" },
+                      }
+                  }
+              },
+              pageSize: 20
+          });
+
+          vm.gridColumns = [
+            //{ field: "id", title: "Id", width: 120 },
+            { field: "name", title: "Name" },
+            { field: "currency", title: "Currency" },
+            { field: "system", title: "System", width: 160, filterable: { multi: true } },
+          ];
+
+          //http://ernpac.net/?p=566
+          vm.mainGridOptions = {
+              toolbar: ["create"],
+              editable: "popup",
+              height: 600,
+              scrollable: true,
+              sortable: true,
+              groupable: true,
+              filterable: true,
+              selectable: true,
+              navigatable: true,
+              pageable: {
+                  input: true,
+                  numeric: true
+              },
+              dataBound: function () {
+                  $(".k-grid-content tbody").find("tr").addClass("hasMenu");
+
+              }
+          };
     })

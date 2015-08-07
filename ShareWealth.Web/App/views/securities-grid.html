@@ -37,14 +37,16 @@
 </kendo-grid>
 
 <!--http://demos.telerik.com/kendo-ui/menu/context-menu-angular-->
-<ul kendo-context-menu
+<ul class = "list-group"
+    kendo-context-menu
     k-filter="'.hasMenu'"
     k-on-open="menuOpen = menuOpen + 1"
     k-on-close="menuOpen = menuOpen - 1"
-    k-on-select="onSelect(kendoEvent)">
-    
+    k-on-select="onSelect(kendoEvent)"
+    k-on-change="selected = data">
 
-    <li ng-click="vm.showChart(selected)"><i class="fa fa-line-chart"></i> Open Chart</li>
-    <li>Add to Watchlist</li>
-    
+
+    <li class = "list-group-item" ng-click="vm.showChart(selected)"><i class="fa fa-line-chart"></i> Open Chart</li>
+    <li class="list-group-item" ng ng-click="vm.addToWatchlist(selected)"><i class="md md-remove-red-eye"></i> Add to Watchlist</li>
+
 </ul>

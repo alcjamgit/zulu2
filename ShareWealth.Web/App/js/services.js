@@ -73,9 +73,13 @@ materialAdmin
             function transactions(){
                 return $http.get('api/stockTransactions');
             };
+            function portfolios(){
+                return $http.get('api/portfolios');
+            };
             return {
                 getAdjustments: adjustments,
-                getTransactions: transactions
+                getTransactions: transactions,
+                getPortfolios: portfolios
             }
         }])
     

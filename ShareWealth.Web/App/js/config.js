@@ -101,8 +101,8 @@ materialAdmin
                     })
             .state('portfolio.portfolios', {
                 url: '/portfolios',
-                templateUrl: '/app/views/watchlist-grid-test.html',
-                controller: 'watchlistTestCtrl as vm',
+                templateUrl: '/app/views/portfolioGrid.html',
+                controller: 'portfolioGridCtrl as vm',
             })
             .state('portfolio.active-portfolio-transactions', {
                 url: '/transactions',
