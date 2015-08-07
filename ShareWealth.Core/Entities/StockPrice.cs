@@ -12,7 +12,7 @@ namespace ShareWealth.Core.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public int SecurityId { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime TradingDate { get; set; }
         public double Open { get; set; }
         public double High { get; set; }
         public double Low { get; set; }

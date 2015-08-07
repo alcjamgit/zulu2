@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.13.2.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,9 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201508061441419_init.cs" />
-    <Compile Include="Migrations\201508061441419_init.Designer.cs">
-      <DependentUpon>201508061441419_init.cs</DependentUpon>
+    <Compile Include="Migrations\201508070506360_init.cs" />
+    <Compile Include="Migrations\201508070506360_init.Designer.cs">
+      <DependentUpon>201508070506360_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508070723579_update003.cs" />
+    <Compile Include="Migrations\201508070723579_update003.Designer.cs">
+      <DependentUpon>201508070723579_update003.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,10 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Migrations\SeedData\stockPrice.csv" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareWealth.Core\ShareWealth.Core.csproj">
@@ -79,8 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508061441419_init.resx">
-      <DependentUpon>201508061441419_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508070506360_init.resx">
+      <DependentUpon>201508070506360_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508070723579_update003.resx">
+      <DependentUpon>201508070723579_update003.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

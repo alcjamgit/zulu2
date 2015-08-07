@@ -11,6 +11,8 @@ namespace ShareWealth.Web.Controllers
         // GET: App
         public ActionResult Index()
         {
+
+
             return View();
         }
     }

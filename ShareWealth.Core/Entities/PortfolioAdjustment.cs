@@ -9,10 +9,10 @@ namespace ShareWealth.Core.Entities
 {
     public class PortfolioAdjustment
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime Date { get; set; }
         public string Type { get; set; }
-        public int PortfolioId { get; set; }
+        public Guid PortfolioId { get; set; }
         public double Amount { get; set; }
 
         [ForeignKey("PortfolioId")]

@@ -9,8 +9,8 @@ namespace ShareWealth.Core.Entities
 {
     public class WatchlistSecurity
     {
-        public int Id { get; set; }
-        public int WatchlistId { get; set; }
+        public Guid Id { get; set; }
+        public Guid WatchlistId { get; set; }
         public int SecurityId { get; set; }
 
         [ForeignKey("SecurityId")]

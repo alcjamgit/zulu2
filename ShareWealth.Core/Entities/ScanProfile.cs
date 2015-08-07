@@ -8,7 +8,7 @@ namespace ShareWealth.Core.Entities
 {
     public class ScanProfile
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string System { get; set; }
         public bool Locked { get; set; }
@@ -26,6 +26,7 @@ namespace ShareWealth.Core.Entities
         public string PeriodType { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
 
         public virtual ICollection<ScanResult> ScanResults { get; set; }
     }

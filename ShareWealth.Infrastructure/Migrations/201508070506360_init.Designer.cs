@@ -13,7 +13,7 @@ namespace ShareWealth.Infrastructure.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201508061441419_init"; }
+            get { return "201508070506360_init"; }
         }
         
         string IMigrationMetadata.Source

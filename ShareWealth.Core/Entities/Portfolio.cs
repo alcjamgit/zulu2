@@ -10,7 +10,7 @@ namespace ShareWealth.Core.Entities
 {
     public class Portfolio
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string System { get; set; }
         public string Currency { get; set; }

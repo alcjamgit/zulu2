@@ -11,10 +11,10 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.PortfolioAdjustments",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Date = c.DateTime(nullable: false),
                         Type = c.String(),
-                        PortfolioId = c.Int(nullable: false),
+                        PortfolioId = c.Guid(nullable: false),
                         Amount = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -25,7 +25,7 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.Portfolios",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         System = c.String(),
                         Currency = c.String(),
@@ -118,7 +118,7 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.ScanProfiles",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         System = c.String(),
                         Locked = c.Boolean(nullable: false),
@@ -141,14 +141,14 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.ScanResults",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         SecurityCode = c.String(),
                         SignalDate = c.DateTime(nullable: false),
                         ActionDate = c.DateTime(nullable: false),
                         SignalName = c.String(),
                         SignalType = c.String(),
                         SignalPrice = c.Double(nullable: false),
-                        ScanProfileId = c.Int(nullable: false),
+                        ScanProfileId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.ScanProfiles", t => t.ScanProfileId, cascadeDelete: true)
@@ -195,8 +195,8 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.WatchlistSecurities",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        WatchlistId = c.Int(nullable: false),
+                        Id = c.Guid(nullable: false),
+                        WatchlistId = c.Guid(nullable: false),
                         SecurityId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -209,7 +209,7 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.Watchlists",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Type = c.String(),
                     })
@@ -219,20 +219,23 @@ namespace ShareWealth.Infrastructure.Migrations
                 "dbo.StockTransactions",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         TransactionDate = c.DateTime(nullable: false),
-                        SecurityCode = c.String(),
+                        SecurityId = c.Int(nullable: false),
                         SignalName = c.String(),
                         TransactionType = c.String(),
                         Quantity = c.Int(nullable: false),
                         Price = c.Double(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Securities", t => t.SecurityId, cascadeDelete: true)
+                .Index(t => t.SecurityId);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.StockTransactions", "SecurityId", "dbo.Securities");
             DropForeignKey("dbo.WatchlistSecurities", "WatchlistId", "dbo.Watchlists");
             DropForeignKey("dbo.WatchlistSecurities", "SecurityId", "dbo.Securities");
             DropForeignKey("dbo.StockPrices", "SecurityId", "dbo.Securities");
@@ -243,6 +246,7 @@ namespace ShareWealth.Infrastructure.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.PortfolioAdjustments", "PortfolioId", "dbo.Portfolios");
+            DropIndex("dbo.StockTransactions", new[] { "SecurityId" });
             DropIndex("dbo.WatchlistSecurities", new[] { "SecurityId" });
             DropIndex("dbo.WatchlistSecurities", new[] { "WatchlistId" });
             DropIndex("dbo.StockPrices", new[] { "SecurityId" });
