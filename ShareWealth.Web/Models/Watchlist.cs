@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace ShareWealth.Web.Models
 {
-    public class Watchlist
+    public class WatchlistVm
     {
-        public int Id { get; set; }
+        public Guid? Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Type { get; set; }
     }

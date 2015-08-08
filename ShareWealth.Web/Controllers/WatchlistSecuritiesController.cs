@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ShareWealth.Infrastructure.DataLayer;
 
 namespace ShareWealth.Web.Controllers
 {
@@ -15,12 +16,26 @@ namespace ShareWealth.Web.Controllers
         public WatchlistSecuritiesController()
         {
             _data = new DataService();
+            _db = new ApplicationDbContext();
+            _db.Configuration.ProxyCreationEnabled = false;
         }
+        private ApplicationDbContext _db;
 
         // GET: api/WatchlistSecurities
-        public IEnumerable<WatchlistSecurities> Get()
+        public HttpResponseMessage Get()
         {
-            return _data.GetWatchlistSecurities();
+            var sec = from ws in _db.WatchlistSecurities
+                      select new WatchlistSecurities { 
+                          Id = ws.Id,
+                          SecurityId = ws.SecurityId,
+                          SecurityCode = ws.Security.SecurityCode,
+                          SecurityName = ws.Security.SecurityName,
+                          WatchlistId = ws.WatchlistId,
+                          Exchange = ws.Security.Exchange
+                      };
+
+            var response = Request.CreateResponse(HttpStatusCode.OK, sec.ToList());
+            return response;
         }
 
         // GET: api/WatchlistSecurities/5
@@ -31,7 +46,7 @@ namespace ShareWealth.Web.Controllers
 
         // POST: api/WatchlistSecurities
         [Route("api/watchlists/add")]
-        public HttpResponseMessage Post([FromBody]Watchlist wl)
+        public HttpResponseMessage Post([FromBody]WatchlistVm wl)
         {
             return new HttpResponseMessage(HttpStatusCode.Created);
         }

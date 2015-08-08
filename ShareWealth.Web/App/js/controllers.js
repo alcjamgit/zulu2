@@ -488,6 +488,17 @@ materialAdmin
                 options.success(result.data);
             });
         };
+        var addDataMain = function (options) {
+            return watchlistService.addWatchlist(options.data).then(function (result) {
+                options.success(result.data);
+            }, function (error) {
+                
+                alert("you failed bozo b" + error.errors[0].errorMessage);
+            });
+        };
+
+
+
         var readDataDetails = function (options) {
             return watchlistService.getWatchlistSecurities().then(function (result) {
                 options.success(result.data);
@@ -499,13 +510,15 @@ materialAdmin
             dataSource: {
                 transport: {
                     read: readDataMain,
+                    create: addDataMain,
                 },
                 schema: {
                     model: {
+                        id: "id",
                         fields: {
-                            id: { type: "number" },
-                            name: { type: "string" },
-                            type: { type: "string" },
+                            id: { type: "string", editable: false },
+                            name: { type: "string", validation : {required: true}},
+                            type: { type: "string", editable: false, defaultValue: "User Defined" },
                         }
                     }
                 },
@@ -540,23 +553,13 @@ materialAdmin
                     },
                     schema: {
                         model: {
+                            id: "id",
                             fields: {
-                                id: { type: "number" },
+                                id: { type: "string" },
                                 securityCode: { type: "string" },
                                 securityName: { type: "string" },
                                 exchange: { type: "string" },
-                                symbol: { type: "string" },
-                                type: { type: "string" },
-                                gicsSector: { type: "string" },
-                                icbIndustry: { type: "string" },
-                                open: { type: "number" },
-                                high: { type: "number" },
-                                low: { type: "number" },
-                                close: { type: "number" },
-                                volume: { type: "number" },
-                                lastDate: { type: "date" },
-                                marketCap: { type: "number" },
-                                watchlistId: { type: "number" }
+                                watchlistId: { type: "string" }
                             }
                         }
                     },
@@ -570,17 +573,13 @@ materialAdmin
                 navigatable: true,
                 pageable: {
                     input: true,
-                    numeric: true
+                    numeric: true,
                 },
                 columns: [
+                    { field: "id", title: "Id", width: 120 },
                     { field: "securityCode", title: "Security Code", width: 120 },
                     { field: "securityName", title: "Security Name" },
                     { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
-                    { field: "type", title: "Type", width: 160, filterable: { multi: true } },
-                    { field: "icbIndustry", title: "ICB Industry", width: 160, filterable: { multi: true } },
-                    { field: "close", title: "Closed Price", width: 120, format: "{0:c}", attributes: { style: "text-align:right;" } },
-                    { field: "volume", title: "Volume", width: 120, format: "{0:n}", attributes: { style: "text-align:right;" } },
-                    { field: "lastDate", title: "Last Date", width: 120, format: "{0:dd/MM/yyyy}", attributes: { style: "text-align:right;" } },
                 ],
                 dataBound: function () {
                     $(".k-grid-content tbody").find("tr").addClass("hasMenu");
@@ -619,7 +618,7 @@ materialAdmin
                       fields: {
                           id: { type: "number", editable: false, nullable: true },
                           name: { type: "string" },
-                          type: { type: "string" },
+                          type: { type: "string", editable: false, defaultValue: "User Defined" },
                       }
                   }
               },

@@ -5,8 +5,13 @@ using System.Web;
 
 namespace ShareWealth.Web.Models
 {
-    public class WatchlistSecurities : SecurityExtended
+    public class WatchlistSecurities
     {
-        public int WatchlistId { get; set; }
+        public Guid Id { get; set; }
+        public int SecurityId { get; set; }
+        public string SecurityCode { get; set; }
+        public string SecurityName { get; set; }
+        public string Exchange { get; set; }
+        public Guid WatchlistId { get; set; }
     }
 }

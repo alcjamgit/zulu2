@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using ShareWealth.Web.Filters;
 
 namespace ShareWealth.Web
 {
@@ -27,8 +28,7 @@ namespace ShareWealth.Web
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            //http://stackoverflow.com/questions/5769200/serialize-one-to-many-relationships-in-json-net
-            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            config.Filters.Add(new HandleApiExceptionAttribute());
 
         }
     }

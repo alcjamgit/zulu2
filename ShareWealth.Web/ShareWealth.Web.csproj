@@ -185,6 +185,7 @@
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\WatchlistController.cs" />
     <Compile Include="Controllers\WatchlistSecuritiesController.cs" />
+    <Compile Include="Filters\HandleApiExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
