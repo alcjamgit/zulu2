@@ -23,7 +23,7 @@
     <link href="~/app/vendors/bower_components/angular-loading-bar/src/loading-bar.css" rel="stylesheet">
     <link href="~/app/vendors/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="~/app/vendors/kendo-ui/styles/kendo.common-material.min.css" rel="stylesheet" />
-
+    
 
     <!-- CSS -->
     <link href="~/app/css/app.min.1.css" rel="stylesheet" id="app-level">
@@ -34,7 +34,8 @@
 </head>
 
 @*<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1' }">*@
-<body class="sw-toggled">
+<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1', 'modal-open': mactrl.sidebarToggle.left === true }">
+@*<body class="sw-toggled">*@
     @RenderBody()
     <header id="header" data-ng-include src="'includes/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
 
@@ -110,6 +111,7 @@
     <script src="~/app/vendors/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="~/app/vendors/bower_components/angular-loading-bar/src/loading-bar.js"></script>
     <script src="~/app/vendors/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="~/App/vendors/bower_components/angular-bootstrap-contextmenu/contextMenu.js"></script>
 
     <!-- Common Vendors -->
     <script src="~/app/vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>

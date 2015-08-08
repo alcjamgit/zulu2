@@ -7,20 +7,23 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using ShareWealth.Infrastructure.DataLayer;
 
 namespace ShareWealth.Web.Controllers
 {
     public class ScanController : ApiController
     {
+        private ApplicationDbContext _db;
         private DataService _data;
-
 
         public ScanController()
         {
             _data = new DataService();
+            _db = new ApplicationDbContext();
+            _db.Configuration.ProxyCreationEnabled = false;
         }
+        
 
-        // GET: api/Scan
         [Route("api/scanprofiles")]
         public IEnumerable<ScanProfile> GetScanProfiles()
         {
@@ -36,9 +39,13 @@ namespace ShareWealth.Web.Controllers
         }
 
         [Route("api/scanresults")]
-        public IEnumerable<ScanResult> GetScanResults()
+        public HttpResponseMessage GetScanResults()
         {
-            return _data.GetScanResults();
+            var scans = from s in _db.ScanResults
+                                            select s;
+            return Request.CreateResponse(HttpStatusCode.OK, scans);
+
+            //return _data.GetScanResults();
         }
         // GET: api/Scan/5
         public string Get(int id)

@@ -382,7 +382,7 @@ materialAdmin
     //=================================================
     .controller('securityExploreCtrl', function (securityService) {
         var vm = this;
-
+        
         vm.keyword = "";
 
         securityService.getSecurities().then(function (result) {
@@ -391,6 +391,27 @@ materialAdmin
         securityService.getWatchlist().then(function (result) {
             vm.watchlists = result.data;
         });
+
+        //vm.selected = 'None';
+        
+        vm.menuOptions = function (sec) {
+            return [
+                ['Open Chart', function ($itemScope) {
+                    alert('ahoy');
+                }],
+                null, // Dividier
+                ['Remove', function ($itemScope) {
+                    alert('hola ');
+                }]
+            ];
+            //return [
+            //    [function ($itemScope) {
+            //        return "John";
+            //    }, function ($itemScope) {
+            //        alert("Test");
+            //    }]
+            //];
+        };
 
     })
 
@@ -493,7 +514,7 @@ materialAdmin
                 options.success(result.data);
             }, function (error) {
                 
-                alert("you failed bozo b" + error.errors[0].errorMessage);
+                alert("Error: " + error.errors[0].errorMessage);
             });
         };
 
@@ -763,15 +784,19 @@ materialAdmin
 
 
     })
-    .controller('scanDailyCtrl', function(scanService){
+    .controller('scanDailyCtrl', function(scanService, $state){
         var vm = this;
         var readDataMain = function (options) {
             return scanService.getDailyScans().then(function (result) {
                 options.success(result.data);
             });
         };
-
-
+        vm.selected = {};
+        vm.createTransaction = function () {
+            alert(vm.selected.securityCode);
+            alert(vm.selected.id);
+            $state.go('home');
+        };
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
             dataSource: {
@@ -780,7 +805,9 @@ materialAdmin
                 },
                 schema: {
                     model: {
+                        id: "id",
                         fields: {
+                            id: {type:"string", editable: false},
                             securityCode: {type: "string"},
                             signalDate: { type: "date" },
                             actionDate: { type: "date" },
@@ -1110,11 +1137,10 @@ materialAdmin
                   vm.localData = result.data;
               });
           };
-          //var addData = function (options) {
-          //      return watchlistService.addWatchlist(options.data).then(function (result) {
-          //          options.success(result.data);
-          //      });
-          //};
+          vm.selected = {};
+          vm.showValue = function () {
+              alert(vm.selected.name);
+          };
 
           vm.gridData = new kendo.data.DataSource({
               transport: {

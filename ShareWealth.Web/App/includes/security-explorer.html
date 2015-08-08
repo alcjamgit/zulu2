@@ -14,7 +14,9 @@
     <div class="tab-content c-overflow h-100">
         <div role="tabpanel" class="tab-pane fade in active" id="friends">
             <div class="listview h-100">
-                <a class="lv-item" href="" ng-repeat="sec in vm.secResult | filter: { securityCode: vm.keyword } ">
+                <a class="lv-item" href=""
+                   ng-repeat="sec in vm.secResult | filter: { securityCode: vm.keyword } "
+                   context-menu="vm.menuOptions(sec)">
                     <div class="media">
 
                         <div class="pull-left p-relative">
@@ -48,4 +50,6 @@
             </div>
         </div>
     </div>
+
+ 
 </div>

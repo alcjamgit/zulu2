@@ -4,14 +4,14 @@
      k-data-source="vm.gridData"
      k-columns="vm.gridColumns"
      k-selectable="true"
-     k-on-change="selected = data"></div>
+     k-on-change="vm.selected = data"></div>
 
-<p ng-show="selected">
+<!--<p ng-show="selected">
     <label>Id: <input ng-model="selected.id" /></label>
     <br />
     <label>Name: <input ng-model="selected.name" /></label>
     <label>Name: <input ng-model="selected.system" /></label>
-</p>
+</p>-->
 
 <button kendo-button ng-click="update('selected')">
     Update from code
@@ -24,7 +24,7 @@
     k-on-close="menuOpen = menuOpen - 1"
     k-on-select="onSelect(kendoEvent)">
 
-    <li><i class="fa fa-line-chart"></i> Open Chart</li>
+    <li ng-click="vm.showValue(selected)"><i class="fa fa-line-chart"></i> Open Chart</li>
     <li ng-click="vm.addData()">Add to Watchlist</li>
 
 </ul>
