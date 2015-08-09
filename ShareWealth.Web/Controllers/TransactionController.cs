@@ -24,9 +24,21 @@ namespace ShareWealth.Web.Controllers
         }
         // GET: api/Transaction
         [Route("api/stockTransactions")]
-        public IEnumerable<StockTransactionVm> Get()
+        public HttpResponseMessage Get()
         {
-            return _dataService.GetStockTransactions();
+            var transactions = from t in _db.StockTransactions
+                               select new StockTransactionVm {
+                                   TransactionDate = t.TransactionDate,
+                                   Price = t.Price,
+                                   Quantity = t.Quantity,
+                                   SecurityId = t.SecurityId,
+                                   SecurityCode = t.Security.SecurityCode,
+                                   SignalName = t.SignalName,
+                                   Brokerage = 30,
+                                   TransactionType = t.TransactionType
+                               };
+            return Request.CreateResponse(HttpStatusCode.OK, transactions);
+            //return _dataService.GetStockTransactions();
         }
 
         [HttpPost]
@@ -43,7 +55,8 @@ namespace ShareWealth.Web.Controllers
             };
             _db.StockTransactions.Add(entity);
             _db.SaveChanges();
-            return Request.CreateResponse(HttpStatusCode.Created, transaction);
+
+            return Request.CreateResponse(HttpStatusCode.Created, transactionVm);
         }
 
         // POST: api/Transaction

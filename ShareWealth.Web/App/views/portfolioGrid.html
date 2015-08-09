@@ -1,3 +1,20 @@
+<div class="block-header">
+    <h2>ALL PORTFOLIOS <small></small></h2>
+
+    <ul class="actions m-t-20 hidden-xs">
+        <li class="dropdown">
+            <a href="" data-toggle="dropdown">
+                <i class="md md-more-vert"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
 <div kendo-grid
      options ="vm.mainGridOptions"
@@ -24,7 +41,7 @@
     k-on-close="menuOpen = menuOpen - 1"
     k-on-select="onSelect(kendoEvent)">
 
-    <li ng-click="vm.showValue(selected)"><i class="fa fa-line-chart"></i> Open Chart</li>
-    <li ng-click="vm.addData()">Add to Watchlist</li>
+    <li inprogress data-message="Delete"><i class="md md-delete"></i> Delete</li>
+    <li inprogress data-message="Edit"><i class="md md-edit"></i>Edit</li>
 
 </ul>

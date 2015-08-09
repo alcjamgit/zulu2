@@ -108,3 +108,14 @@ materialAdmin
             }
         }
     })
+
+    .directive('inprogress', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr) {
+                element.bind('click', function () {
+                    alert(attr['message'] + ' functionality in progress');
+                });
+            }
+        }
+    })

@@ -79,7 +79,7 @@ materialAdmin
             };
 
             function addStockTransaction(postData) {
-                console.log(postData);
+                //console.log(postData);
                 return $http({
                     method:'POST',
                     url: 'api/addStockTransaction',

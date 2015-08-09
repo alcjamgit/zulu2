@@ -34,7 +34,10 @@
 </head>
 
 @*<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1' }">*@
-<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1', 'modal-open': mactrl.sidebarToggle.left === true }">
+<body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1', 
+    'modal-open': mactrl.sidebarToggle.left === true,
+    'modal-open': mactrl.sidebarToggle.right === true}">
+
 @*<body class="sw-toggled">*@
     @RenderBody()
     <header id="header" data-ng-include src="'includes/header.html'" data-ng-controller="headerCtrl as hctrl"></header>

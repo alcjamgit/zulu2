@@ -559,7 +559,7 @@ materialAdmin
                 numeric: true
             },
             columns: [
-                { field: "id", title: "Id", width: 120 },
+                //{ field: "id", title: "Id", width: 120 },
                 { field: "name", title: "Name" },
                 { field: "type", title: "Type", width: 160, filterable: { multi: true } },
             ],
@@ -597,7 +597,7 @@ materialAdmin
                     numeric: true,
                 },
                 columns: [
-                    { field: "id", title: "Id", width: 120 },
+                    //{ field: "id", title: "Id", width: 120 },
                     { field: "securityCode", title: "Security Code", width: 120 },
                     { field: "securityName", title: "Security Name" },
                     { field: "exchange", title: "Exchange", width: 160, filterable: { multi: true } },
@@ -690,6 +690,7 @@ materialAdmin
             });
         };
 
+        
 
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
@@ -699,6 +700,7 @@ materialAdmin
                 },
                 schema: {
                     model: {
+                        id:'id',
                         fields: {
                             id: { type: "number" },
                             name: { type: "string" },
@@ -711,7 +713,7 @@ materialAdmin
                             exit: { type: "boolean" },
                             pyramid: { type: "boolean" },
                             lighten: { type: "boolean" },
-                            timeFrameType: { type: "boolean" },
+                            timeFrameType: { type: "string" },
                             period: { type: "number" },
                             periodType: { type: "string" },
                             startDate: { type: "date" },
@@ -793,10 +795,9 @@ materialAdmin
         };
         vm.selected = {};
         vm.createTransaction = function () {
-            alert(vm.selected.securityCode);
-            alert(vm.selected.id);
-            $state.go('portfolio.create-transactions');
+            $state.go('portfolio.create-transactions', { scanId: vm.selected.id});
         };
+
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
             dataSource: {
@@ -1078,7 +1079,7 @@ materialAdmin
         };
 
         vm.createTransaction = function(){
-            $state.go('portfolio.create-transactions', { scanId: "1545e813-c599-46cc-96b4-473b45498547" });
+            $state.go('portfolio.create-transactions');
         };
 
         //http://ernpac.net/?p=566
@@ -1089,9 +1090,9 @@ materialAdmin
                 },
                 schema: {
                     model: {
-                        
                         fields: {
                             transactionDate: { type: "date" },
+                            securityId: { type: "number" },
                             securityCode: {type: "string"},
                             signalName: {type: "string"},
                             transactionType: { type: "string" },
@@ -1132,36 +1133,48 @@ materialAdmin
 
 
     })
-    .controller('createTransactionCtrl', function ($stateParams, $window, scanService, portfolioService) {
+    .controller('createTransactionCtrl', function ($stateParams,  $window, $filter, scanService, portfolioService) {
         var vm = this;
         vm.scanData = {};
         vm.trans = {};
-        scanService.getScanItem($stateParams.scanId).then(function (response) {
-            vm.scanData = angular.copy(response.data);
+        vm.trans.transactionDate = $filter('date')(new Date(), 'dd/MM/yyyy');
+        
+        if ($stateParams.scanId !== '') {
+            initFromScan();
+        };
+        function initFromScan() {
+            scanService.getScanItem($stateParams.scanId).then(function (response) {
+                vm.scanData = angular.copy(response.data);
 
-            vm.trans.transactionDate = new Date();
-            vm.trans.signalName = vm.scanData.signalName;
-            vm.trans.securityCode = vm.scanData.securityCode;
-            vm.trans.transactionType = vm.scanData.signalType;
-            vm.trans.brokerage = 30;
-            vm.trans.price = vm.scanData.signalPrice;
-            vm.trans.quantity = 0;
- 
-            updateTotal();
-        });
-        vm.tradeValue;
+
+                vm.trans.signalName = vm.scanData.signalName;
+                vm.trans.securityId = vm.scanData.securityId;
+                vm.trans.securityCode = vm.scanData.securityCode;
+                vm.trans.transactionType = vm.scanData.signalType;
+                vm.trans.brokerage = 30;
+                vm.trans.price = vm.scanData.signalPrice;
+                vm.trans.quantity = 0;
+
+                updateTotal();
+            });
+        };
+
+        vm.tradeValue=0;
         
         function updateTotal() {
-            vm.tradeValue = (vm.trans.quantity * vm.trans.price) + vm.trans.brokerage;
+            var total = (vm.trans.quantity * vm.trans.price) + vm.trans.brokerage;
+            vm.tradeValue = $filter('number')(total,2) ;
         };
+
         vm.updateTotal = updateTotal;
         vm.cancel = function () {
             $window.history.back();
         };
+
         vm.save = function () {
             portfolioService.addStockTransaction(vm.trans).then(function (response) {
-                alert('success');
-            }, function (error) {
+                alert('Transaction Saved');
+            }, function (responseException) {
                 alert("Failed");
             });
         };
@@ -1183,6 +1196,7 @@ materialAdmin
           vm.showValue = function () {
               alert(vm.selected.name);
           };
+          
 
           vm.gridData = new kendo.data.DataSource({
               transport: {

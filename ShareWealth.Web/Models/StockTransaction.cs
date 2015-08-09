@@ -8,6 +8,7 @@ namespace ShareWealth.Web.Models
     public class StockTransactionVm
     {
         public DateTime TransactionDate { get; set; }
+        public int SecurityId { get; set; }
         public string SecurityCode { get; set; }
         public string SignalName { get; set; }
         public string TransactionType { get; set; }
