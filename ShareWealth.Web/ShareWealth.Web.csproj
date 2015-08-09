@@ -259,6 +259,7 @@
     <Content Include="App\views\active-portfolio-status.html" />
     <Content Include="App\views\active-portfolio-adjustments.html" />
     <Content Include="App\views\portfolioGrid.html" />
+    <Content Include="App\views\active-portfolio-form-transaction.html" />
     <Content Include="favicon.ico" />
     <Content Include="App\404.html" />
     <Content Include="App\css\app.css" />

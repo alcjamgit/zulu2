@@ -42,17 +42,23 @@ namespace ShareWealth.Web.Controllers
         public HttpResponseMessage GetScanResults()
         {
             var scans = from s in _db.ScanResults
-                                            select s;
+                        select s;
             return Request.CreateResponse(HttpStatusCode.OK, scans);
 
             //return _data.GetScanResults();
         }
-        // GET: api/Scan/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
+        [Route("api/scans/{id}")]
+        public HttpResponseMessage GetScanItem(Guid id)
+        {
+            var scanItem = (from s in _db.ScanResults
+                        where s.Id == id
+                        select s).FirstOrDefault();
+            return Request.CreateResponse(HttpStatusCode.OK, scanItem);
+
+            //return _data.GetScanResults();
+        }
+ 
         // POST: api/Scan
         public void Post([FromBody]string value)
         {

@@ -1,6 +1,6 @@
 
-<div class="pmb-block">
-    <div class="pmbb-header">
+<div class="pmb-block p-t-15">
+    <div class="pmbb-header m-b-15">
         <h2><i class="md md-settings m-r-5"></i> General</h2>
 
         <ul class="actions" data-ng-if="vm.editGeneral === 0">
@@ -38,7 +38,7 @@
         </div>
 
         <form data-ng-submit="vm.submit('generalInfo', 'Portfolio Profile')" class="pmbb-edit" data-ng-if="vm.editGeneral === 1">
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Portfolio Name</dt>
                 <dd>
                     <div class="fg-line">
@@ -47,7 +47,7 @@
 
                 </dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">System</dt>
                 <dd>
                     <div class="fg-line">
@@ -58,7 +58,7 @@
                     </div>
                 </dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Stock Exchange</dt>
                 <dd>
                     <div class="fg-line">
@@ -69,7 +69,7 @@
                     </div>
                 </dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Currency</dt>
                 <dd>
                     <div class="fg-line" ng-model="vm.profile.currency">
@@ -90,7 +90,7 @@
     </div>
 </div>
 <div class="pmb-block">
-    <div class="pmbb-header">
+    <div class="pmbb-header m-b-15">
         <h2><i class="md md-attach-money m-r-5"></i> Money Management</h2>
 
         <ul class="actions" data-ng-if="vm.editMoneyManagement === 0">
@@ -124,7 +124,7 @@
         </div>
 
         <form data-ng-submit="vm.submit('moneyManagement', 'Money Management')" class="pmbb-edit" data-ng-if="vm.editMoneyManagement === 1">
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Risk Table</dt>
                 <dd>
                     <div class="fg-line" >
@@ -137,7 +137,7 @@
                     </div>
                 </dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Max Open Postions</dt>
                 <dd>
                     <div class="fg-line">
@@ -145,7 +145,7 @@
                     </div>
                 </dd>
             </dl>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal m-b-5">
                 <dt class="p-t-10">Allocation Risks</dt>
                 <dd>
                     <div class="fg-line">
@@ -161,83 +161,3 @@
         </form>
     </div>
 </div>
-
-<!--<div class="pmb-block">
-    <div class="pmbb-header">
-        <h2><i class="md md-phone m-r-5"></i> Contact Information</h2>
-
-        <ul class="actions" data-ng-if="pctrl.editContact === 0">
-            <li class="dropdown">
-                <a href="" data-toggle="dropdown">
-                    <i class="md md-more-vert"></i>
-                </a>
-
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li>
-                        <a data-ng-click="pctrl.editContact = 1" href="">Edit</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="pmbb-body p-l-30">
-        <div class="pmbb-view" data-ng-if="pctrl.editContact === 0">
-            <dl class="dl-horizontal">
-                <dt>Mobile Phone</dt>
-                <dd>{{ pctrl.mobileNumber }}</dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Email Address</dt>
-                <dd>{{ pctrl.emailAddress }}</dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Twitter</dt>
-                <dd>{{ pctrl.twitter }}</dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Skype</dt>
-                <dd>{{ pctrl.skype }}</dd>
-            </dl>
-        </div>
-
-        <form data-ng-submit="pctrl.submit('profileContact', 'Profile Contact Information')" class="pmbb-edit" data-ng-if="pctrl.editContact === 1">
-            <dl class="dl-horizontal">
-                <dt class="p-t-10">Mobile Phone</dt>
-                <dd>
-                    <div class="fg-line">
-                        <input data-ng-model="pctrl.mobileNumber" type="text" class="form-control" placeholder="eg. 00971 12345678 9">
-                    </div>
-                </dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt class="p-t-10">Email Address</dt>
-                <dd>
-                    <div class="fg-line">
-                        <input data-ng-model="pctrl.emailAddress" type="email" class="form-control" placeholder="eg. malinda.h@gmail.com">
-                    </div>
-                </dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt class="p-t-10">Twitter</dt>
-                <dd>
-                    <div class="fg-line">
-                        <input data-ng-model="pctrl.twitter" type="text" class="form-control" placeholder="eg. @malinda">
-                    </div>
-                </dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt class="p-t-10">Skype</dt>
-                <dd>
-                    <div class="fg-line">
-                        <input data-ng-model="pctrl.skype" type="text" class="form-control" placeholder="eg. malinda.hollaway">
-                    </div>
-                </dd>
-            </dl>
-
-            <div class="m-t-30">
-                <button class="btn btn-primary btn-sm" type="submit">Save</button>
-                <button class="btn btn-link btn-sm" data-ng-click="pctrl.editContact = 0" >Cancel</button>
-            </div>
-        </form>
-    </div>
-</div>-->

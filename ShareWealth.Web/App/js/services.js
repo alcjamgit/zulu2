@@ -73,13 +73,28 @@ materialAdmin
             function transactions(){
                 return $http.get('api/stockTransactions');
             };
+
             function portfolios(){
                 return $http.get('api/portfolios');
             };
+
+            function addStockTransaction(postData) {
+                console.log(postData);
+                return $http({
+                    method:'POST',
+                    url: 'api/addStockTransaction',
+                    data: postData,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            };
+
             return {
                 getAdjustments: adjustments,
                 getTransactions: transactions,
-                getPortfolios: portfolios
+                getPortfolios: portfolios,
+                addStockTransaction: addStockTransaction
             }
         }])
     
@@ -99,6 +114,16 @@ materialAdmin
                 alert('ahoo');
             });
         };
+
+        function getScanItem(scanId) {
+            var request = {
+                method: 'GET',
+                url: 'api/scans/' + scanId,
+                //params: {id: scanId}
+            };
+            return $http(request);
+        };
+
         return {
             getScanProfiles: function () {
                 return $http.get('api/scanProfiles')
@@ -106,7 +131,8 @@ materialAdmin
             getDailyScans: function () {
                 return $http.get('api/scanResults')
             },
-            addScanProfile: addScanProfile
+            addScanProfile: addScanProfile,
+            getScanItem: getScanItem
         }
     }])
     // =========================================================================

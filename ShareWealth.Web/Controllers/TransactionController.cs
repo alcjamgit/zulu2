@@ -6,30 +6,44 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using ShareWealth.Infrastructure.DataLayer;
+using ShareWealth.Core.Entities;
 
 namespace ShareWealth.Web.Controllers
 {
     public class TransactionController : ApiController
     {
         private DataService _dataService;
+        private ApplicationDbContext _db;
 
         public TransactionController()
         {
             _dataService = new DataService();
+            _db = new ApplicationDbContext();
+            _db.Configuration.ProxyCreationEnabled = false;
         }
         // GET: api/Transaction
         [Route("api/stockTransactions")]
-        public IEnumerable<StockTransaction> Get()
+        public IEnumerable<StockTransactionVm> Get()
         {
-
             return _dataService.GetStockTransactions();
         }
 
-        // GET: api/Transaction/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("api/addStockTransaction")]
+        public HttpResponseMessage Post([FromBody]StockTransactionVm transactionVm)
         {
-            return "value";
+            var id = Guid.NewGuid();
+            var entity = new StockTransaction {
+                Id = id,
+                TransactionDate = transactionVm.TransactionDate,
+                Quantity = transactionVm.Quantity,
+                SignalName = transactionVm.SignalName,
+                Price = transactionVm.Price
+            };
+            _db.StockTransactions.Add(entity);
+            _db.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.Created, transaction);
         }
 
         // POST: api/Transaction

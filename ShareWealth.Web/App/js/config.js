@@ -109,7 +109,38 @@ materialAdmin
                 templateUrl: '/app/views/active-portfolio-transactions.html',
                 controller: 'transactionCtrl as vm',
             })
-
+                    .state('portfolio.create-transactions', {
+                        url: '/create/{scanId}',
+                        templateUrl: '/app/views/active-portfolio-form-transaction.html',
+                        controller: 'createTransactionCtrl as vm',
+                        resolve: {
+                            loadPlugin: function ($ocLazyLoad) {
+                                return $ocLazyLoad.load([
+                                    {
+                                        name: 'css',
+                                        insertBefore: '#app-level',
+                                        files: [
+                                            '/app/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css',
+                                            '/app/vendors/chosen_v1.4.2/chosen.min.css',
+                                            '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                                        ]
+                                    },
+                                    {
+                                        name: 'vendors',
+                                        files: [
+                                            '/app/vendors/input-mask/input-mask.min.js',
+                                            '/app/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+                                            '/app/vendors/chosen_v1.4.2/chosen.jquery.min.js',
+                                            '/app/vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js',
+                                            '/app/vendors/bower_components/moment/min/moment.min.js',
+                                            '/app/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                            '/app/vendors/fileinput/fileinput.min.js'
+                                        ]
+                                    }
+                                ])
+                            }
+                        }
+                    })
             //------------------------------
             // SCANS
             //------------------------------

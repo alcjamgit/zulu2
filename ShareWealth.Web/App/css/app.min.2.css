@@ -3070,6 +3070,17 @@ input[type=text].remove-clear::-ms-clear {
   display: none;
 }
 
+.form-legend {
+  margin-bottom: 15px;
+  line-height: 100%;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: inherit;
+  color: #000000;
+  border: none;
+  padding-bottom: 10px;
+}
+
 .ie-warning {
   position: fixed;
   top: 0;

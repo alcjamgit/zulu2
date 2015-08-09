@@ -1,0 +1,108 @@
+﻿<div class="block-header">
+    <h2>New Transaction<small></small></h2>
+</div>
+
+<div class="card">
+
+    <form class="form-horizontal ng-pristine ng-valid" role="form">
+        <!--<div class="card-header">
+            <h2>Horizontal Form</h2>
+        </div>-->
+
+        <div class="card-body card-padding">
+            <fieldset>
+                <legend class="form-legend">TRADE CONDITIONS</legend>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Transaction Date</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <input type="text" ng-model="vm.trans.transactionDate | date : 'dd/MM/yyyy'" class="form-control input-sm" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Signal Type</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <select ng-model="vm.trans.transactionType" data-selectpicker>
+                                <option>BUY</option>
+                                <option>SELL</option>
+                                <option>PYRAMID</option>
+                                <option>LIGHTEN</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Security Code</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <select ng-model="vm.trans.securityCode" data-selectpicker data-live-search="true">
+                                <option>BHP</option>
+                                <option>XAO</option>
+                                <option>DJUCY</option>
+                                <option>EWH</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Signal</label>
+                    <div class="col-sm-10">
+                        <select ng-model="vm.trans.signalName" data-selectpicker data-live-search="true">
+                            <option>ATR BO</option>
+                            <option>ATR TS</option>
+                            <option>ISL</option>
+                            <option>4LT</option>
+                            <option>H&S</option>
+                            <option>FT</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend class="form-legend">AMOUNT</legend>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Signal Price</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <input type="text" ng-model="vm.trans.price" ng-change="vm.updateTotal()" class="form-control input-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Quantity</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <input type="number" ng-model="vm.trans.quantity" ng-change="vm.updateTotal()" class="form-control input-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Brokerage</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <input type="text" ng-model="vm.trans.brokerage" ng-change="vm.updateTotal()" class="form-control input-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-15">
+                    <label class="col-sm-2 control-label">Trade Value</label>
+                    <div class="col-sm-10">
+                        <div class="fg-line">
+                            <input type="text" ng-model="vm.tradeValue | number : 2" class="form-control input-sm">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group m-b-15">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="vm.save()" class="btn btn-primary btn-sm waves-effect">SAVE</button>
+                    <button ng-click="vm.cancel()" class="btn btn-link btn-sm waves-effect m-l-5">CANCEL</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

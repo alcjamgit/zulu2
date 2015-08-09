@@ -795,7 +795,7 @@ materialAdmin
         vm.createTransaction = function () {
             alert(vm.selected.securityCode);
             alert(vm.selected.id);
-            $state.go('home');
+            $state.go('portfolio.create-transactions');
         };
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
@@ -1068,7 +1068,7 @@ materialAdmin
 
     })
 
-    .controller('transactionCtrl', function (portfolioService) {
+    .controller('transactionCtrl', function (portfolioService, $state) {
         var vm = this;
         //alert($stateParams.id);
         var readData = function (options) {
@@ -1077,6 +1077,9 @@ materialAdmin
             });
         };
 
+        vm.createTransaction = function(){
+            $state.go('portfolio.create-transactions', { scanId: "1545e813-c599-46cc-96b4-473b45498547" });
+        };
 
         //http://ernpac.net/?p=566
         vm.mainGridOptions = {
@@ -1086,6 +1089,7 @@ materialAdmin
                 },
                 schema: {
                     model: {
+                        
                         fields: {
                             transactionDate: { type: "date" },
                             securityCode: {type: "string"},
@@ -1126,6 +1130,44 @@ materialAdmin
             }
         };
 
+
+    })
+    .controller('createTransactionCtrl', function ($stateParams, $window, scanService, portfolioService) {
+        var vm = this;
+        vm.scanData = {};
+        vm.trans = {};
+        scanService.getScanItem($stateParams.scanId).then(function (response) {
+            vm.scanData = angular.copy(response.data);
+
+            vm.trans.transactionDate = new Date();
+            vm.trans.signalName = vm.scanData.signalName;
+            vm.trans.securityCode = vm.scanData.securityCode;
+            vm.trans.transactionType = vm.scanData.signalType;
+            vm.trans.brokerage = 30;
+            vm.trans.price = vm.scanData.signalPrice;
+            vm.trans.quantity = 0;
+ 
+            updateTotal();
+        });
+        vm.tradeValue;
+        
+        function updateTotal() {
+            vm.tradeValue = (vm.trans.quantity * vm.trans.price) + vm.trans.brokerage;
+        };
+        vm.updateTotal = updateTotal;
+        vm.cancel = function () {
+            $window.history.back();
+        };
+        vm.save = function () {
+            portfolioService.addStockTransaction(vm.trans).then(function (response) {
+                alert('success');
+            }, function (error) {
+                alert("Failed");
+            });
+        };
+        
+
+        
 
     })
     .controller('portfolioGridCtrl', function(portfolioService){
