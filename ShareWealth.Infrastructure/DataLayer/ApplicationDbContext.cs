@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using ShareWealth.Core.Entities;
+using ShareWealth.Infrastructure.Migrations;
 
 namespace ShareWealth.Infrastructure.DataLayer
 {
@@ -24,6 +25,12 @@ namespace ShareWealth.Infrastructure.DataLayer
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<PortfolioAdjustment> PortfolioAdjustments { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Used by AppHarbor to automatically update database
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            base.OnModelCreating(modelBuilder);
+        }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
