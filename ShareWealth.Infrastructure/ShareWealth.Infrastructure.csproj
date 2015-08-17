@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201508070723579_update003.Designer.cs">
       <DependentUpon>201508070723579_update003.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508171201453_update004.cs" />
+    <Compile Include="Migrations\201508171201453_update004.Designer.cs">
+      <DependentUpon>201508171201453_update004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508171319225_update005.cs" />
+    <Compile Include="Migrations\201508171319225_update005.Designer.cs">
+      <DependentUpon>201508171319225_update005.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Migrations\201508171201453_update004.resx">
+      <DependentUpon>201508171201453_update004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508171319225_update005.resx">
+      <DependentUpon>201508171319225_update005.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\SeedData\stockPrice.csv" />
     <None Include="packages.config" />
   </ItemGroup>

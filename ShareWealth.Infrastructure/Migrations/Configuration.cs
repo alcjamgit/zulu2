@@ -13,6 +13,7 @@ namespace ShareWealth.Infrastructure.Migrations
     using System.IO;
     using CsvHelper;
     using System.Text;
+    using System.Diagnostics;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
@@ -24,16 +25,16 @@ namespace ShareWealth.Infrastructure.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            SeedAdminUsers(context);
-            SeedPortfolioProfiles(context);
-            SeedPortfolioAdjustments(context);
-            SeedSecurities(context);
-            SeedWatclist(context);
-            SeedWatchlistSecurities(context);
-            SeedScanProfiles(context);
-            SeedScanResults(context);
-            SeedStockTransaction(context);
-
+            //SeedAdminUsers(context);
+            //SeedPortfolioProfiles(context);
+            //SeedPortfolioAdjustments(context);
+            //SeedSecurities(context);
+            //SeedWatclist(context);
+            //SeedWatchlistSecurities(context);
+            //SeedScanProfiles(context);
+            //SeedScanResults(context);
+            //SeedStockTransaction(context);
+            //Console.WriteLine("Executing the seed");
             //SeedStockPrice(context);
 
             context.SaveChanges();
@@ -668,10 +669,21 @@ namespace ShareWealth.Infrastructure.Migrations
                     CsvReader csvReader = new CsvReader(reader);
                     csvReader.Configuration.WillThrowOnMissingField = false;
                     var stockPrice = csvReader.GetRecords<StockPrice>().ToArray();
+                    SaveArrayAsCSV<StockPrice>(stockPrice, @"f:\temp\dataArray.csv");
                     context.StockPrices.AddOrUpdate(sp => sp.Id, stockPrice);
                 }
             }
 
+        }
+        private static void SaveArrayAsCSV<T>(T[] arrayToSave, string fileName)
+        {
+            using (StreamWriter file = new StreamWriter(fileName))
+            {
+                foreach (T item in arrayToSave)
+                {
+                    file.Write(item + ",");
+                }
+            }
         }
 
     }
