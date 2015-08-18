@@ -1,0 +1,47 @@
+{
+  "name": "sharewealth.web",
+  "version": "0.0.1",
+  "homepage": "https://github.com/alcjamgit/zulu2",
+  "authors": [
+    "alcjamgit <alcarazjames@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap-contextmenu": "~0.9.4",
+    "angular-loading-bar": "~0.7.1",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "daneden/animate.css#~3.3.0",
+    "autosize": "~3.0.6",
+    "bower": "*",
+    "bootstrap-select": "silviomoreto/bootstrap-select#~1.7.2",
+    "flot-orderBars": "emmerich/flot-orderBars",
+    "farbtastic": "mattfarina/farbtastic#~2.0.0-alpha.1",
+    "eonasdan-bootstrap-datetimepicker": "Eonasdan/bootstrap-datetimepicker#~4.7.14",
+    "flot.curvedlines": "MichaelZinsmaier/CurvedLines#~1.1.1",
+    "flot.tooltip": "~0.8.5",
+    "install": "~1.0.4",
+    "fullcalendar": "~2.3.1",
+    "jquery.bootgrid": "~1.2.0",
+    "jquery-placeholder": "~2.1.2",
+    "jquery.easy-pie-chart": "~2.1.6",
+    "jquery.nicescroll": "inuyaksa/jquery.nicescroll#~3.6.0",
+    "lightgallery": "~1.1.5",
+    "material-design-iconic-font": "~1.1.1",
+    "material-shadows": "~2.0.1",
+    "mediaelement": "johndyer/mediaelement#~2.16.4",
+    "ng-contextmenu": "~0.3.3",
+    "nouislider": "leongersen/noUiSlider#~7.0.10",
+    "oclazyload": "ocombe/ocLazyLoad#~1.0.1",
+    "summernote": "~0.6.7",
+    "simpleWeather": "~3.0.2",
+    "sweetalert": "~1.0.1",
+    "Waves": "fians/Waves#~0.7.2"
+  }
+}

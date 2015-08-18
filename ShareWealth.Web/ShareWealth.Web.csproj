@@ -4622,6 +4622,7 @@
     <Content Include="App\views\widgets.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Gruntfile.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Todos\Todos.txt" />
@@ -6362,6 +6363,7 @@
     <Content Include="App\vendors\bower_components\ng-contextmenu\releases\master.zip" />
     <Content Include="App\vendors\bower_components\angular-bootstrap-contextmenu\.bower.json" />
     <Content Include="App\vendors\bower_components\angular-bootstrap-contextmenu\bower.json" />
+    <Content Include="App\vendors\bower.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSpa.cshtml" />
