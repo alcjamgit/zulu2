@@ -14,6 +14,7 @@ namespace ShareWealth.Infrastructure.Migrations
     using CsvHelper;
     using System.Text;
     using System.Diagnostics;
+    using EntityFramework.Seeder;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
@@ -34,8 +35,8 @@ namespace ShareWealth.Infrastructure.Migrations
             //SeedScanProfiles(context);
             //SeedScanResults(context);
             //SeedStockTransaction(context);
-            //Console.WriteLine("Executing the seed");
-            //SeedStockPrice(context);
+
+            SeedStockPrice(context);
 
             context.SaveChanges();
         }
@@ -71,21 +72,12 @@ namespace ShareWealth.Infrastructure.Migrations
 
         private void SeedPortfolioProfiles(ApplicationDbContext context)
         {
-            var portfolios = new List<Portfolio>
-            {
-                new Portfolio { Id = new Guid("ad78931a-4bc3-4acd-8f9e-28d049e2e943"), Name = "Default Portfolio", System = "SPA3", Exchange = "XASX", Currency = "AUD", MinBrokerage = 30, BrokeragePercentage = 0.02 , UserId = _systemId_1, RiskOption = "Default XASX SIROC 21:08" },
-                new Portfolio { Id = new Guid("b92bb8c6-ac24-43e0-8c54-b7e515392eda"), Name = "SPA3 Portfolio", System = "SPA3", Exchange = "XASX", Currency = "AUD", MinBrokerage = 40, BrokeragePercentage = 0.02 , UserId = _systemId_1, RiskOption = "Default XASX SIROC 19:08" },
-                new Portfolio { Id = new Guid("2a0063b6-d019-406c-a502-cbee64b96f3f"), Name = "SPA3 ETF Portfolio", System = "SPA3 ETF", Exchange = "XASX", Currency = "AUD", MinBrokerage = 35, BrokeragePercentage = 0.02 , UserId = _systemId_1 },
-                new Portfolio { Id = new Guid("020cd4ae-7663-4af7-836f-e1836a061d78"), Name = "SPA3 ETF Portfolio", System = "SPA3 ETF", Exchange = "XNYS", Currency = "USD", MinBrokerage = 20, BrokeragePercentage = 0.03 , UserId = _systemId_1 },
-            };
-            foreach (var pf in portfolios)
-            {
-                if (!context.Portfolios.Any(p => p.Name == pf.Name))
-                {
-                    context.Portfolios.Add(pf);
-                }
-            }
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "ShareWealth.Infrastructure.Migrations.SeedData.PortfolioProfiles.csv";
+            context.Portfolios.SeedFromResource(resourceName, p => p.Id);
+
         }
+
         private void SeedPortfolioAdjustments(ApplicationDbContext context)
         {
             var portfolios = new List<PortfolioAdjustment>
@@ -660,19 +652,8 @@ namespace ShareWealth.Infrastructure.Migrations
             //http://adrianmejia.com/blog/2011/07/18/cs-getmanifestresourcestream-gotcha/
             Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = "ShareWealth.Infrastructure.Migrations.SeedData.stockPrice.csv";
-            
-           
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-                {
-                    CsvReader csvReader = new CsvReader(reader);
-                    csvReader.Configuration.WillThrowOnMissingField = false;
-                    var stockPrice = csvReader.GetRecords<StockPrice>().ToArray();
-                    SaveArrayAsCSV<StockPrice>(stockPrice, @"f:\temp\dataArray.csv");
-                    context.StockPrices.AddOrUpdate(sp => sp.Id, stockPrice);
-                }
-            }
+            context.StockPrices.SeedFromResource(resourceName, sp => sp.Id);
+          
 
         }
         private static void SaveArrayAsCSV<T>(T[] arrayToSave, string fileName)

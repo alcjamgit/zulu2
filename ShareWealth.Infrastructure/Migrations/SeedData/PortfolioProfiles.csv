@@ -1,0 +1,5 @@
+Id,Name,System,Currency,Exchange,WatchlistName,RiskOption,MaxOpenPositions,AllocationRisk,MinBrokerage,BrokeragePercentage,BrokerageThreshold,UserId
+ad78931a-4bc3-4acd-8f9e-28d049e2e943,Default Portfolio,SPA3,AUD,XASX,x,Default XASX SIROC 21:08,20,0.2,30,0.03,30,33ccbfae-d01a-4d94-ba62-da0118503f13
+b92bb8c6-ac24-43e0-8c54-b7e515392eda,SPA3 Portfolio,SPA3,AUD,XASX,x,Default XASX SIROC 19:08,20,0.2,40,0.03,30,33ccbfae-d01a-4d94-ba62-da0118503f13
+2a0063b6-d019-406c-a502-cbee64b96f3f,SPA3 ETF Portfolio,SPA3 ETF,AUD,XASX,x,Default XASX SIROC 21:08,20,0.2,35,0.03,30,33ccbfae-d01a-4d94-ba62-da0118503f13
+020cd4ae-7663-4af7-836f-e1836a061d78,SPA3 ETF Portfolio,SPA3 ETF,USD,XNAS,x,Default XASX SIROC 19:08,20,0.2,20,0.03,30,33ccbfae-d01a-4d94-ba62-da0118503f13

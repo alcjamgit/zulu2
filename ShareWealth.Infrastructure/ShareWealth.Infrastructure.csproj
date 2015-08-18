@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Seeder.EF6">
+      <HintPath>..\packages\EntityFramework.Seeder.EF6.0.4.0\lib\EntityFramework.Seeder.EF6.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -88,7 +91,12 @@
     <EmbeddedResource Include="Migrations\201508171319225_update005.resx">
       <DependentUpon>201508171319225_update005.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\SeedData\stockPrice.csv" />
+    <EmbeddedResource Include="Migrations\SeedData\stockPrice.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\SeedData\PortfolioProfiles.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
