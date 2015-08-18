@@ -192,6 +192,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\OpenTrade.cs" />
     <Compile Include="Models\PortfolioAdjustment.cs" />
     <Compile Include="Models\PriceData.cs" />
     <Compile Include="Models\ScanProfile.cs" />

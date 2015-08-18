@@ -18,10 +18,25 @@ namespace ShareWealth.Web.Controllers
                 new Notification { Id = 5, Message = "Pyramid for DJI", Type = "Scans", Symbol = "P" },
             };
 
+        private IEnumerable<OpenTrade> _openTrades = new List<OpenTrade> { 
+                new OpenTrade { SecurityCode = "SLF", SecurityName = "SPDR S&P/ASX200 Listed Fund", MarketValue = 1563.63 },
+                new OpenTrade { SecurityCode = "SFY", SecurityName = "SPDR S&P/ASX50 Fund", MarketValue = 214.28 },
+                new OpenTrade { SecurityCode = "STW", SecurityName = "SPDR S&P/ASX200 Fund", MarketValue = 1438.92 },
+                new OpenTrade { SecurityCode = "BHP", SecurityName = "BHP Billiton Ltd", MarketValue = 2713.54 },
+        };
+
         // GET: api/Notification
+        [Route("api/Notification")]
         public IEnumerable<Notification> Get()
         {
             return _notifications;
+        }
+
+        // GET: api/Notification
+        [Route("api/OpenTrades")]
+        public IEnumerable<OpenTrade> GetOpenTrades()
+        {
+            return _openTrades;
         }
 
         // GET: api/Notification/5
