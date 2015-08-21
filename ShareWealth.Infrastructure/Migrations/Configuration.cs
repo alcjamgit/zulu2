@@ -26,15 +26,15 @@ namespace ShareWealth.Infrastructure.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            //SeedAdminUsers(context);
-            //SeedPortfolioProfiles(context);
-            //SeedPortfolioAdjustments(context);
-            //SeedSecurities(context);
-            //SeedWatclist(context);
-            //SeedWatchlistSecurities(context);
-            //SeedScanProfiles(context);
-            //SeedScanResults(context);
-            //SeedStockTransaction(context);
+            SeedAdminUsers(context);
+            SeedPortfolioProfiles(context);
+            SeedPortfolioAdjustments(context);
+            SeedSecurities(context);
+            SeedWatclist(context);
+            SeedWatchlistSecurities(context);
+            SeedScanProfiles(context);
+            SeedScanResults(context);
+            SeedStockTransaction(context);
 
             SeedStockPrice(context);
 

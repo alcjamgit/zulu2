@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!--[if IE 9 ]><html class="ie9" data-ng-app="materialAdmin" data-ng-controller="materialadminCtrl as mactrl"><![endif]-->
     <![if IE 9 ]>
-<html data-ng-app="materialAdmin" data-ng-controller="materialadminCtrl as mactrl">
+<html data-ng-app="stockApp" data-ng-controller="mainCtrl as mactrl">
 <![endif]>
 
 <head>
@@ -15,16 +15,7 @@
     <title>Beyond Charts</title>
 
     <!-- Vendor CSS -->
-
-    <link href="~/app/vendors/socicon/socicon.min.css" rel="stylesheet">
-    <link href="~/app/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-    <link href="~/app/vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
-    <link href="~/app/vendors/bower_components/sweetalert/dist/sweetalert-override.min.css" rel="stylesheet">
-    <link href="~/app/vendors/bower_components/angular-loading-bar/src/loading-bar.css" rel="stylesheet">
-    <link href="~/app/vendors/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
-    <link href="~/app/vendors/kendo-ui/styles/kendo.common-material.min.css" rel="stylesheet" />
-    
-
+    @Styles.Render("~/App/cssbundle")
     <!-- CSS -->
     <link href="~/app/css/app.min.1.css" rel="stylesheet" id="app-level">
     <link href="~/app/css/app.min.2.css" rel="stylesheet">
@@ -35,13 +26,13 @@
 
 <body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1', 
     'modal-open': mactrl.sidebarToggle.left === true ||  mactrl.sidebarToggle.right === true}">
-
+    
     @RenderBody()
-    <header id="header" data-ng-include src="'includes/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
+    <header id="header" data-ng-include src="'app/includes/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
 
     <section id="main">
-        <aside id="sidebar" data-ng-include src="'includes/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
-        <aside id="chat" data-ng-include src="'includes/security-explorer.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
+        <aside id="sidebar" data-ng-include src="'app/includes/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+        <aside id="chat" data-ng-include src="'app/includes/security-explorer.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
 
         <section id="content">
 
@@ -52,7 +43,7 @@
         </section>
     </section>
 
-    <footer id="footer" data-ng-include src="'includes/footer.html'"></footer>
+    <footer id="footer" data-ng-include src="'app/includes/footer.html'"></footer>
     <!-- Older IE warning message -->
     <!--[if lt IE 9]>
         <div class="ie-warning">
@@ -135,24 +126,46 @@
     <script src="~/app/vendors/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
 
     <!-- App level -->
-    <script src="~/app/js/app.js"></script>
-    <script src="~/app/js/config.js"></script>
-    <script src="~/app/js/controllers.js"></script>
+    @*<script src="~/app/js/app.js"></script>
+    <script src="~/app/js/config.js"></script>*@
+
+    <script src="~/App/areas/_main/app.js"></script>
+    <script src="~/App/areas/_main/config.js"></script>
+    <script src="~/App/areas/_main/mainCtrl.js"></script>
+    <script src="~/App/areas/_main/headerCtrl.js"></script>
+    <script src="~/App/areas/portfolio/activePortfolioCtrl.js"></script>
+    <script src="~/App/areas/portfolio/activePortfolioAdjustmentCtrl.js"></script>
+    <script src="~/App/areas/portfolio/portfoliGridCtrl.js"></script>
+    <script src="~/App/areas/_main/securityExplorerCtrl.js"></script>
+    <script src="~/App/areas/security/securitiesGridCtrl.js"></script>
+    <script src="~/App/areas/watchlist/watchListGridCtrl.js"></script>
+    <script src="~/App/areas/stockChart/stockChartCtrl.js"></script>
+    <script src="~/App/areas/scans/scanProfilesCtrl.js"></script>
+    <script src="~/App/areas/scans/scanDailyCtrl.js"></script>
+    <script src="~/App/areas/portfolio/transactionCtrl.js"></script>
+    <script src="~/App/areas/portfolio/createTransactionCtrl.js"></script>
+    <script src="~/App/areas/_main/services.js"></script>
+    <script src="~/App/areas/_main/templates.js"></script>
+
+    @*<script src="~/app/js/controllers.js"></script>
     <script src="~/app/js/services.js"></script>
-    <script src="~/app/js/templates.js"></script>
+    <script src="~/app/js/templates.js"></script>*@
+
+
 
 
     <!-- Template Modules -->
-    <script src="~/app/js/modules/template.js"></script>
-    <script src="~/app/js/modules/ui.js"></script>
-    <script src="~/app/js/modules/charts/flot.js"></script>
-    <script src="~/app/js/modules/charts/other-charts.js"></script>
-    <script src="~/app/js/modules/form.js"></script>
-    <script src="~/app/js/modules/table.js"></script>
-    <script src="~/app/js/modules/media.js"></script>
-    <script src="~/app/js/modules/components.js"></script>
-    <script src="~/app/js/modules/calendar.js"></script>
-    <script src="~/app/js/modules/demo.js"></script>
+
+    <script src="~/App/areas/directives/ui.js"></script>
+    <script src="~/App/areas/directives/calendar.js"></script>
+    <script src="~/App/areas/directives/components.js"></script>
+    <script src="~/App/areas/directives/demo.js"></script>
+    <script src="~/App/areas/directives/flot.js"></script>
+    <script src="~/App/areas/directives/form.js"></script>
+    <script src="~/App/areas/directives/media.js"></script>
+    <script src="~/App/areas/directives/other-charts.js"></script>
+    <script src="~/App/areas/directives/table.js"></script>
+    <script src="~/App/areas/directives/template.js"></script>
 
 </body>
 </html>
