@@ -1,0 +1,20 @@
+{
+  "name": "stockapp",
+  "version": "0.0.1",
+  "description": "stock application",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Alcaraz",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^0.5.7",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-csssplit": "^0.4.0"
+  }
+}
