@@ -148,7 +148,7 @@ angular.module('stockApp')
             //------------------------------
              .state('scans', {
                 url: '/scans',
-                templateUrl: '/app/views/scan-common.html',
+                templateUrl: '/app/areas/scans/scan-common.html',
                 
             })
             .state('scans.scan-profiles', {
