@@ -58,15 +58,15 @@ module.exports = function(grunt) {
       }
     },
 
-    jshint: {
-      jshintrc: '.jshintrc',
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      src: {
-        src: ['src/*.js']
-      }
-    },
+    //jshint: {
+    //  jshintrc: '.jshintrc',
+    //  gruntfile: {
+    //    src: 'Gruntfile.js'
+    //  },
+    //  src: {
+    //    src: ['src/*.js']
+    //  }
+    //},
 
     concat: {
       build: {
