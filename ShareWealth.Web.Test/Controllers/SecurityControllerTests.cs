@@ -20,7 +20,7 @@ namespace ShareWealth.Web.Controllers.Tests
         public void SecurityControllerTest()
         {
             //http://www.davepaquette.com/archive/2014/03/18/seeding-entity-framework-database-from-csv.aspx
-            //http://adrianmejia.com/blog/2011/07/18/cs-getmanifestresourcestream-gotcha/
+            //http://adrianmejia.com/blog/2011/07/18/cs-getmanifestresourcestream-gotcha
             Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = "ShareWealth.Web.Test.SeedData.stockPrice.csv";
             ApplicationDbContext context = new ApplicationDbContext();
