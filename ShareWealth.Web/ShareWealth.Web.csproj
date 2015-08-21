@@ -2316,9 +2316,6 @@
     <Content Include="node_modules\async\.gitmodules" />
     <Content Include="node_modules\async\index.js" />
     <Content Include="node_modules\async\lib\async.js" />
-    <Content Include="node_modules\atob\bin\atob.js" />
-    <Content Include="node_modules\atob\index.js" />
-    <Content Include="node_modules\atob\test.js" />
     <Content Include="node_modules\aws-sign2\index.js" />
     <Content Include="node_modules\balanced-match\example.js" />
     <Content Include="node_modules\balanced-match\index.js" />
@@ -6064,10 +6061,6 @@
     <Content Include="node_modules\async\Makefile" />
     <Content Include="node_modules\async\package.json" />
     <Content Include="node_modules\async\README.md" />
-    <Content Include="node_modules\atob\LICENSE" />
-    <Content Include="node_modules\atob\LICENSE.DOCS" />
-    <Content Include="node_modules\atob\package.json" />
-    <Content Include="node_modules\atob\README.md" />
     <Content Include="node_modules\aws-sign2\LICENSE" />
     <Content Include="node_modules\aws-sign2\package.json" />
     <Content Include="node_modules\aws-sign2\README.md" />
